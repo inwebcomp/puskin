@@ -12,6 +12,10 @@ let mix = require('laravel-mix')
  */
 
 mix.sass('assets/scss/app.scss', 'dist/css/')
+   .browserSync({
+        proxy: false,
+        server: {baseDir: 'dist'}
+   })
    .options({
       processCssUrls: false, // Process/optimize relative stylesheet url()'s. Set to false, if you don't want them touched.
     });
