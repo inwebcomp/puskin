@@ -11,7 +11,7 @@ let mix = require('laravel-mix')
  |
  */
 
-mix.sass('assets/scss/app.scss', 'dist/')
+mix.sass('assets/scss/app.scss', 'dist/css/')
    .options({
       processCssUrls: false, // Process/optimize relative stylesheet url()'s. Set to false, if you don't want them touched.
     });
@@ -29,7 +29,10 @@ mix.sass('assets/scss/app.scss', 'dist/')
 // mix.less(src, output);
 // mix.stylus(src, output);
 // mix.postCss(src, output, [require('postcss-some-plugin')()]);
-// mix.browserSync('my-site.test');
+// mix.browserSync({
+//    files: ["assets", "*.html"],
+//    notify: true
+// });
 // mix.combine(files, destination);
 // mix.babel(files, destination); <-- Identical to mix.combine(), but also includes Babel compilation.
 // mix.copy(from, to);
