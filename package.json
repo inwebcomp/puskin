@@ -11,7 +11,9 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "laravel-mix": "^2.1.14"
+        "laravel-mix": "^4.0.15",
+        "sass": "^1.18.0",
+        "sass-loader": "7.*"
     },
     "dependencies": {
         "scroll-into-view": "^1.9.3",
