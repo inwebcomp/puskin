@@ -852,3 +852,21 @@ body {
 .languages__item.active {
   font-weight: 500;
 }
+
+.article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 775px;
+}
+.article__img {
+  width: 50%;
+  max-width: 350px;
+  min-width: 200px;
+}
+.article__content {
+  margin-left: 18px;
+}

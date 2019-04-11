@@ -1,0 +1,15 @@
+.article {
+    display: flex;
+    align-items: center;
+    max-width: 775px;
+
+    &__img {
+        width: 50%;
+        max-width: 350px;
+        min-width: 200px;
+    }
+
+    &__content {
+        margin-left: 18px;
+    }
+}
