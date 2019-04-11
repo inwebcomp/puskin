@@ -1,0 +1,28 @@
+.languages {
+    font-size: rem(14px);
+    font-weight: 100;
+
+    &__item {
+        display: inline-block;
+        position: relative;
+        line-height: 1;
+
+        &:not(:last-child) {
+            padding-right: 18px;
+            margin-right: 10px;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 2px;
+                height: 100%;
+                background-color: #f0f0f0;
+            }
+        }
+
+        &.active {
+            font-weight: 500;
+        }
+    }
+}

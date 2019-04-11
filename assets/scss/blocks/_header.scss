@@ -30,23 +30,12 @@
         margin-left: 16px;
     }
 
-    &__contact-item {
+    &__contact {
         transition: transform 0.2s;
         cursor: pointer;
 
         &:not(:last-child) {
             margin-right: 40px;
-        }
-
-        span {
-            font-size: rem(17px);
-            font-weight: 100;
-        }
-
-        .fas {
-            color: #F2C94C;
-            margin-right: 12px;
-            transition: color 0.25s;
         }
 
         &:hover {
@@ -58,39 +47,24 @@
         &:active {
             transform: scale(0.95);
         }
-    }
 
-    &__langs {
-        font-size: rem(14px);
-        font-weight: 100;
-
-        a {
-            display: inline-block;
-            position: relative;
-            line-height: 1;
-
-            &:not(:last-child) {
-                padding-right: 18px;
-                margin-right: 10px;
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    width: 2px;
-                    height: 100%;
-                    background-color: #f0f0f0;
-                }
-            }
-
-            &.active {
-                font-weight: 500;
-            }
+        &-text {
+            font-size: rem(17px);
+            font-weight: 100;
         }
+
+        .fas {
+            color: #F2C94C;
+            margin-right: 12px;
+            transition: color 0.25s;
+        } 
     }
+
+    
 
     &__menu {
         margin-top: 36px;
         padding-right: -16px;
     }
 }
+

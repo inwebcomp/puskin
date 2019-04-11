@@ -716,7 +716,7 @@ body {
           align-items: center;
   margin-left: 16px;
 }
-.header__contact-item {
+.header__contact {
   -webkit-transition: -webkit-transform 0.2s;
   transition: -webkit-transform 0.2s;
   -o-transition: transform 0.2s;
@@ -724,52 +724,27 @@ body {
   transition: transform 0.2s, -webkit-transform 0.2s;
   cursor: pointer;
 }
-.header__contact-item:not(:last-child) {
+.header__contact:not(:last-child) {
   margin-right: 40px;
 }
-.header__contact-item span {
+.header__contact:hover .fas {
+  color: #444;
+}
+.header__contact:active {
+  -webkit-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+          transform: scale(0.95);
+}
+.header__contact-text {
   font-size: 1.0625rem;
   font-weight: 100;
 }
-.header__contact-item .fas {
+.header__contact .fas {
   color: #F2C94C;
   margin-right: 12px;
   -webkit-transition: color 0.25s;
   -o-transition: color 0.25s;
   transition: color 0.25s;
-}
-.header__contact-item:hover .fas {
-  color: #444;
-}
-.header__contact-item:active {
-  -webkit-transform: scale(0.95);
-      -ms-transform: scale(0.95);
-          transform: scale(0.95);
-}
-.header__langs {
-  font-size: 0.875rem;
-  font-weight: 100;
-}
-.header__langs a {
-  display: inline-block;
-  position: relative;
-  line-height: 1;
-}
-.header__langs a:not(:last-child) {
-  padding-right: 18px;
-  margin-right: 10px;
-}
-.header__langs a:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background-color: #f0f0f0;
-}
-.header__langs a.active {
-  font-weight: 500;
 }
 .header__menu {
   margin-top: 36px;
@@ -850,4 +825,30 @@ body {
 }
 .main-menu__link.active::before {
   width: 100%;
+}
+
+.languages {
+  font-size: 0.875rem;
+  font-weight: 100;
+}
+.languages__item {
+  display: inline-block;
+  position: relative;
+  line-height: 1;
+}
+.languages__item:not(:last-child) {
+  padding-right: 18px;
+  margin-right: 10px;
+}
+.languages__item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #f0f0f0;
+}
+.languages__item.active {
+  font-weight: 500;
 }
