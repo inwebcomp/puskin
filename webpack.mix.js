@@ -44,8 +44,8 @@ mix.sass('assets/scss/app.scss', 'dist/css/')
 // mix.stylus(src, output);
 // mix.postCss(src, output, [require('postcss-some-plugin')()]);
 // mix.browserSync({
-//    proxy: false,
-//    server: {baseDir: 'dist'},
+//    proxy: 'http://localhost:8080',
+   
 //    files: ['*']
 // })
 // mix.combine(files, destination);

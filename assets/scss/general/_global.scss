@@ -8,6 +8,10 @@ template {
 	display: none;
 }
 
+p {
+	margin: $padding 0;
+}
+
 .link {
 	transition: color $transition;
 

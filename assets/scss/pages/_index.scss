@@ -4,3 +4,21 @@
 @import "blocks/languages";
 
 @import "blocks/article";
+@import "blocks/news";
+@import "blocks/carousel";
+
+
+.page-content {
+    background-color: $background-color;
+    padding: $padding * 2.875;
+    display: grid;
+    grid-template-columns: 6fr 2fr;
+    grid-column-gap: $padding * 2.875;
+}
+
+.page-title {
+    font-size: rem(23px);
+    text-transform: uppercase;
+    font-weight: 900;
+    margin: 0 0 $padding * 2 0;
+}

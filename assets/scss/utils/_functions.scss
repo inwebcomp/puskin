@@ -4,4 +4,8 @@
 
 @function rem($pixels, $context: $font-size) {
     @return #{$pixels/$context}rem;
-  } 
+} 
+
+@function em($pixels, $context: $font-size) {
+    @return #{$pixels/$context}em;
+}

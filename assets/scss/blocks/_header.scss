@@ -2,36 +2,36 @@
     display: flex;
     justify-content: space-between;
     background-color: #fff;
-    padding: 16px;
-    padding-bottom: 0;
-    padding-right: 0;
+    padding: $padding 0 0 $padding;
     margin-bottom: 5px;
-    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+    min-height: $header-height;
 
     &__logo {
-        margin-top: -16px;
+        align-self: flex-start;
+        margin-top: -$padding / 4;
     }
 
     &__info {
         display: flex;
         justify-content: space-between;
-        padding-right: 16px;
+        padding-right: $padding;
     }
 
     &__right-box {
-        max-width: 685px;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
     }
 
     &__contacts {
         display: flex;
         align-items: center;
-        margin-left: 16px;
+        margin-left: $padding;
     }
 
     &__contact {
-        transition: transform 0.2s;
+        transition: transform $transition;
         cursor: pointer;
 
         &:not(:last-child) {
@@ -39,13 +39,9 @@
         }
 
         &:hover {
-            .fas {
-                color: #444;
+            .header__contact-icon {
+                color: lighten(#F2C94C, 10%);
             }
-        }
-
-        &:active {
-            transform: scale(0.95);
         }
 
         &-text {
@@ -53,16 +49,11 @@
             font-weight: 100;
         }
 
-        .fas {
+        &-icon {
             color: #F2C94C;
-            margin-right: 12px;
-            transition: color 0.25s;
+            margin-right: $padding * 0.75;
+            transition: color $transition;
         } 
-    }
-
-    &__menu {
-        margin-top: 36px;
-        padding-right: -16px;
     }
 }
 

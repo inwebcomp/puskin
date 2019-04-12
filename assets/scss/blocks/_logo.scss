@@ -1,5 +1,6 @@
 .logo {
     display: flex;
+    align-items: center;
     
     &__img {
         display: block;
@@ -10,10 +11,9 @@
 
     &__content {
         text-align: center;
-        margin-left: 21px;
+        margin-left: $padding * 1.25;
         font-size: rem(20px);
         line-height: 1;
-        margin-top: 26px;
     }
 
     &__text {

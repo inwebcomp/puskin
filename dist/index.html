@@ -9,12 +9,15 @@
 
     <link rel="shortcut icon" href="img/favicons/favicon.ico">
 
-    <link href="css/app.css" rel="stylesheet" type="text/css" />
-
     <!-- temporal connection for fast reload-->
     <link rel="stylesheet" href="fonts/fas/css/fontawesome.min.css">
     <link rel="stylesheet" href="fonts/fas/css/solid.min.css">
     <link rel="stylesheet" href="fonts/fas/css/light.min.css">
+    <!-- flickity -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+    <link href="css/app.css" rel="stylesheet" type="text/css" />
+    
 </head>
 <body>
     <div id="app" class="page page--index">
@@ -33,11 +36,11 @@
                     <div class="header__info">
                         <div class="header__contacts">
                             <a href="#" class="header__contact">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-map-marker-alt header__contact-icon"></i>
                                 <span class="header__contact-text">ул. Набережная, 3</span>
                             </a>
                             <a href="tel:++37329721 998" class="header__contact">
-                                <i class="fas fa-phone"></i>
+                                <i class="fas fa-phone header__contact-icon"></i>
                                 <span class="header__contact-text">+373 297 <b>21 998</b></span>
                             </a>
                         </div>
@@ -46,7 +49,7 @@
                             <a href="" class="languages__item">Romana</a>
                         </nav>
                     </div>
-                    <nav class="main-menu header__menu">
+                    <nav class="main-menu">
                         <a class="main-menu__link" href="#">Лицей</a>
                         <a class="main-menu__link" href="#">Учебный процесс</a>
                         <a class="main-menu__link active" href="#">Учителя</a>
@@ -58,28 +61,148 @@
             </header>
         </div>
         <div class="container container--shadow">
-            <div style=" background-color: #fff; padding-top: 25px;">
-                <div class="article-list">
-                    <article class="article">
-                        <img src="./img/article-img.jpg" alt="post-photo" class="article__img">
-                        <div class="article__content">
-                            <h3 class="article__title">Лицей организовывает поездку во францию. 26 июня - 2 июля.</h3>
-                            <div class="article__info">
-                                <span class="article__date">09.06.2019</span>
-                                <span class="article__comments">Комментариев:
-                                    <span class="article__comments-count">9</span>
-                                </span>
-                            </div>
-                            <p class="article__prew-text"></p>
-                            <a href="#" class="article__link">
-                                Подробнее
-                                <i class="fal fa-long-arrow-right"></i>
-                            </a>
+            <section class="page-content"">
+                <main class="page-main">
+                    <section class="carousel">
+                        <div class="carousel__cell">
+                            <img class="carousel__image" src="img/slider-img.jpg"  data-flickity-lazyload="img/slider-img.jpg">
                         </div>
-                    </article>        
-                </div>
-            </div>
+                        <div class="carousel__cell">
+                            <img class="carousel__image" data-flickity-lazyload="https://xaxa-net.ru/uploads/posts/2018-03/1522233561_perfekcionizm_xaxa-net.ru-10.jpg"  >
+                        </div>
+                        <div class="carousel__cell">
+                            <img class="carousel__image" data-flickity-lazyload="https://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" >
+                        </div>
+                        <div class="carousel__cell">
+                            <img class="carousel__image" data-flickity-lazyload="https://cdn.humoraf.ru/wp-content/uploads/2017/08/23-14.jpg"  alt="orange tree">
+                        </div>
+                    </section>
+                    <div class="article-list">
+                        <h2 class="page-title article-list__title">Последние новости</h2>
+
+                        <article class="article-prew">
+                            <div class="article-prew__photo">
+                                <img src="./img/article-img.jpg" alt="post-photo" class="article-prew__photo-img">
+                            </div>
+                            
+                            <div class="article-prew__content">
+                                <h3 class="article-prew__title">Лицей организовывает поездку во францию. 26 июня - 2 июля.</h3>
+                                <div class="article-prew__info">
+                                    <span class="article-prew__date">
+                                        <i class="fal fa-calendar-alt article-prew__info-icon"></i>
+                                        09.06.2019
+                                    </span>
+                                    <span class="article-prew__comments">
+                                        <i class="fal fa-comment-lines article-prew__info-icon"></i>
+                                        Комментариев:
+                                        <span class="article-prew__comments-count">9</span>
+                                    </span>
+                                </div>
+                                <p class="article-prew__text">
+                                    Экскурсия по Парижу. Мы посетим Триумфальную Арку, Эйфелеву башню, Лувр, Нотр-Дам-де-Пари. Остановимся в отеле Shangri-La Hotel Paris. Заказаны 4 лимузина.
+                                </p>
+                                <a href="#" class="article-prew__link">
+                                    Подробнее
+                                    <i class="fal fa-long-arrow-right article-prew__link-icon"></i>
+                                </a>
+                            </div>
+                        </article>
+                        <article class="article-prew">
+                            <div class="article-prew__photo">
+                                <img src="https://xaxa-net.ru/uploads/posts/2018-03/1522233561_perfekcionizm_xaxa-net.ru-10.jpg" alt="post-photo" class="article-prew__photo-img">
+                            </div>
+                            
+                            <div class="article-prew__content">
+                                <h3 class="article-prew__title">Лицей организовывает поездку во францию. 26 июня - 2 июля.</h3>
+                                <div class="article-prew__info">
+                                    <span class="article-prew__date">
+                                        <i class="fal fa-calendar-alt article-prew__info-icon"></i>
+                                        09.06.2019
+                                    </span>
+                                    <span class="article-prew__comments">
+                                        <i class="fal fa-comment-lines article-prew__info-icon"></i>
+                                        Комментариев:
+                                        <span class="article-prew__comments-count">9</span>
+                                    </span>
+                                </div>
+                                <p class="article-prew__text">
+                                    Экскурсия по Парижу. Мы посетим Триумфальную Арку, Эйфелеву башню, Лувр, Нотр-Дам-де-Пари. Остановимся в отеле Shangri-La Hotel Paris. Заказаны 4 лимузина.
+                                </p>
+                                <a href="#" class="article-prew__link">
+                                    Подробнее
+                                    <i class="fal fa-long-arrow-right article-prew__link-icon"></i>
+                                </a>
+                            </div>
+                        </article>
+                        <article class="article-prew">
+                            <div class="article-prew__photo">
+                                <img src="./img/article-img.jpg" alt="post-photo" class="article-prew__photo-img">
+                            </div>
+                            
+                            <div class="article-prew__content">
+                                <h3 class="article-prew__title">Лицей организовывает поездку во францию. 26 июня - 2 июля.</h3>
+                                <div class="article-prew__info">
+                                    <span class="article-prew__date">
+                                        <i class="fal fa-calendar-alt article-prew__info-icon"></i>
+                                        09.06.2019
+                                    </span>
+                                    <span class="article-prew__comments">
+                                        <i class="fal fa-comment-lines article-prew__info-icon"></i>
+                                        Комментариев:
+                                        <span class="article-prew__comments-count">9</span>
+                                    </span>
+                                </div>
+                                <p class="article-prew__text">
+                                    Экскурсия по Парижу. Мы посетим Триумфальную Арку, Эйфелеву башню, Лувр, Нотр-Дам-де-Пари. Остановимся в отеле Shangri-La Hotel Paris. Заказаны 4 лимузина.
+                                </p>
+                                <a href="#" class="article-prew__link">
+                                    Подробнее
+                                    <i class="fal fa-long-arrow-right article-prew__link-icon"></i>
+                                </a>
+                            </div>
+                        </article>  
+                    </div>
+                </main>
+                <aside class="page-sitebar">
+                    <article class="news">
+                        <img src="./img/article-img.jpg" alt="post-photo" class="news__img">
+                        <div class="news__info">
+                            <span class="news__date">
+                                <i class="fal fa-calendar-alt news__info-icon"></i>
+                                09.06.2019
+                            </span>
+                            <span class="news__comments">
+                                <i class="fal fa-comment-lines news__info-icon"></i>
+                                Комментариев:
+                                <span class="news__comments-count">9</span>
+                            </span>
+                        </div>
+                        <h3 class="news__title">Лицей организовывает поездку во францию. 26 июня - 2 июля.</h3>  
+                        <p class="news__text">
+                            Экскурсия по Парижу. Мы посетим Триумфальную Арку, Эйфелеву башню, Лувр, Нотр-Дам-де-Пари. Остановимся в отеле Shangri-La Hotel Paris. Заказаны 4 лимузина.
+                        </p>
+                        
+                    </article>
+                </aside>
+            </section>
         </div>
     </div>
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script>
+        const initCarousel = () => {
+            const carousel = document.querySelector('.carousel');
+            if (carousel) {
+                let flkty = new Flickity( carousel, {
+                    "prevNextButtons": true,
+                    "lazyLoad": true,
+                    //"imagesLoaded": true,
+                    "adaptiveHeight": true
+                });
+            }
+        };
+
+        initCarousel();
+    </script>
 </body>
 </html>
