@@ -4,7 +4,8 @@
     display: grid;
     grid-template-columns: 6fr 2fr;
     grid-template-row: 500px 500px;
-    grid-gap: $padding * 2.875;
+    grid-column-gap: $padding * 2.875;
+    grid-row-gap: $padding * 2.25;
     align-items: start;
 }
 
