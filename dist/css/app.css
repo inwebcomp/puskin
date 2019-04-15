@@ -706,7 +706,7 @@ body {
   font-size: 0.75rem;
   padding: 6px 12px;
   padding-top: 8px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .layout {
@@ -720,7 +720,11 @@ body {
   padding: 36px 46px;
   display: grid;
   grid-template-columns: 6fr 2fr;
-  grid-column-gap: 46px;
+  grid-template-row: 500px 500px;
+  grid-gap: 46px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
 }
 
 .page-title {
@@ -743,7 +747,7 @@ body {
 .page-title--labeled::before {
   content: "";
   position: absolute;
-  top: 9px;
+  top: 6px;
   left: -51px;
   width: 33px;
   height: 16px;
@@ -1104,18 +1108,11 @@ body {
           transform: translateX(7px);
 }
 
-.article-list {
-  margin-top: 48px;
-}
 .article-list__title {
   margin-bottom: 44px;
 }
 .article-list .article-prew:not(:last-child) {
   margin-bottom: 48px;
-}
-
-.news-list__title {
-  margin-bottom: 32px;
 }
 
 .news {
@@ -1127,6 +1124,30 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 257px;
+  position: relative;
+}
+.news:not(:first-of-type) {
+  margin-top: 16px;
+}
+.news--separator {
+  padding-bottom: 9.1428571429px;
+}
+.news--separator:last-child:after {
+  content: none;
+}
+.news--separator:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  background-color: #F0F0F0;
+  max-width: 100px;
+  width: 80%;
+  height: 2px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 .news__img {
   max-width: 100%;
@@ -1134,7 +1155,9 @@ body {
 .news__title {
   font-size: 1rem;
   font-weight: 500;
+  line-height: normal;
   margin-bottom: 8px;
+  margin-top: 9.1428571429px;
 }
 .news__info {
   font-size: 0.75rem;
@@ -1169,6 +1192,14 @@ body {
   line-height: 1.3333333333em;
   font-weight: 100;
   margin: 8px 0;
+}
+
+.news-list__title {
+  margin-bottom: 32px;
+}
+
+.events-list__title {
+  margin-bottom: 44px;
 }
 
 .flickity-viewport {
@@ -1306,4 +1337,9 @@ body {
 }
 .flickity-page-dots .dot.is-selected {
   background-color: #fff;
+}
+
+.footer {
+  background-color: #212121;
+  height: 246px;
 }

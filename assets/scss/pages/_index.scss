@@ -1,47 +1,5 @@
-.page-content {
-    background-color: $background-color;
-    padding: $padding * 2.25 $padding * 2.875;
-    display: grid;
-    grid-template-columns: 6fr 2fr;
-    grid-column-gap: $padding * 2.875;
-}
 
-.page-title {
-    font-size: rem(23px);
-    text-transform: uppercase;
-    font-weight: 900;
-    margin: 0 0  $padding * 3  0;
-    vertical-align: middle;
-    display: flex;
-    line-height: normal;
-    align-items: center;
-
-    &--labeled {
-        position: relative;
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 9px;
-            left: -51px;
-            width: 33px;
-            height: 16px;
-            display: block;
-            background-image: url("../img/icons/red-label.svg");
-        }
-    }
-
-    &__btn {
-        margin-left: $padding * 2;
-    }
-
-    &__icon-pin {
-        margin-left: 12px;
-        color: #EB5757;
-        transform: rotate(45deg);
-    }
-}
-
+@import "components/page";
 
 @import "blocks/header";
 @import "blocks/logo";
@@ -51,5 +9,6 @@
 @import "blocks/article";
 @import "blocks/news";
 @import "blocks/carousel";
+@import "blocks/footer";
 
 

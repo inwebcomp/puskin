@@ -92,21 +92,15 @@
 }
 
 .article-list {
-    margin-top: $padding * 3;
+    //margin-top: $padding * 3;
 
     &__title {
-        margin-bottom: 44px;
+        margin-bottom: $padding * 2.75;
     }
 
     .article-prew {
         &:not(:last-child) {
             margin-bottom: $padding * 3;
         }  
-    }
-}
-
-.news-list {
-    &__title {
-        margin-bottom: $padding * 2;
     }
 }
