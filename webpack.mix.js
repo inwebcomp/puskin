@@ -1,4 +1,6 @@
-let mix = require('laravel-mix')
+let mix = require('laravel-mix');
+
+mix.disableSuccessNotifications();
 
 /*
  |--------------------------------------------------------------------------
@@ -43,11 +45,10 @@ mix.sass('assets/scss/app.scss', 'dist/css/')
 // mix.less(src, output);
 // mix.stylus(src, output);
 // mix.postCss(src, output, [require('postcss-some-plugin')()]);
-// mix.browserSync({
-//    proxy: 'http://localhost:8080',
-   
-//    files: ['*']
-// })
+mix.browserSync({
+   proxy: 'http://localhost:80',
+   files: ['dist/**/*.*']
+})
 // mix.combine(files, destination);
 // mix.babel(files, destination); <-- Identical to mix.combine(), but also includes Babel compilation.
 // mix.copy(from, to);

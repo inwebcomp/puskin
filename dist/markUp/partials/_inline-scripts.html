@@ -1,0 +1,15 @@
+<script>
+    const initCarousel = () => {
+        const carousel = document.querySelector('.carousel');
+        if (carousel) {
+            let flkty = new Flickity( carousel, {
+                "prevNextButtons": true,
+                "lazyLoad": true,
+                //"imagesLoaded": true,
+                "adaptiveHeight": true
+            });
+        }
+    };
+
+    initCarousel();
+</script>
