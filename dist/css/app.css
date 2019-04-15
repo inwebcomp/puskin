@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -673,10 +674,91 @@ body {
   margin: 0 16px 0 -38px;
 }
 
+.button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #292828;
+  background-color: #F2C94C;
+  line-height: 1;
+  border-radius: 3px;
+  -webkit-transition: background-color ease 0.15s, -webkit-transform ease 0.15s;
+  transition: background-color ease 0.15s, -webkit-transform ease 0.15s;
+  -o-transition: background-color ease 0.15s, transform ease 0.15s;
+  transition: background-color ease 0.15s, transform ease 0.15s;
+  transition: background-color ease 0.15s, transform ease 0.15s, -webkit-transform ease 0.15s;
+  font-size: 1rem;
+  padding: 10px 16px 8px;
+  font-weight: 400;
+}
+.button:hover {
+  background-color: #f6da85;
+}
+.button:active {
+  -webkit-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+          transform: scale(0.95);
+}
+.button--small {
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  padding-top: 8px;
+  font-weight: 300;
+}
+
 .layout {
   display: grid;
   grid-template-columns: 270px 1fr;
   grid-gap: 32px;
+}
+
+.page-content {
+  background-color: #fff;
+  padding: 36px 46px;
+  display: grid;
+  grid-template-columns: 6fr 2fr;
+  grid-column-gap: 46px;
+}
+
+.page-title {
+  font-size: 1.4375rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin: 0 0 48px 0;
+  vertical-align: middle;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: normal;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.page-title--labeled {
+  position: relative;
+}
+.page-title--labeled::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: -51px;
+  width: 33px;
+  height: 16px;
+  display: block;
+  background-image: url("../img/icons/red-label.svg");
+}
+.page-title__btn {
+  margin-left: 32px;
+}
+.page-title__icon-pin {
+  margin-left: 12px;
+  color: #EB5757;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .header {
@@ -794,16 +876,42 @@ body {
   display: flex;
   width: 100%;
 }
+.main-menu__item {
+  position: relative;
+  -webkit-transition: all ease 0.15s;
+  -o-transition: all ease 0.15s;
+  transition: all ease 0.15s;
+}
+.main-menu__item:hover .drop-menu {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  visibility: visible;
+}
+.main-menu__item:hover:last-child .drop-menu {
+  right: 0;
+  left: auto;
+}
+.main-menu__item:hover .main-menu__link::before {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+.main-menu__item:last-child .main-menu__link {
+  padding: 6px 16px 22px 16px;
+}
+.main-menu__item.active .main-menu__link::before {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
 .main-menu__link {
   display: block;
-  padding: 6px 16px 22px 16px;
+  padding: 6px 17px 22px 16px;
   position: relative;
   text-align: center;
 }
-.main-menu__link:not(:last-child) {
-  padding-right: 18px;
-}
-.main-menu__link:not(:last-child)::after {
+.main-menu__link::after {
   content: "";
   position: absolute;
   top: 10px;
@@ -832,15 +940,41 @@ body {
       -ms-transform-origin: center bottom;
           transform-origin: center bottom;
 }
-.main-menu__link:hover::before {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
+.drop-menu {
+  width: 195px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  display: block;
+  z-index: 3;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-transition: visibility ease 0.15s, -webkit-transform ease 0.15s;
+  transition: visibility ease 0.15s, -webkit-transform ease 0.15s;
+  -o-transition: transform ease 0.15s, visibility ease 0.15s;
+  transition: transform ease 0.15s, visibility ease 0.15s;
+  transition: transform ease 0.15s, visibility ease 0.15s, -webkit-transform ease 0.15s;
+  overflow: hidden;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  visibility: hidden;
+  -webkit-transform-origin: top center;
+      -ms-transform-origin: top center;
+          transform-origin: top center;
 }
-.main-menu__link.active::before {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
+.drop-menu__item {
+  display: block;
+  padding: 9px 10px;
+  -webkit-transition: background-color ease 0.15s;
+  -o-transition: background-color ease 0.15s;
+  transition: background-color ease 0.15s;
+  font-size: 1rem;
+  line-height: normal;
+}
+.drop-menu__item:hover {
+  background-color: #F0F0F0;
 }
 
 .languages {
@@ -970,8 +1104,18 @@ body {
           transform: translateX(7px);
 }
 
+.article-list {
+  margin-top: 48px;
+}
+.article-list__title {
+  margin-bottom: 44px;
+}
 .article-list .article-prew:not(:last-child) {
   margin-bottom: 48px;
+}
+
+.news-list__title {
+  margin-bottom: 32px;
 }
 
 .news {
@@ -1034,10 +1178,11 @@ body {
 }
 
 .carousel__cell {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  background-color: #fff;
+  height: 408px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #F0F0F0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1062,6 +1207,89 @@ body {
   opacity: 1;
 }
 
+.flickity-button {
+  background-color: transparent;
+  border-radius: 0;
+  outline: none;
+  text-decoration: none;
+  background-repeat: no-repeat;
+}
+.flickity-button:hover {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  outline: none;
+  text-decoration: none;
+}
+
+.flickity-prev-next-button {
+  padding: 0;
+  width: 36px;
+  height: 34px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: opacity ease 0.15s;
+  -o-transition: opacity ease 0.15s;
+  transition: opacity ease 0.15s;
+}
+.flickity-prev-next-button:focus {
+  opacity: 1;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.flickity-prev-next-button:after {
+  content: "\F054";
+  position: absolute;
+  display: inline-block;
+  color: #fff;
+  font-family: "Font Awesome 5 Pro";
+  font-size: 1.3125rem;
+  font-weight: 700;
+  -webkit-transition: -webkit-transform ease 0.15s;
+  transition: -webkit-transform ease 0.15s;
+  -o-transition: transform ease 0.15s;
+  transition: transform ease 0.15s;
+  transition: transform ease 0.15s, -webkit-transform ease 0.15s;
+}
+.flickity-prev-next-button.previous {
+  background-image: url("../img/icons/Arrow-left.svg");
+  left: -5px;
+}
+.flickity-prev-next-button.previous:after {
+  margin-left: 10px;
+  top: 1px;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.flickity-prev-next-button.previous:hover::after {
+  top: 1px;
+  -webkit-transform: rotate(180deg) translateX(5px);
+      -ms-transform: rotate(180deg) translateX(5px);
+          transform: rotate(180deg) translateX(5px);
+}
+.flickity-prev-next-button.next {
+  background-image: url("../img/icons/Arrow-right.svg");
+  right: -5px;
+}
+.flickity-prev-next-button.next:after {
+  top: 2px;
+  margin-left: 15px;
+}
+.flickity-prev-next-button.next:hover::after {
+  -webkit-transform: translateX(4px);
+      -ms-transform: translateX(4px);
+          transform: translateX(4px);
+}
+.flickity-prev-next-button .flickity-button-icon {
+  display: none;
+}
+
 .flickity-page-dots {
   bottom: 25px;
 }
@@ -1073,22 +1301,9 @@ body {
   border: 2px solid #fff;
   opacity: 1;
   margin: 0 4px;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .flickity-page-dots .dot.is-selected {
   background-color: #fff;
-}
-
-.page-content {
-  background-color: #fff;
-  padding: 46px;
-  display: grid;
-  grid-template-columns: 6fr 2fr;
-  grid-column-gap: 46px;
-}
-
-.page-title {
-  font-size: 1.4375rem;
-  text-transform: uppercase;
-  font-weight: 900;
-  margin: 0 0 32px 0;
 }

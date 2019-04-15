@@ -3,9 +3,9 @@
 }
   
 .carousel__cell {
-    //height: 525px;
-    align-items: flex-start;
-    background-color: $background-color;
+    height: 408px;
+    align-items: center;
+    background-color: $content-bg-color;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -26,6 +26,84 @@
     opacity: 1;
 }
 
+.flickity-button {
+    background-color: transparent;
+    border-radius: 0;
+    outline: none;
+    text-decoration: none;
+    background-repeat: no-repeat;
+
+    &:hover {
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        outline: none;
+        text-decoration: none;
+    }
+}
+
+.flickity-prev-next-button {
+    padding: 0;
+    width: 36px;
+    height: 34px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    transition: opacity $transition;
+
+    &:focus {
+        opacity: 1;
+        box-shadow: none;
+    }
+
+     &:after {
+        content: '\f054';
+        position: absolute;
+        display: inline-block;
+        color: #fff;
+        font-family: $icon-font;
+        font-size: rem(21px);
+        font-weight: 700;
+        transition: transform $transition;
+    }
+
+    &.previous {
+        background-image: url('../img/icons/Arrow-left.svg');
+        left: -5px;
+
+        &:after {
+            margin-left: 10px;
+            top: 1px;
+            transform: rotate(180deg);
+        }
+
+        &:hover::after  {
+            top: 1px;
+            transform: rotate(180deg) translateX(5px);
+        }
+    }
+
+    &.next {
+        background-image: url('../img/icons/Arrow-right.svg');
+        right: -5px;
+
+        &:after {
+            top: 2px;
+            margin-left: 15px;
+        }
+
+        &:hover::after  {
+            transform: translateX(4px);
+        }
+    }
+
+    .flickity-button-icon {
+        display: none;
+    }
+}
+
 .flickity-page-dots {
     bottom: 25px;
 
@@ -37,6 +115,7 @@
         border: 2px solid #fff;
         opacity: 1;
         margin: 0 $padding / 4;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
         &.is-selected {
             background-color: #fff;

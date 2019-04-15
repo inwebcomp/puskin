@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="fonts/fas/css/fontawesome.min.css">
     <link rel="stylesheet" href="fonts/fas/css/solid.min.css">
     <link rel="stylesheet" href="fonts/fas/css/light.min.css">
+    <link rel="stylesheet" href="fonts/fas/css/regular.min.css">
     <!-- flickity -->
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
@@ -31,7 +32,9 @@
                     <?php include ("./partials/_slider.html") ?>
 
                     <div class="article-list">
-                        <h2 class="page-title article-list__title">Последние новости</h2>
+                        <h2 class="page-title page-title--labeled article-list__title">Последние новости
+                            <a class="button button--small page-title__btn" href="#">Все новости</a>
+                        </h2>
 
                         <?php include ("./partials/_article-prew.html") ?>
                         
@@ -67,7 +70,12 @@
                     </div>
                 </main>
                 <aside class="page-sitebar">
-                    <?php include ("./partials/_news-item.html") ?>
+                    <div class="news-list">
+                        <h2 class="page-title article-list__title">новость дня
+                            <i class="far fa-thumbtack page-title__icon-pin"></i>
+                        </h2>
+                        <?php include ("./partials/_news-item.html") ?>
+                    </div>  
                 </aside>
             </section>
         </div>
