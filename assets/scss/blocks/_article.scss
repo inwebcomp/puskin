@@ -92,14 +92,16 @@
 }
 
 .article-list {
-    //margin-top: $padding * 3;
-
     &__title {
         margin-bottom: $padding * 2.75;
     }
 
+    &__btn {
+        margin-top: $padding * 1.5;
+    }
+
     .article-prew {
-        &:not(:last-child) {
+        &:not(:last-of-type) {
             margin-bottom: $padding * 3;
         }  
     }

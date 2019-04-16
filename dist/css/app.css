@@ -717,10 +717,9 @@ body {
 
 .page-content {
   background-color: #fff;
-  padding: 36px 46px;
+  padding: 36px 46px 52px;
   display: grid;
   grid-template-columns: 6fr 2fr;
-  grid-template-row: 500px 500px;
   grid-column-gap: 46px;
   grid-row-gap: 36px;
   -webkit-box-align: start;
@@ -849,6 +848,9 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+.logo--invers {
+  color: #F8F8F8;
+}
 .logo__img {
   display: block;
   max-width: 100%;
@@ -859,6 +861,7 @@ body {
   text-align: center;
   margin-left: 20px;
   font-size: 1.25rem;
+  font-weight: 100;
   line-height: 1;
 }
 .logo__text {
@@ -1112,7 +1115,10 @@ body {
 .article-list__title {
   margin-bottom: 44px;
 }
-.article-list .article-prew:not(:last-child) {
+.article-list__btn {
+  margin-top: 24px;
+}
+.article-list .article-prew:not(:last-of-type) {
   margin-bottom: 48px;
 }
 
@@ -1342,5 +1348,79 @@ body {
 
 .footer {
   background-color: #212121;
-  height: 246px;
+  color: #F8F8F8;
+}
+.footer__main {
+  padding: 28px 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+.footer__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 54%;
+}
+.footer__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.9375rem;
+  line-height: normal;
+  font-weight: 100;
+}
+.footer__list-item {
+  margin-bottom: 1px;
+}
+.footer__list-item.head {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.footer__list-link {
+  display: inline-block;
+  padding: 4px;
+  -webkit-transition: opacity ease 0.15s;
+  -o-transition: opacity ease 0.15s;
+  transition: opacity ease 0.15s;
+}
+.footer__list-link:hover {
+  opacity: 0.85;
+}
+.footer__bottom {
+  background-color: #313131;
+  padding: 16px 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.8125rem;
+  line-height: normal;
+}
+.footer__copyr {
+  margin: 0;
+  font-weight: 400;
+}
+.footer__author {
+  margin: 0;
+  margin-left: auto;
+  font-weight: 300;
+}
+.footer__author-link {
+  font-weight: 400;
+  text-decoration: underline;
+}
+.footer__author-link:hover {
+  text-decoration: none;
+  opacity: 0.85;
 }

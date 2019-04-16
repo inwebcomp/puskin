@@ -1,6 +1,10 @@
 .logo {
     display: flex;
     align-items: center;
+
+    &--invers {
+        color: $footer-font-color;
+    }
     
     &__img {
         display: block;
@@ -13,6 +17,7 @@
         text-align: center;
         margin-left: $padding * 1.25;
         font-size: rem(20px);
+        font-weight: 100;
         line-height: 1;
     }
 

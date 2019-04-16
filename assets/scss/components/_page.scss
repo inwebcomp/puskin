@@ -1,9 +1,8 @@
 .page-content {
     background-color: $background-color;
-    padding: $padding * 2.25 $padding * 2.875;
+    padding: $padding * 2.25 $padding * 2.875 $padding * 3.25;
     display: grid;
     grid-template-columns: 6fr 2fr;
-    grid-template-row: 500px 500px;
     grid-column-gap: $padding * 2.875;
     grid-row-gap: $padding * 2.25;
     align-items: start;

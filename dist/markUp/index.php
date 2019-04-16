@@ -93,14 +93,7 @@
                 
             </section>
 
-            <footer class="footer">
-                <div class="footer__main">
-
-                </div>
-                <div class="footer__bottom">
-
-                </div>
-            </footer>
+            <?php include ("./partials/_footer.html") ?>
         </div>
     </div>
 
