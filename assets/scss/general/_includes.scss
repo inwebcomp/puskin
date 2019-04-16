@@ -12,10 +12,12 @@
 @import "blocks/logo";
 @import "blocks/main-menu";
 @import "blocks/languages";
+@import "blocks/_data&comments";
 @import "blocks/article";
 @import "blocks/news";
 @import "blocks/carousel";
 @import "blocks/footer";
+@import "blocks/breadcrumbs";
 
 // Pages
 @import "../pages/index";

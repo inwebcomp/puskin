@@ -43,3 +43,31 @@
         transform: rotate(45deg);
     }
 }
+
+.page-title-h1 {
+    font-size: rem(33px);
+    font-weight: 900;
+    line-height: normal;
+    margin-top: $padding * 1.5;
+    margin-bottom: $padding * 1.5;
+}
+
+.page-title-h2 {
+    font-size: rem(28px);
+    font-weight: 900;
+    line-height: normal;
+    margin-top: $padding * 1.5;
+    margin-bottom: $padding * 1.5;
+}
+
+.page-title-h3 {
+    font-size: rem(22px);
+    font-weight: 900;
+    line-height: normal;
+    margin-top: $padding * 1.5;
+    margin-bottom: $padding * 1.5;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}

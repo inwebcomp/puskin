@@ -43,36 +43,6 @@
         margin-top: $padding / 1.75;
     }
 
-    &__info {
-        font-size: rem(12px);
-        color: #000;
-        opacity: 0.9;
-        display: flex;
-        margin-top: $padding;  
-
-        &-icon {
-            background-color: $content-bg-color;
-            padding-top: 4px;
-            width: 20px;
-            height: 20px;
-            text-align: center;
-            vertical-align: middle;
-            border-radius: 50%;
-            color: $icon-color; 
-            margin-right: $padding / 2; 
-        }
-    }
-    
-    &__date {
-        display: inline-block;
-        margin-right: auto;
-    }
-
-    &__comments {
-        display: block;
-        padding-left: 20px;
-    }
-
     &__text {
         font-size: rem(15px);
         line-height: em(20px, 15px);

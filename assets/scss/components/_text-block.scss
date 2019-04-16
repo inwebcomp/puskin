@@ -1,14 +1,36 @@
 .text-block {
-    font-size: $font-size;
-    line-height: $line-height;
+    font-size: rem(17px);
+    line-height: em(24px, 17px);
     color: $font-color;
+    box-sizing: border-box;
 
-    p:first-child {
+    p {
+        margin-top: $padding * 1.5;
+        margin-bottom: $padding * 1.5;
+        line-height: em(24px, 17px);
+    }
+
+    p:first-of-type {
         margin-top: 0;
     }
 
-    p:last-child {
+    p:last-of-type {
         margin-bottom: 0;
+    }
+
+    b {
+        font-weight: 700;
+    }
+
+    a {
+        font-weight: 500;
+        color: $font-color-accent;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+            opacity: 0.85;
+        }
     }
 
     hr {
@@ -45,21 +67,24 @@
 
     ul {
         list-style: none;
-        padding-left: $padding + 1;
+        margin-top: $padding * 3;
+        padding-left: $padding * 4;
 
         li {
             position: relative;
 
-            &::before {
+            &::before { 
                 content: '';
                 display: block;
-                width: 6px;
-                height: 6px;
-                border-radius: 3px;
-                background-color: $primary-color;
+                box-sizing: border-box;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                border: 3px solid $accent-color;
+                background-color: transparent;
                 position: absolute;
-                top: 9px;
-                left: -$padding - 1;
+                top: 5px;
+                left: -$padding * 2;
             }
         }
     }
@@ -67,24 +92,23 @@
     ol {
         list-style: none;
         counter-reset: list-counter;
+        margin-top: $padding * 3;
+        padding-left: $padding * 4;
+        position: relative;
 
         li {
             counter-increment: list-counter;
-
-            $size: 2.2rem;
+            position: relative;
 
             &::before {
-                content: counter(list-counter);
+                content: counter(list-counter) ".";
                 display: inline-block;
-                font-size: 1.6rem;
-                width: $size;
-                height: $size;
-                line-height: $size;
-                border-radius: 1.1rem;
-                text-align: center;
-                color: #fff;
-                background-color: $primary-color;
-                margin: 0 $padding 0 (remToPx(-$size) - $padding);
+                font-size: rem(17px);
+                font-weight: 700;
+                color: $accent-color;
+                position: absolute;
+                top: 5px;
+                left: -$padding * 2;
             }
         }
     }

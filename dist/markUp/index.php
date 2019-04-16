@@ -5,7 +5,7 @@
 
     <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1">
 
-    <title>Puskin</title>
+    <title>Puskin - index</title>
     <base href="../">
 
     <link rel="shortcut icon" href="img/favicons/favicon.ico">

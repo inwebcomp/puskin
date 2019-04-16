@@ -601,15 +601,34 @@ body {
   }
 }
 .text-block {
-  font-size: 16px;
-  line-height: 1.4;
+  font-size: 1.0625rem;
+  line-height: 1.4117647059em;
   color: #000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
-.text-block p:first-child {
+.text-block p {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  line-height: 1.4117647059em;
+}
+.text-block p:first-of-type {
   margin-top: 0;
 }
-.text-block p:last-child {
+.text-block p:last-of-type {
   margin-bottom: 0;
+}
+.text-block b {
+  font-weight: 700;
+}
+.text-block a {
+  font-weight: 500;
+  color: #0299eb;
+  text-decoration: underline;
+}
+.text-block a:hover {
+  text-decoration: none;
+  opacity: 0.85;
 }
 .text-block hr {
   border: none;
@@ -637,7 +656,8 @@ body {
 }
 .text-block ul {
   list-style: none;
-  padding-left: 17px;
+  margin-top: 48px;
+  padding-left: 64px;
 }
 .text-block ul li {
   position: relative;
@@ -645,33 +665,37 @@ body {
 .text-block ul li::before {
   content: "";
   display: block;
-  width: 6px;
-  height: 6px;
-  border-radius: 3px;
-  background-color: #007dc4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 3px solid #F2C94C;
+  background-color: transparent;
   position: absolute;
-  top: 9px;
-  left: -17px;
+  top: 5px;
+  left: -32px;
 }
 .text-block ol {
   list-style: none;
   counter-reset: list-counter;
+  margin-top: 48px;
+  padding-left: 64px;
+  position: relative;
 }
 .text-block ol li {
   counter-increment: list-counter;
+  position: relative;
 }
 .text-block ol li::before {
-  content: counter(list-counter);
+  content: counter(list-counter) ".";
   display: inline-block;
-  font-size: 1.6rem;
-  width: 2.2rem;
-  height: 2.2rem;
-  line-height: 2.2rem;
-  border-radius: 1.1rem;
-  text-align: center;
-  color: #fff;
-  background-color: #007dc4;
-  margin: 0 16px 0 -38px;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #F2C94C;
+  position: absolute;
+  top: 5px;
+  left: -32px;
 }
 
 .button {
@@ -765,6 +789,34 @@ body {
           transform: rotate(45deg);
 }
 
+.page-title-h1 {
+  font-size: 2.0625rem;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.page-title-h2 {
+  font-size: 1.75rem;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.page-title-h3 {
+  font-size: 1.375rem;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -774,10 +826,14 @@ body {
           justify-content: space-between;
   background-color: #fff;
   padding: 16px 0 0 16px;
+  min-height: 120px;
+  position: relative;
+  z-index: 1;
+}
+.header--shadow {
   margin-bottom: 5px;
   -webkit-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
           box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
-  min-height: 120px;
 }
 .header__logo {
   -ms-flex-item-align: start;
@@ -908,6 +964,9 @@ body {
 .main-menu__item:last-child .main-menu__link {
   padding: 6px 16px 22px 16px;
 }
+.main-menu__item:last-child .main-menu__link::after {
+  content: none;
+}
 .main-menu__item.active .main-menu__link::before {
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
@@ -948,6 +1007,7 @@ body {
       -ms-transform-origin: center bottom;
           transform-origin: center bottom;
 }
+
 .drop-menu {
   width: 195px;
   position: absolute;
@@ -1018,6 +1078,46 @@ body {
 }
 .languages__item.active {
   font-weight: 500;
+}
+
+.data-comment {
+  font-size: 0.75rem;
+  color: #000;
+  opacity: 0.9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 16px;
+}
+.data-comment--lg {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.data-comment--lg .data-comment__date {
+  margin-right: auto;
+}
+.data-comment__icon {
+  background-color: #F0F0F0;
+  padding-top: 4px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  color: #4B4B4B;
+  margin-right: 8px;
+}
+.data-comment__date {
+  display: inline-block;
+  margin-right: 32px;
+}
+.data-comment__comments {
+  display: block;
+  padding-left: 20px;
 }
 
 .article-prew {
@@ -1166,34 +1266,6 @@ body {
   margin-bottom: 8px;
   margin-top: 9.1428571429px;
 }
-.news__info {
-  font-size: 0.75rem;
-  color: #000;
-  opacity: 0.9;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 16px;
-}
-.news__info-icon {
-  background-color: #F0F0F0;
-  padding-top: 4px;
-  width: 20px;
-  height: 20px;
-  text-align: center;
-  vertical-align: middle;
-  border-radius: 50%;
-  color: #4B4B4B;
-  margin-right: 8px;
-}
-.news__date {
-  display: inline-block;
-  margin-right: auto;
-}
-.news__comments {
-  display: block;
-  padding-left: 20px;
-}
 .news__text {
   font-size: 0.9375rem;
   line-height: 1.3333333333em;
@@ -1220,8 +1292,6 @@ body {
 }
 .carousel--large .carousel__cell {
   height: 401px;
-  -webkit-box-shadow: inset 0px 17px 10px -20px rgba(0, 0, 0, 0.79);
-          box-shadow: inset 0px 17px 10px -20px rgba(0, 0, 0, 0.79);
 }
 .carousel--main {
   margin-top: -5px;
@@ -1431,6 +1501,44 @@ body {
 .footer__author-link:hover {
   text-decoration: none;
   opacity: 0.85;
+}
+
+.breadcrumbs {
+  background-color: #F0F0F0;
+  padding: 9px 16px 8px 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.breadcrumbs__item {
+  font-size: 0.8125rem;
+  padding: 4px;
+  line-height: normal;
+  color: #656565;
+  margin-right: 6px;
+  -webkit-transition: color ease 0.15s;
+  -o-transition: color ease 0.15s;
+  transition: color ease 0.15s;
+}
+.breadcrumbs__item:hover {
+  color: #8b8b8b;
+}
+.breadcrumbs__item::after {
+  content: "\F054";
+  display: inline-block;
+  font-family: "Font Awesome 5 Pro";
+  color: #656565;
+  margin-left: 12px;
+}
+.breadcrumbs__item:last-child::after {
+  content: none;
+}
+.breadcrumbs__icon-home {
+  color: #656565;
+  margin-right: 10px;
 }
 
 .page--index .page-content {

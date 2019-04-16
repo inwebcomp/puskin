@@ -1,0 +1,39 @@
+.breadcrumbs {
+    background-color: $content-bg-color;
+    padding: $padding * 0.5 + 1 $padding $padding * 0.5 $padding * 3;
+    display: flex;
+    align-items: center;
+
+    &__item {
+        font-size: rem(13px);
+        padding: $padding * 0.25;
+        line-height: normal;
+        color: $breadcrumbs-color;
+        margin-right: 6px;
+        transition: color $transition;
+
+        &:hover {
+            color: lighten($breadcrumbs-color, 15%)
+        }
+
+        &::after {
+            content: '\f054';
+            display: inline-block;
+            font-family: $icon-font;
+            color: $breadcrumbs-color;
+            margin-left: 12px;
+            
+        }
+
+        &:last-child {
+            &::after {
+                content: none;
+            }
+        }
+    }
+
+    &__icon-home {
+        color: $breadcrumbs-color;
+        margin-right: 10px;
+    }
+}
