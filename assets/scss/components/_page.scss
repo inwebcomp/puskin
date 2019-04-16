@@ -1,6 +1,6 @@
 .page-content {
     background-color: $background-color;
-    padding: $padding * 2.25 $padding * 2.875 $padding * 3.25;
+    padding: $padding * 3 $padding * 3 $padding * 3.25; 
     display: grid;
     grid-template-columns: 6fr 2fr;
     grid-column-gap: $padding * 2.875;

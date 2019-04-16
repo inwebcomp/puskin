@@ -1,29 +1,46 @@
 .flickity-viewport {
     transition: height 0.2s;
 }
-  
-.carousel__cell {
-    height: 408px;
-    align-items: center;
-    background-color: $content-bg-color;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: center;
-    margin-right: 1rem;
-    width: 100%;
-}
 
-.carousel__image {
-    max-height: 100%;
-    max-width: 100%;
-    opacity: 0;
-    transition: opacity .4s;
-}
+.carousel {
+    &--large {
+        height: 401px;
+    
+        .carousel__cell {
+            height: 401px;
+            box-shadow: inset 0px 17px 10px -20px rgba(0,0,0,0.79);
+        }
+    }
 
-.carousel__image.flickity-lazyloaded,
-.carousel__image.flickity-lazyerror {
-    opacity: 1;
+    &--main {
+        margin-top: -5px;
+    }
+
+    &__cell {
+        height: 408px;
+        align-items: center;
+        background-color: $content-bg-color;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: center;
+        margin-right: 1rem;
+        width: 100%; 
+    }
+
+    &__image {
+        max-height: 100%;
+        max-width: 100%;
+        opacity: 0;
+        transition: opacity $transition;
+    }
+
+    &__image {
+        &.flickity-lazyloaded,
+        &.flickity-lazyerror {
+            opacity: 1;
+        }
+    }
 }
 
 .flickity-button {

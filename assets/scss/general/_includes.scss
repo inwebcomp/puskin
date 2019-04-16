@@ -1,10 +1,25 @@
 // Components
 @import "../components/sidebars";
-@import "../blocks/text-block";
-@import "../blocks/buttons";
+@import "../components/text-block";
+@import "../components/buttons";
 
 // Page components
 @import "../components/layout";
+@import "../components/page";
+
+// blocks
+@import "blocks/header";
+@import "blocks/logo";
+@import "blocks/main-menu";
+@import "blocks/languages";
+@import "blocks/article";
+@import "blocks/news";
+@import "blocks/carousel";
+@import "blocks/footer";
 
 // Pages
 @import "../pages/index";
+@import "../pages/home";
+
+
+

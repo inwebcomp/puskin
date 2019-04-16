@@ -1,14 +1,6 @@
-
-@import "components/page";
-
-@import "blocks/header";
-@import "blocks/logo";
-@import "blocks/main-menu";
-@import "blocks/languages";
-
-@import "blocks/article";
-@import "blocks/news";
-@import "blocks/carousel";
-@import "blocks/footer";
-
+.page--index {
+    .page-content {
+        padding-top: $padding * 2.25;
+    }
+}
 

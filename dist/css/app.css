@@ -717,7 +717,7 @@ body {
 
 .page-content {
   background-color: #fff;
-  padding: 36px 46px 52px;
+  padding: 48px 48px 52px;
   display: grid;
   grid-template-columns: 6fr 2fr;
   grid-column-gap: 46px;
@@ -1215,6 +1215,17 @@ body {
   transition: height 0.2s;
 }
 
+.carousel--large {
+  height: 401px;
+}
+.carousel--large .carousel__cell {
+  height: 401px;
+  -webkit-box-shadow: inset 0px 17px 10px -20px rgba(0, 0, 0, 0.79);
+          box-shadow: inset 0px 17px 10px -20px rgba(0, 0, 0, 0.79);
+}
+.carousel--main {
+  margin-top: -5px;
+}
 .carousel__cell {
   height: 408px;
   -webkit-box-align: center;
@@ -1230,18 +1241,15 @@ body {
   margin-right: 1rem;
   width: 100%;
 }
-
 .carousel__image {
   max-height: 100%;
   max-width: 100%;
   opacity: 0;
-  -webkit-transition: opacity 0.4s;
-  -o-transition: opacity 0.4s;
-  transition: opacity 0.4s;
+  -webkit-transition: opacity ease 0.15s;
+  -o-transition: opacity ease 0.15s;
+  transition: opacity ease 0.15s;
 }
-
-.carousel__image.flickity-lazyloaded,
-.carousel__image.flickity-lazyerror {
+.carousel__image.flickity-lazyloaded, .carousel__image.flickity-lazyerror {
   opacity: 1;
 }
 
@@ -1423,4 +1431,8 @@ body {
 .footer__author-link:hover {
   text-decoration: none;
   opacity: 0.85;
+}
+
+.page--index .page-content {
+  padding-top: 36px;
 }
