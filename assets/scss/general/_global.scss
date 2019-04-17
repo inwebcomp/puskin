@@ -18,4 +18,13 @@ p {
 	&:hover {
 		color: $font-color-accent;
 	}
+
+	&--blue {
+		color: $font-color-accent;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
 }

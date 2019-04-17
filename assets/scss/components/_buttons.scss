@@ -28,4 +28,12 @@
         padding-top: $padding * 0.375 + 2;
         font-weight: 400;
     }
+
+    &--disabled {
+        user-select: none;
+        cursor: default;
+        color: $breadcrumbs-color;
+        pointer-events: none;
+        background-color: $content-bg-color !important;
+    }
 }

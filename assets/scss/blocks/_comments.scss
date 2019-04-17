@@ -1,0 +1,131 @@
+.comments {
+    &__head {
+        padding: $padding $padding;
+        display: flex;
+        align-items: center;
+        color: $link-dark-color;
+        background-color: $content-bg-color;
+        width: 100%;
+        border: none;
+        outline: none;
+
+        &--empty {
+            .comments__btn-collapse {
+                display: none;
+            }
+        }
+
+        &.open {
+            .comments__btn-collapse {
+                &::after {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    &__head-icon {
+        margin-right: $padding;
+        color: $icon-color;
+        font-size: rem(18px);
+    }
+
+    &__head-text {
+        margin: 0;
+    }
+
+    &__btn-collapse {
+        margin-left: auto;
+        color: $font-color-accent;
+        border: none;
+        padding: 0;
+        background-color: transparent;
+        transition: color $transition;
+
+        &::after {
+            content: '\f078';
+            display: inline-block;
+            font-family: $icon-font;
+            margin-left: $padding * 0.5;
+            transition: transform $transition;
+        }  
+    }
+
+    &__inner {
+        margin-top: $padding * 4;
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        
+        &:not(:last-child) {
+            margin-bottom: $padding * 1.5;
+        }
+    }
+
+    &__item-info {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: right;
+        margin-right: $padding;
+        margin-top: $padding;
+        width: 19%;
+    }
+
+    &__item-name {
+        font-weight: 900;
+        font-size: rem(16px);
+        line-height: normal;
+        margin-bottom: $padding * 0.5;
+    }
+
+    &__item-class {
+        font-size: rem(15px);
+        line-height: normal;
+        margin-bottom: $padding * 0.5;
+    }
+
+    &__item-time {
+        font-size: rem(15px);
+        line-height: normal;
+        color: $breadcrumbs-color;
+    }
+
+    &__item-text {
+        display: block;
+        width: calc(81% - 16px); 
+        font-size: rem(15px);
+        line-height: em(22px, 15px);
+        margin: 0;
+        padding: $padding $padding $padding * 0.5;
+        background-color: rgba($accent-color, 0.05);
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        margin-top: $padding * 3;
+    }
+
+    &__footer-text {
+        margin: 0 $padding;
+        font-size: rem(13px);
+        line-height: normal;
+    }
+
+    &__socials-link {
+        display: inline-block;
+        font-size: rem(18px);
+        transition: opacity $transition;
+
+        &:hover {
+            opacity: 0.85;
+        }
+
+        &:not(:last-child) {
+            margin-right: $padding - 2;
+        }
+    }
+}

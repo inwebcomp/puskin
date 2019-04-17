@@ -449,6 +449,13 @@ p {
 .link:hover {
   color: #0299eb;
 }
+.link--blue {
+  color: #0299eb;
+  text-decoration: underline;
+}
+.link--blue:hover {
+  text-decoration: none;
+}
 
 .grid {
   display: grid;
@@ -607,6 +614,32 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+.text-block img {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 36px;
+}
+.text-block h1 {
+  font-size: 2.0625rem;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+.text-block h2 {
+  font-size: 1.75rem;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.text-block h3 {
+  font-size: 1.375rem;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
 .text-block p {
   margin-top: 24px;
   margin-bottom: 24px;
@@ -617,6 +650,12 @@ body {
 }
 .text-block p:last-of-type {
   margin-bottom: 0;
+}
+.text-block p.p-float-img img {
+  float: left;
+  max-width: 300px;
+  margin-bottom: 28px;
+  margin-right: 32px;
 }
 .text-block b {
   font-weight: 700;
@@ -657,6 +696,7 @@ body {
 .text-block ul {
   list-style: none;
   margin-top: 48px;
+  margin-bottom: 48px;
   padding-left: 64px;
 }
 .text-block ul li {
@@ -680,6 +720,7 @@ body {
   list-style: none;
   counter-reset: list-counter;
   margin-top: 48px;
+  margin-bottom: 48px;
   padding-left: 64px;
   position: relative;
 }
@@ -731,6 +772,16 @@ body {
   padding: 6px 12px;
   padding-top: 8px;
   font-weight: 400;
+}
+.button--disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: default;
+  color: #656565;
+  pointer-events: none;
+  background-color: #F0F0F0 !important;
 }
 
 .layout {
@@ -793,7 +844,7 @@ body {
   font-size: 2.0625rem;
   font-weight: 900;
   line-height: normal;
-  margin-top: 24px;
+  margin-top: 0;
   margin-bottom: 24px;
 }
 
@@ -1080,6 +1131,139 @@ body {
   font-weight: 500;
 }
 
+.comments__head {
+  padding: 16px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #292828;
+  background-color: #F0F0F0;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.comments__head--empty .comments__btn-collapse {
+  display: none;
+}
+.comments__head.open .comments__btn-collapse::after {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.comments__head-icon {
+  margin-right: 16px;
+  color: #4B4B4B;
+  font-size: 1.125rem;
+}
+.comments__head-text {
+  margin: 0;
+}
+.comments__btn-collapse {
+  margin-left: auto;
+  color: #0299eb;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  -webkit-transition: color ease 0.15s;
+  -o-transition: color ease 0.15s;
+  transition: color ease 0.15s;
+}
+.comments__btn-collapse::after {
+  content: "\F078";
+  display: inline-block;
+  font-family: "Font Awesome 5 Pro";
+  margin-left: 8px;
+  -webkit-transition: -webkit-transform ease 0.15s;
+  transition: -webkit-transform ease 0.15s;
+  -o-transition: transform ease 0.15s;
+  transition: transform ease 0.15s;
+  transition: transform ease 0.15s, -webkit-transform ease 0.15s;
+}
+.comments__inner {
+  margin-top: 64px;
+}
+.comments__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.comments__item:not(:last-child) {
+  margin-bottom: 24px;
+}
+.comments__item-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: right;
+  margin-right: 16px;
+  margin-top: 16px;
+  width: 19%;
+}
+.comments__item-name {
+  font-weight: 900;
+  font-size: 1rem;
+  line-height: normal;
+  margin-bottom: 8px;
+}
+.comments__item-class {
+  font-size: 0.9375rem;
+  line-height: normal;
+  margin-bottom: 8px;
+}
+.comments__item-time {
+  font-size: 0.9375rem;
+  line-height: normal;
+  color: #656565;
+}
+.comments__item-text {
+  display: block;
+  width: calc(81% - 16px);
+  font-size: 0.9375rem;
+  line-height: 1.4666666667em;
+  margin: 0;
+  padding: 16px 16px 8px;
+  background-color: rgba(242, 201, 76, 0.05);
+}
+.comments__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 48px;
+}
+.comments__footer-text {
+  margin: 0 16px;
+  font-size: 0.8125rem;
+  line-height: normal;
+}
+.comments__socials-link {
+  display: inline-block;
+  font-size: 1.125rem;
+  -webkit-transition: opacity ease 0.15s;
+  -o-transition: opacity ease 0.15s;
+  transition: opacity ease 0.15s;
+}
+.comments__socials-link:hover {
+  opacity: 0.85;
+}
+.comments__socials-link:not(:last-child) {
+  margin-right: 14px;
+}
+
 .data-comment {
   font-size: 0.75rem;
   color: #000;
@@ -1222,6 +1406,19 @@ body {
   margin-bottom: 48px;
 }
 
+.article {
+  padding-bottom: 48px;
+  border-bottom: 1px solid #F0F0F0;
+  margin-bottom: 48px;
+}
+.article__content {
+  margin: 36px 0 48px;
+  padding-top: 32px;
+  padding-bottom: 48px;
+  border-top: 1px solid #F0F0F0;
+  border-bottom: 1px solid #F0F0F0;
+}
+
 .news {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1232,9 +1429,6 @@ body {
           flex-direction: column;
   max-width: 257px;
   position: relative;
-}
-.news:not(:first-of-type) {
-  margin-top: 16px;
 }
 .news--separator {
   padding-bottom: 9.1428571429px;
@@ -1279,6 +1473,9 @@ body {
 
 .events-list__title {
   margin-bottom: 44px;
+}
+.events-list .news:not(:first-of-type) {
+  margin-top: 16px;
 }
 
 .flickity-viewport {
@@ -1541,6 +1738,25 @@ body {
   margin-right: 10px;
 }
 
+.others-list {
+  padding: 0 48px;
+  background-color: #fff;
+  margin-bottom: 48px;
+}
+.others-list__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .page--index .page-content {
   padding-top: 36px;
+}
+
+.page--article .page-content {
+  grid-row-gap: 0;
+  padding-bottom: 0;
 }

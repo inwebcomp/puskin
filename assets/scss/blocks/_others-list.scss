@@ -1,0 +1,10 @@
+.others-list {
+    padding: 0 $padding * 3;
+    background-color: $background-color;
+    margin-bottom: $padding * 3;
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+}

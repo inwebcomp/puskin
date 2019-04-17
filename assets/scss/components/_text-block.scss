@@ -4,6 +4,36 @@
     color: $font-color;
     box-sizing: border-box;
 
+    img {
+        display: block;
+        max-width: 100%;
+        margin-bottom: $padding * 2.25;
+    }
+
+    h1 {
+        font-size: rem(33px);
+        font-weight: 900;
+        line-height: normal;
+        margin-top: 0;
+        margin-bottom: $padding * 1.5;
+    }
+
+    h2 {
+        font-size: rem(28px);
+        font-weight: 900;
+        line-height: normal;
+        margin-top: $padding * 1.5;
+        margin-bottom: $padding * 1.5;
+    }
+
+    h3 {
+        font-size: rem(22px);
+        font-weight: 900;
+        line-height: normal;
+        margin-top: $padding * 1.5;
+        margin-bottom: $padding * 1.5;
+    }
+
     p {
         margin-top: $padding * 1.5;
         margin-bottom: $padding * 1.5;
@@ -16,6 +46,15 @@
 
     p:last-of-type {
         margin-bottom: 0;
+    }
+
+    p.p-float-img {
+        img {
+            float: left;
+            max-width: 300px;
+            margin-bottom: $padding * 1.75;
+            margin-right: $padding * 2;
+        }
     }
 
     b {
@@ -68,6 +107,7 @@
     ul {
         list-style: none;
         margin-top: $padding * 3;
+        margin-bottom: $padding * 3;
         padding-left: $padding * 4;
 
         li {
@@ -93,6 +133,7 @@
         list-style: none;
         counter-reset: list-counter;
         margin-top: $padding * 3;
+        margin-bottom: $padding * 3;
         padding-left: $padding * 4;
         position: relative;
 

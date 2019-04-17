@@ -12,16 +12,20 @@
 @import "blocks/logo";
 @import "blocks/main-menu";
 @import "blocks/languages";
-@import "blocks/_data&comments";
+@import "blocks/comments";
+@import "blocks/data&comments";
+@import "blocks/article-prew";
 @import "blocks/article";
 @import "blocks/news";
 @import "blocks/carousel";
 @import "blocks/footer";
 @import "blocks/breadcrumbs";
+@import "blocks/others-list";
 
 // Pages
 @import "../pages/index";
 @import "../pages/home";
+@import "../pages/article";
 
 
 

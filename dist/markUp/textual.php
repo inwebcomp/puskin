@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="fonts/fas/css/solid.min.css">
     <link rel="stylesheet" href="fonts/fas/css/light.min.css">
     <link rel="stylesheet" href="fonts/fas/css/regular.min.css">
+    <link rel="stylesheet" href="fonts/fas/css/brands.min.css">
     <!-- flickity -->
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
@@ -22,7 +23,7 @@
     
 </head>
 <body>
-    <div id="app" class="page page--home">
+    <div id="app" class="page page--article">
         <div class="container container--shadow">
             <?php include ("./partials/_header.html") ?>
             <?php include ("./partials/_breadcrumbs.html") ?>
@@ -40,12 +41,16 @@
                     </div>  
                 </aside>
             </section>
+            <?php include ("./partials/_other-news-list.php") ?>
+
+            
 
             <?php include ("./partials/_footer.html") ?>
         </div>
     </div>
 
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="./js/sticky.js"></script>
 
     <?php include ("./partials/_inline-scripts.html") ?>
 </body>
