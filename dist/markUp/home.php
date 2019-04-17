@@ -23,7 +23,7 @@
 </head>
 <body>
     <div id="app" class="page page--home">
-        <div class="container container--shadow">
+        <div class="container">
             <?php include ("./partials/_header.html") ?>
             <section class="carousel carousel--large carousel--main">
                 <div class="carousel__cell">
@@ -39,21 +39,16 @@
                     <img class="carousel__image" data-flickity-lazyload="https://cdn.humoraf.ru/wp-content/uploads/2017/08/23-14.jpg"  alt="orange tree">
                 </div>
             </section>
-        </div>
-        <div class="container container--shadow">
-        
             <section class="page-content">
                 <main class="page-main">
                     <div class="article-list">
                         <h2 class="page-title page-title--labeled article-list__title">Последние новости
                             <a class="button button--small page-title__btn" href="#">Все новости</a>
                         </h2>
-
                         <?php include ("./partials/_article-prew.html") ?>
                         <?php include ("./partials/_article-prew.html") ?>
                         <?php include ("./partials/_article-prew.html") ?>
                         <?php include ("./partials/_article-prew.html") ?>
-
                         <a href="#" class="button button--small article-list__btn">Все новости</a>
                     </div>
                 </main>

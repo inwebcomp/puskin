@@ -23,22 +23,21 @@
 </head>
 <body>
     <div id="app" class="page page--index">
-        <div class="container container--shadow">
+        <div class="container">
             <?php include ("./partials/_header.html") ?>
-        </div>
-        <div class="container container--shadow">
             <section class="page-content">
-                <?php include ("./partials/_slider.html") ?>
+                <div class="page-slider-small">
+                    <?php include ("./partials/_slider.html") ?>
 
-                <aside class="page-sitebar">
-                    <div class="news-list">
-                        <h2 class="page-title news-list__title">новость дня
-                            <i class="far fa-thumbtack page-title__icon-pin"></i>
-                        </h2>
-                        <?php include ("./partials/_news-item.html") ?>
-                    </div>  
-                </aside>
-
+                    <aside class="page-sitebar">
+                        <div class="news-list">
+                            <h2 class="page-title news-list__title">новость дня
+                                <i class="far fa-thumbtack page-title__icon-pin"></i>
+                            </h2>
+                            <?php include ("./partials/_news-item.html") ?>
+                        </div>  
+                    </aside>
+                </div>        
                 <main class="page-main">
                     <div class="article-list">
                         <h2 class="page-title page-title--labeled article-list__title">Последние новости
@@ -80,8 +79,7 @@
                         <a href="#" class="button button--small article-list__btn">Все новости</a>
                     </div>
                 </main>
-
-                <aside class="aside">
+                <aside class="page-sitebar">
                     <div class="events-list">
                         <h2 class="page-title events-list__title">Мероприятия</h2>
                         <?php include ("./partials/_news-item-sm.html") ?>
@@ -89,8 +87,6 @@
                         <?php include ("./partials/_news-item-sm.html") ?>    
                     </div>  
                 </aside>
-
-                
             </section>
 
             <?php include ("./partials/_footer.html") ?>
@@ -98,7 +94,6 @@
     </div>
 
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
     <?php include ("./partials/_inline-scripts.html") ?>
 </body>
 </html>
