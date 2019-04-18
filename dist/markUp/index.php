@@ -98,6 +98,6 @@
     </div>
 
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <?php include ("./partials/_inline-scripts.html") ?>
+    <script type="module" src="./js/index.js"></script>
 </body>
 </html>
