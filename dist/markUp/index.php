@@ -52,7 +52,11 @@
                             </div>
                             
                             <div class="article-prew__content">
-                                <h3 class="article-prew__title">Лицей организовывает поездку во францию. 26 июня - 2 июля.</h3>
+                            <h3 class="article-prew__title">
+                                <a href="#">
+                                    Лицей организовывает поездку во францию. 26 июня - 2 июля.
+                                </a>
+                            </h3>
                                 <div class="article-prew__info">
                                     <span class="article-prew__date">
                                         <i class="fal fa-calendar-alt article-prew__info-icon"></i>

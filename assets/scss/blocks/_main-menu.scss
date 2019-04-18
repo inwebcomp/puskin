@@ -10,14 +10,7 @@
             .drop-menu {
                 transform: scale(1);
                 visibility: visible;
-            }
-
-            &:last-child {
-                .drop-menu {
-                    right: 0;
-                    left: auto;
-                }
-            }
+            } 
 
             .main-menu__link::before {
                 transform: scale(1);
@@ -31,6 +24,11 @@
                 &::after {
                     content: none;
                 }
+            }
+
+            .drop-menu {
+                right: 0;
+                left: auto;
             }
         }
 

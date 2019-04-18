@@ -10,6 +10,9 @@
         outline: none;
 
         &--empty {
+            cursor: default;
+            pointer-events: none;
+
             .comments__btn-collapse {
                 display: none;
             }
@@ -71,7 +74,8 @@
         text-align: right;
         margin-right: $padding;
         margin-top: $padding;
-        width: 19%;
+        width: 150px;
+        min-width: 150px;
     }
 
     &__item-name {
@@ -94,12 +98,11 @@
     }
 
     &__item-text {
-        display: block;
-        width: calc(81% - 16px); 
+        display: block; 
         font-size: rem(15px);
         line-height: em(22px, 15px);
         margin: 0;
-        padding: $padding $padding $padding * 0.5;
+        padding: $padding;
         background-color: rgba($accent-color, 0.05);
     }
 
@@ -115,17 +118,25 @@
         line-height: normal;
     }
 
+    &__socials {
+        display: flex;
+    }
+
     &__socials-link {
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: rem(18px);
         transition: opacity $transition;
+        width: 30px;
+        height: 30px;
 
         &:hover {
             opacity: 0.85;
         }
 
         &:not(:last-child) {
-            margin-right: $padding - 2;
+            margin-right: $padding * 0.25;
         }
     }
 }

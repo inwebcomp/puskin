@@ -100,7 +100,7 @@
                     <?php include ("partials/_article.php") ?>
                 </main>
 
-                <aside class="aside">
+                <aside class="page-sitebar">
                     <div class="news-list">
                         <h2 class="page-title news-list__title">Мероприятия</h2>
                         <?php include ("./partials/_news-item.html") ?>

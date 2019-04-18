@@ -3,10 +3,11 @@
         const carousel = document.querySelector('.carousel');
         if (carousel) {
             let flkty = new Flickity( carousel, {
-                "prevNextButtons": true,
-                "lazyLoad": true,
+                prevNextButtons: true,
+                lazyLoad: true,
                 //"imagesLoaded": true,
-                "adaptiveHeight": false
+                wrapAround: true,
+                adaptiveHeight: false
             });
         }
     };
@@ -15,10 +16,10 @@
 </script>
 
 <script type="text/javascript">
-    const sidebar = new StickySidebar('.aside', {
+    const sidebar = new StickySidebar('.page-sitebar', {
       topSpacing: 20,
       bottomSpacing: 120,
       containerSelector: '.page-content',
       innerWrapperSelector: '.news-list'
     });
-  </script>
+</script>

@@ -34,6 +34,11 @@
     &__comments {
         display: block;
         padding-left: 20px;
+        transition: opacity $transition;
+
+        &:hover {
+            opacity: 0.88;
+        }
     }
 }
  

@@ -53,7 +53,7 @@
                     </div>
                 </main>
 
-                <aside class="aside">
+                <aside class="page-sitebar">
                     <div class="events-list">
                         <h2 class="page-title events-list__title">Мероприятия</h2>
                         <?php include ("./partials/_news-item-sm.html") ?>
