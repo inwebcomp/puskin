@@ -24,7 +24,7 @@
 <body>
     <div id="app" class="page page--index">
         <div class="container">
-            <?php include ("./partials/_header.html") ?>
+            <?php include ("./partials/_header--shadow.html") ?>
             <section class="page-content">
                 <div class="page-slider-small">
                     <?php include ("./partials/_slider.html") ?>

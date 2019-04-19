@@ -24,7 +24,7 @@
 <body>
     <div id="app" class="page page--home">
         <div class="container">
-            <?php include ("./partials/_header.html") ?>
+            <?php include ("./partials/_header--shadow.html") ?>
             <section class="carousel carousel--large carousel--main">
                 <div class="carousel__cell">
                     <img class="carousel__image" src="img/slider-img-lg.jpg"  data-flickity-lazyload="img/slider-img-lg.jpg">

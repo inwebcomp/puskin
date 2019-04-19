@@ -5,7 +5,7 @@
 
     <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1">
 
-    <title>Puskin - Text</title>
+    <title>Puskin - gallery</title>
     <base href="../">
 
     <link rel="shortcut icon" href="img/favicons/favicon.ico">
@@ -21,29 +21,28 @@
     
 </head>
 <body>
-    <div id="app" class="page page--article">
+    <div id="app" class="page page--gallery">
         <div class="container">
             <?php include ("./partials/_header.html") ?>
             <?php include ("./partials/_breadcrumbs.html") ?>
             <section class="page-content">
-                <main class="page-main">
-                    <?php include ("partials/_article.php") ?>
-                </main>
+                <main class="gallery">
+                    <h2 class="page-title-h2 gallery__title">Фотоальбом</h2>
 
-                <aside class="page-sitebar">
-                    <div class="news-list sticky">
-                        <h2 class="page-title news-list__title">Мероприятия</h2>
-                        <?php include ("./partials/_news-item.html") ?>
-                    </div>  
-                </aside>
+                    <div class="gallery__list">
+                        <?php include ("./partials/_album-prew.html") ?>
+                        <?php include ("./partials/_album-prew.html") ?>
+                        <?php include ("./partials/_album-prew.html") ?>
+                        <?php include ("./partials/_album-prew.html") ?>
+                        <?php include ("./partials/_album-prew.html") ?>
+                    </div>
+                </main>
             </section>
-            <?php include ("./partials/_other-news-list.php") ?>
 
             <?php include ("./partials/_footer.html") ?>
         </div>
     </div>
 
-    <script src="./js/sticky.js"></script>
     <script type="module" src="./js/index.js"></script>
 </body>
 </html>

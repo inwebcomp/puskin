@@ -27,12 +27,14 @@
     }
 
     &__date {
-        display: inline-block;
+        display: flex;
+        align-items: center;
         margin-right: $padding * 2;
     }
     
     &__comments {
-        display: block;
+        display: flex;
+        align-items: center;
         padding-left: 20px;
         transition: opacity $transition;
 

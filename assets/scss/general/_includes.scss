@@ -23,11 +23,16 @@
 @import "blocks/others-list";
 @import "blocks/pagination";
 @import "blocks/arhive-list";
+@import "blocks/album-prev";
+@import "blocks/album";
+@import "blocks/classes";
 
 // Pages
 @import "../pages/index";
 @import "../pages/home";
 @import "../pages/article";
+@import "../pages/gallery";
+@import "../pages/album";
 
 
 

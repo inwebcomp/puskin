@@ -1,0 +1,20 @@
+.page--gallery {
+
+}
+
+.gallery {
+    width: 100%;
+
+    &__title {
+        margin-top: 0;
+        margin-bottom: $padding * 3;
+    }
+    
+    &__list {
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(300px, 336px) );
+        grid-column-gap: $padding * 2;
+        grid-row-gap: $padding * 3;
+        justify-content: center;
+    }
+}
