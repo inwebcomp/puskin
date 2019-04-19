@@ -23,7 +23,7 @@
     
 </head>
 <body>
-    <div id="app" class="page page--article">
+    <div id="app" class="page page--news">
         <div class="container">
             <header class="header">
                 <a href="#" class="logo header__logo">
@@ -72,10 +72,10 @@
                             <a class="main-menu__link" href="#">Классы</a>
 
                             <div class="drop-menu">
-                                <a class="drop-menu__item" href="#">Пункт меню 1</a>
-                                <a class="drop-menu__item" href="#">Длинный пункт меню</a>
-                                <a class="drop-menu__item" href="#">Очень длинный пункт меню</a>
-                                <a class="drop-menu__item" href="#">Пункт меню 4</a>
+                                    <a class="drop-menu__item" href="#">Пункт меню 1</a>
+                                    <a class="drop-menu__item" href="#">Длинный пункт меню</a>
+                                    <a class="drop-menu__item" href="#">Очень длинный пункт меню</a>
+                                    <a class="drop-menu__item" href="#">Пункт меню 4</a>
                             </div>
                         </div>
                         <div class="main-menu__item">
@@ -97,24 +97,26 @@
             <?php include ("./partials/_breadcrumbs.html") ?>
             <section class="page-content">
                 <main class="page-main">
-                    <?php include ("partials/_article.php") ?>
+                    <div class="article-list">
+                        <h1 class="page-title-h1">Новости лицея</h1>
+                        <?php include ("./partials/_article-prew.html") ?>
+                        <?php include ("./partials/_article-prew.html") ?>
+                        <?php include ("./partials/_article-prew.html") ?>
+                        <?php include ("./partials/_article-prew.html") ?>
+                    </div> 
+                    <?php include ("./partials/_pagination.html") ?>                   
                 </main>
-
                 <aside class="page-sitebar">
-                    <div class="news-list sticky">
-                        <h2 class="page-title news-list__title">Мероприятия</h2>
-                        <?php include ("./partials/_news-item.html") ?>
-                    </div>  
+                    <?php include ("./partials/_arhive-list.html") ?>  
+                    <?php include ("./partials/_arhive-list.html") ?>  
+                    <?php include ("./partials/_arhive-list.html") ?> 
                 </aside>
             </section>
-            <?php include ("./partials/_other-news-list.php") ?>
-
+            
             <?php include ("./partials/_footer.html") ?>
         </div>
     </div>
 
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <script src="./js/sticky.js"></script>
     <script type="module" src="./js/index.js"></script>
 </body>
 </html>
