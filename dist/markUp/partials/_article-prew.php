@@ -1,6 +1,6 @@
 <article class="article-prew">
     <a href="#" class="article-prew__photo">
-        <img src="./img/article-img.jpg" alt="post-photo" class="article-prew__photo-img">
+        <img src="./img/article-img.jpg" width="320" height="196" alt="post-photo" class="article-prew__photo-img">
     </a>
     
     <div class="article-prew__content">
@@ -9,23 +9,12 @@
                 Лицей организовывает поездку во францию. 26 июня - 2 июля.
             </a>
         </h3>
-        <div class="data-comment">
-            <span class="data-comment__date">
-                <i class="fal fa-calendar-alt data-comment__icon"></i>
-                09.06.2019
-            </span>
-            <a href="#" class="data-comment__comments">
-                <i class="fal fa-comment-lines data-comment__icon"></i>
-                Комментариев:
-                <span class="data-comment__comments-count">9</span>
-            </a>
-        </div>
+        <?php include ("_data-comments.html") ?>
         <p class="article-prew__text">
             Экскурсия по Парижу. Мы посетим Триумфальную Арку, Эйфелеву башню, Лувр, Нотр-Дам-де-Пари. Остановимся в отеле Shangri-La Hotel Paris. Заказаны 4 лимузина.
         </p>
-        <a href="#" class="article-prew__link">
+        <a href="#" class="link-arrow pseudo article-prew__link">
             Подробнее
-            <i class="fal fa-long-arrow-right article-prew__link-icon"></i>
         </a>
     </div>
 </article>

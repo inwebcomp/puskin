@@ -74,26 +74,7 @@
     }
 
     &__link {
-        font-weight: normal;
-        display: inline-block;
         padding: $padding / 4 0;
-
-        &-icon {
-            margin-left: $padding / 2;
-            margin-bottom: 2px;
-            color: $accent-color;
-            transition: color, transform $transition;
-            font-size: rem(22px);
-            vertical-align: middle;
-        }
-
-        &:hover {
-            color: lighten($font-color, 20%);
-
-            .article-prew__link-icon {
-                transform: translateX(7px);
-            }
-        }
     }
 }
 

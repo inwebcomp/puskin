@@ -40,8 +40,10 @@
         &:hover {
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 
-            .classes__link-icon {
-                transform: translateX(7px);
+            .classes__link {
+                &:after {
+                    transform: translateX(7px);
+                }
             }
         }
 
@@ -76,16 +78,6 @@
     }
 
     &__link {
-        display: inline-flex;
-        align-items: center;
-        font-weight: 400;
         margin-top: $padding;
-
-        &-icon {
-            margin-left: $padding * 0.5;
-            font-size: 22px;
-            color: $accent-color;
-            transition: transform $transition;
-        }
     }
 }

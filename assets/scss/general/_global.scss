@@ -28,24 +28,3 @@ p {
 		}
 	}
 }
-
-.back-link {
-	font-size: rem(16px);
-	display: inline-flex;
-	align-items: center;
-	font-weight: 400;
-
-	&__icon {
-		color: $accent-color;
-		font-size: rem(22px);
-		margin-right: $padding * 0.5;
-		margin-bottom: 2px;
-		transition: transform $transition;
-	}
-
-	&:hover {
-		.back-link__icon {
-			transform: translateX(-7px);
-		}
-	}
-}

@@ -29,30 +29,29 @@
             <?php include ("./partials/_breadcrumbs.html") ?>
             <section class="page-content">
                 <main class="album">
-                    <a href="#" class="back-link album__back">
-                        <i class="fal fa-long-arrow-left back-link__icon"></i>
+                    <a href="#" class="link-arrow pseudo left album__back">
                         К фотоальбому
                     </a>
                     <h2 class="page-title-h2 album__title">Поездка по Европе</h2>
 
                     <div class="album__list">
                         <a href="./img/slider-img.jpg" data-fancybox="gallery" class="album__item">
-                            <img src="./img/article-img.jpg" alt="Фото" class="album__photo">
+                            <img src="./img/article-img.jpg" width="336" height="203" alt="Фото" class="album__photo">
                         </a>
                         <a href="./img/slider-img-lg.jpg" data-fancybox="gallery" class="album__item">
-                            <img src="./img/article-img.jpg" alt="Фото" class="album__photo">
+                            <img src="./img/article-img.jpg" width="336" height="203" alt="Фото" class="album__photo">
                         </a>
                         <a href="./img/slider-img.jpg" data-fancybox="gallery" class="album__item">
-                            <img src="./img/article-img.jpg" alt="Фото" class="album__photo">
+                            <img src="./img/article-img.jpg" width="336" height="203" alt="Фото" class="album__photo">
                         </a>
                         <a href="./img/slider-img.jpg" data-fancybox="gallery" class="album__item">
-                            <img src="./img/article-img.jpg" alt="Фото" class="album__photo">
+                            <img src="./img/article-img.jpg" width="336" height="203" alt="Фото" class="album__photo">
                         </a>
                         <a href="./img/slider-img-lg.jpg" data-fancybox="gallery" class="album__item">
-                            <img src="./img/article-img.jpg" alt="Фото" class="album__photo">
+                            <img src="./img/article-img.jpg" width="336" height="203" alt="Фото" class="album__photo">
                         </a>
                         <a href="./img/slider-img.jpg" data-fancybox="gallery" class="album__item">
-                            <img src="./img/article-img.jpg" alt="Фото" class="album__photo">
+                            <img src="./img/article-img.jpg" width="336" height="203" alt="Фото" class="album__photo">
                         </a>
                     </div>
                 </main>

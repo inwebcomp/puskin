@@ -29,10 +29,10 @@
                 <main class="page-main">
                     <div class="article-list">
                         <h1 class="page-title-h1">Новости лицея</h1>
-                        <?php include ("./partials/_article-prew.html") ?>
-                        <?php include ("./partials/_article-prew.html") ?>
-                        <?php include ("./partials/_article-prew.html") ?>
-                        <?php include ("./partials/_article-prew.html") ?>
+                        <?php include ("./partials/_article-prew.php") ?>
+                        <?php include ("./partials/_article-prew.php") ?>
+                        <?php include ("./partials/_article-prew.php") ?>
+                        <?php include ("./partials/_article-prew.php") ?>
                     </div> 
                     <?php include ("./partials/_pagination.html") ?>                   
                 </main>

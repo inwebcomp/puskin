@@ -2,8 +2,10 @@
     display: block;
 
     &:hover {
-        .album-prew__link-icon {
-            transform: translateX(6px);
+        .album-prew__link {
+            &:after {
+                transform: translateX(6px);
+            }
         }
     }
 
@@ -23,20 +25,7 @@
         align-items: center;
     }
 
-    &__link {
-        display: flex;
-        align-items: center;
-        font-weight: 400;
-    }
-
     &__data {
         margin-top: 0;
-    }
-
-    &__link-icon {
-        font-size: rem(22px);
-        color: $accent-color;
-        margin-left: $padding * 0.5;
-        transition: transform $transition;
     }
 }

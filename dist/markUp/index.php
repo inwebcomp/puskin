@@ -44,7 +44,7 @@
                             <a class="button button--small page-title__btn" href="#">Все новости</a>
                         </h2>
 
-                        <?php include ("./partials/_article-prew.html") ?>
+                        <?php include ("./partials/_article-prew.php") ?>
                         
                         <article class="article-prew">
                             <div class="article-prew__photo">
@@ -78,7 +78,7 @@
                             </div>
                         </article>
 
-                        <?php include ("./partials/_article-prew.html") ?>
+                        <?php include ("./partials/_article-prew.php") ?>
 
                         <a href="#" class="button button--small article-list__btn">Все новости</a>
                     </div>

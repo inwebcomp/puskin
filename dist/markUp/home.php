@@ -45,10 +45,10 @@
                         <h2 class="page-title page-title--labeled article-list__title">Последние новости
                             <a class="button button--small page-title__btn" href="#">Все новости</a>
                         </h2>
-                        <?php include ("./partials/_article-prew.html") ?>
-                        <?php include ("./partials/_article-prew.html") ?>
-                        <?php include ("./partials/_article-prew.html") ?>
-                        <?php include ("./partials/_article-prew.html") ?>
+                        <?php include ("./partials/_article-prew.php") ?>
+                        <?php include ("./partials/_article-prew.php") ?>
+                        <?php include ("./partials/_article-prew.php") ?>
+                        <?php include ("./partials/_article-prew.php") ?>
                         <a href="#" class="button button--small article-list__btn">Все новости</a>
                     </div>
                 </main>

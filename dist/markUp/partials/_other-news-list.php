@@ -2,7 +2,7 @@
     <h2 class="page-title page-title--labeled others-list__title">Другие новости </h2>
     <div class="others-list__list">
         <article class="news">
-            <img src="./img/article-img.jpg" alt="post-photo" class="news__img">
+            <img src="./img/article-img.jpg" alt="post-photo" width="257" height="160" class="news__img">
             <div class="data-comment data-comment--lg">
                 <span class="data-comment__date">
                     <i class="fal fa-calendar-alt data-comment__icon"></i>
@@ -19,7 +19,7 @@
             </h3>  
         </article>
         <article class="news">
-            <img src="./img/article-img.jpg" alt="post-photo" class="news__img">
+            <img src="./img/article-img.jpg" alt="post-photo" width="257" height="160" class="news__img">
             <div class="data-comment data-comment--lg">
                 <span class="data-comment__date">
                     <i class="fal fa-calendar-alt data-comment__icon"></i>
@@ -36,7 +36,7 @@
             </h3>  
         </article>
         <article class="news">
-            <img src="./img/article-img.jpg" alt="post-photo" class="news__img">
+            <img src="./img/article-img.jpg" alt="post-photo" width="257" height="160" class="news__img">
             <div class="data-comment data-comment--lg">
                 <span class="data-comment__date">
                     <i class="fal fa-calendar-alt data-comment__icon"></i>
@@ -53,7 +53,7 @@
             </h3>  
         </article>
         <article class="news">
-            <img src="./img/article-img.jpg" alt="post-photo" class="news__img">
+            <img src="./img/article-img.jpg" alt="post-photo" width="257" height="160" class="news__img">
             <div class="data-comment data-comment--lg">
                 <span class="data-comment__date">
                     <i class="fal fa-calendar-alt data-comment__icon"></i>

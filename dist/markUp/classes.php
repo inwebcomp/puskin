@@ -42,9 +42,8 @@
                                 <span class="classes__item-key">Сейчас идёт урок:</span>
                                 <span class="classes__item-value">Иностранный язык (10 каб.)</span>
                             </p>
-                            <span class="classes__link">
+                            <span class="link-arrow pseudo classes__link">
                                 Страница класса
-                                <i class="fal fa-long-arrow-right classes__link-icon"></i>
                             </span>
                         </a>
                         <a href="#" class="classes__item">
@@ -60,9 +59,8 @@
                                 <span class="classes__item-key">Сейчас идёт урок:</span>
                                 <span class="classes__item-value">Иностранный язык (10 каб.)</span>
                             </p>
-                            <span class="classes__link">
+                            <span class="link-arrow pseudo classes__link">
                                 Страница класса
-                                <i class="fal fa-long-arrow-right classes__link-icon"></i>
                             </span>
                         </a>
                     </div>
@@ -80,9 +78,8 @@
                                 <span class="classes__item-key">Сейчас идёт урок:</span>
                                 <span class="classes__item-value">Иностранный язык (10 каб.)</span>
                             </p>
-                            <span class="classes__link">
+                            <span class="link-arrow pseudo classes__link">
                                 Страница класса
-                                <i class="fal fa-long-arrow-right classes__link-icon"></i>
                             </span>
                         </a>
                     </div>
