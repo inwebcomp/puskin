@@ -3,8 +3,28 @@
     background-color: $background-color;
     margin-bottom: $padding * 3;
 
+    @include media-max($small) {
+        padding: 0 $padding * 1.5; 
+    }
+
     &__list {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
+
+        @include media-max($large) {    
+            margin-left: -$padding;
+            margin-right: -$padding;
+        }
+    } 
+
+    .news {
+        @include media-max($large) {
+            margin-top: 0;
+
+            &:not(:last-of-type) {
+                margin-bottom: $padding * 2;
+            }
+        }
     }
 }

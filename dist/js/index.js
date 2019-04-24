@@ -17,7 +17,9 @@ initCarousel();
 const initStickySidebar = () => {
     const elemSticky = document.querySelector('.sticky');
 
-    if(!elemSticky) return false;
+    if (document.body.clientWidth < 1170) return false;
+
+    if(!elemSticky) return false;  
 
     const sidebar = new StickySidebar('.sticky', {
         topSpacing: 20,

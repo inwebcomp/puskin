@@ -26,18 +26,17 @@
         <div class="container">
             <?php include ("./partials/_header--shadow.html") ?>
             <section class="page-content">
-                <div class="page-slider-small">
-                    <?php include ("./partials/_slider.html") ?>
+                <?php include ("./partials/_slider.html") ?>
 
-                    <aside class="page-sitebar">
-                        <div class="news-list">
-                            <h2 class="page-title news-list__title">новость дня
-                                <i class="far fa-thumbtack page-title__icon-pin"></i>
-                            </h2>
-                            <?php include ("./partials/_news-item.html") ?>
-                        </div>  
-                    </aside>
-                </div>        
+                <aside class="page-sitebar news-sitebar">
+                    <div class="news-list">
+                        <h2 class="page-title news-list__title">новость дня
+                            <i class="far fa-thumbtack page-title__icon-pin"></i>
+                        </h2>
+                        <?php include ("./partials/_news-item.html") ?>
+                    </div>  
+                </aside>      
+
                 <main class="page-main">
                     <div class="article-list">
                         <h2 class="page-title page-title--labeled article-list__title">Последние новости
@@ -83,7 +82,7 @@
                         <a href="#" class="button button--small article-list__btn">Все новости</a>
                     </div>
                 </main>
-                <aside class="page-sitebar">
+                <aside class="page-sitebar events-sitebar">
                     <div class="events-list">
                         <h2 class="page-title events-list__title">Мероприятия</h2>
                         <?php include ("./partials/_news-item-sm.html") ?>

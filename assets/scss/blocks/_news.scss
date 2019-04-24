@@ -4,12 +4,20 @@
     max-width: 257px;
     position: relative;
 
+    @include media-max($large) {    
+        margin: 0 $padding 0;
+    }
+
     &--separator {
         padding-bottom: $padding / 1.75;
 
         &:last-child {
             &:after {
                 content: none;
+
+                @include media-max($large) {    
+                    content: '';
+                }
             }
         }
 
@@ -64,20 +72,84 @@
     }
 }
 
+// Boxes for news
+
 .news-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @include media-max($large) {    
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: -$padding;
+        margin-right: -$padding;
+    }
+
+    @include media-max($x-small) {
+        justify-content: center;
+    }
+
     &__title {
+        width: 100%;
         margin-bottom: $padding * 2;
+
+        @include media-max($large) {  
+            margin-left: $padding;   
+        }
     }  
 }
 
 .events-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+    @include media-max($large) {    
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: -$padding;
+        margin-right: -$padding;
+    }
+
+    @include media-max($x-small) {
+        justify-content: center;
+    }
+    
     &__title {
         margin-bottom: $padding * 2.75;
+        width: 100%;
+
+        @include media-max($large) {  
+            margin-left: $padding;  
+            margin-bottom: $padding * 1; 
+        }
     }
 
     .news {
-        &:not(:first-of-type) {
-            margin-top: $padding;
+        margin-top: $padding;
+        &:first-of-type {
+            margin-top: 0;
         }
+
+        @include media-max($large) {
+            margin-top: 0;
+
+            &:not(:last-of-type) {
+                margin-bottom: $padding * 2;
+            }
+        }
+    }
+}
+
+.news-sitebar {
+    @include media-max($large) {    
+        order: 3
+    }
+}
+
+.events-sitebar {
+    @include media-max($large) {    
+        order: 2
     }
 }

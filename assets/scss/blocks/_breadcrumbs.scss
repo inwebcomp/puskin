@@ -3,6 +3,15 @@
     padding: $padding * 0.5 + 1 $padding $padding * 0.5 $padding * 3;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+
+    @include media-max($small) {
+        padding-left: $padding * 1.5;
+    }
+
+    @include media-max($xx-small) {
+        padding-left: $padding;
+    }
 
     &__item {
         font-size: rem(13px);

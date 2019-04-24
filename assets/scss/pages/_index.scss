@@ -1,9 +1,24 @@
 .page--index {
     .page-content {
         padding-top: $padding * 2.25;   
+
+        @include media-max($large) {    
+            padding-top: $padding * 1.75;
+        };
     }
+
     .header {
         margin-bottom: 5px;
-    }   
+    }
+    
+    .carousel {
+        width: 771px;
+        align-self: flex-start;
+        margin-bottom: $padding * 3;
+    
+        @include media-max($large) {    
+            width: 100%;
+        };
+    }
 }
 

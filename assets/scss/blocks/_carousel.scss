@@ -3,11 +3,14 @@
 }
 
 .carousel {
-    &--large {
-        height: 401px;
+    width: 100%;
     
+    &--large {
         .carousel__cell {
             height: 401px;
+            @include media-max($large) {    
+                height: 343px;
+            }
         }
     }
 
@@ -25,6 +28,10 @@
         justify-content: center;
         margin-right: 1rem;
         width: 100%; 
+
+        @include media-max($large) {    
+            height: 353px;
+        }
     }
 
     &__image {

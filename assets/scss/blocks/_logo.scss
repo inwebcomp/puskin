@@ -1,5 +1,7 @@
 .logo {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
 
     &--invers {
@@ -19,6 +21,12 @@
         font-size: rem(20px);
         font-weight: 100;
         line-height: 1;
+
+        @include media-max($x-small) {
+            width: 100%;
+            margin: 0;
+            margin-top: $padding;
+        }
     }
 
     &__text {

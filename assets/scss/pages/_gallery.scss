@@ -15,6 +15,15 @@
         grid-template-columns: repeat( auto-fit, minmax(300px, 336px) );
         grid-column-gap: $padding * 2;
         grid-row-gap: $padding * 3;
+        //grid-auto-columns: minmax(300px, 1fr); /* NEW */
+        //grid-auto-flow: dense; /* NEW */
         justify-content: center;
+
+        // @include media-max($large) {
+        //     grid-template-columns: repeat( auto-fit, minmax(300px, 336px) );
+        // };
+        // @include media-max($medium) {
+        //     grid-template-columns: repeat( 1, minmax(300px, 336px) );
+        // };
     }
 }

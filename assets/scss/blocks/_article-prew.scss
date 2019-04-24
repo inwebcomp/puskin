@@ -3,12 +3,21 @@
     align-items: center;
     max-width: 100%;
 
+    @include media-max($small) {
+        flex-wrap: wrap;
+    }
+
     &__photo {
         display: block;
-        width: 43%;
-        max-width: 350px;
+        max-width: 320px;
         min-width: 250px;
         max-height: 300px;
+
+        @include media-max($small) {    
+            max-width: 300px;
+            width: 100%;
+            margin-bottom: $padding;
+        }
 
         &-img {
             max-width: 100%;
@@ -16,12 +25,22 @@
             display: block;
             max-height: 300px;
             margin:  0 auto;
+
+            @include media-max($small) {
+                margin-left: 0;
+            }
         }
     }
 
     &__content {
         width: 57%;
         margin-left: 18px;
+
+        @include media-max($small) {
+            width: 100%;
+            max-width: 450px;
+            margin-left: 0;
+        }
     }
 
     &__title {
@@ -91,6 +110,12 @@
         &:not(:last-of-type) {
             margin-bottom: $padding * 3;
         }  
+
+        @include media-max($small) {
+            &:not(:last-of-type) {
+                margin-bottom: $padding * 2;
+            }  
+        }
     }
 
     .page-title-h1 {

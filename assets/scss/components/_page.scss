@@ -13,6 +13,19 @@
     position: relative;
     background-color: $background-color;
     box-shadow: 0px 37px 37px rgba(0, 0, 0, 0.1);
+
+    @include media-max($large) {
+        max-width: $medium;
+    }
+    @include media-max($medium) {
+        max-width: $small;
+    }
+    @include media-max($small) {
+        max-width: 100%;
+    }
+    @include media-max($x-small) {
+        max-width: 100%;
+    }
 }
 
 .page-content {
@@ -26,6 +39,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @include media-max($small) {
+        padding: $padding * 2.5 $padding * 1.5 $padding * 2.5; 
+    }
 }
 
 .page-main {
@@ -34,6 +51,14 @@
 
 .page-sitebar {
     width: 257px;
+    margin-left: $padding * 3 - 2;
+    
+    @include media-max($large) {    
+        margin: 0 auto;
+        margin-top: $padding * 2.25;
+        order: 3;
+        width: 100%;
+    }
 }
 
 .page-title {
@@ -44,7 +69,18 @@
     vertical-align: middle;
     display: flex;
     line-height: normal;
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    @include media-max($medium) {
+        margin-bottom: $padding * 2;
+    }
+
+    @include media-max($small) {
+        &::before {
+            content: none;
+        }
+    }
 
     &--labeled {
         position: relative;
@@ -59,10 +95,22 @@
             display: block;
             background-image: url("../img/icons/red-label.svg");
         }
+
+        @include media-max($small) {
+            &::before {
+                content: none;
+            }
+        }
     }
 
     &__btn {
         margin-left: $padding * 2;
+
+        @include media-max($xx-small) {
+            margin-left: 0;
+            margin-right: 50%;
+            margin-top: $padding;
+        }
     }
 
     &__icon-pin {
@@ -101,13 +149,24 @@
 }
 
 .page-slider-small {
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    justify-content: center;
+
+    display: grid;
+    //grid-template-columns: repeat( auto-fit, 1fr 257px );
+    grid-template-columns: 1fr 257px;
+    grid-column-gap: $padding * 3;
+
     width: 100%;
     margin-bottom: $padding * 3;
 
+    @include media-max($medium) {    
+        grid-template-columns: 1fr;
+        grid-row-gap: $padding * 2;
+    };
+
     .carousel {
-        width: 772px;
+        //width: 772px;
         align-self: flex-start;
     }
 }

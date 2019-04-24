@@ -5,14 +5,31 @@
     &__main {
         padding: $padding * 1.75  $padding * 3;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         width: 100%;
+
+        @include media-max($x-small) {
+            padding: $padding * 1.75  $padding * 1.75 0;
+        }
+    }
+
+    &__logo {
+        @include media-max($medium) {
+            margin: 0 auto;
+        }
     }
     
     &__content {
         display: flex;
         justify-content: space-between;
         width: 54%;
+
+        @include media-max($medium) {
+            flex-wrap: wrap;
+            width: 100%;
+            margin-top: $padding * 2;
+        }
     }
 
     &__list {
@@ -22,6 +39,15 @@
         font-size: rem(15px);
         line-height: normal;
         font-weight: 100;
+
+        @include media-max($x-small) {
+            width: 32%;
+            margin-bottom: $padding * 1.5;
+        }
+
+        @include media-max($xx-small) {
+            width: 48%;
+        }
     }
 
     &__list-item {
@@ -57,8 +83,18 @@
         padding: $padding  $padding * 3;
         display: flex;
         align-items: center;
+        justify-content: space-between;
         font-size: rem(13px);
         line-height: normal;
+        
+
+        @include media-max($x-small) {
+            flex-wrap: wrap;
+        }
+
+        @include media-max($x-small) {
+            padding: $padding  $padding * 1.75;
+        }
     }
 
     &__copyr {
@@ -68,8 +104,11 @@
 
     &__author {
         margin: 0;
-        margin-left: auto;
         font-weight: 300;
+
+        @include media-max($x-small) {
+            margin-top: $padding * 0.75;
+        }
     }
 
     &__author-link {
