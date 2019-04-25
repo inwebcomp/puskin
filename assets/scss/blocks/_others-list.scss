@@ -1,7 +1,6 @@
 .others-list {
     padding: 0 $padding * 3;
     background-color: $background-color;
-    margin-bottom: $padding * 3;
 
     @include media-max($small) {
         padding: 0 $padding * 1.5; 
@@ -16,15 +15,17 @@
             margin-left: -$padding;
             margin-right: -$padding;
         }
+
+        @include media-max($small) {    
+            justify-content: center;
+        }
     } 
 
     .news {
+        margin-top: 0;
+        margin-bottom: $padding * 3;
         @include media-max($large) {
-            margin-top: 0;
-
-            &:not(:last-of-type) {
-                margin-bottom: $padding * 2;
-            }
+            margin-bottom: $padding * 2;
         }
     }
 }

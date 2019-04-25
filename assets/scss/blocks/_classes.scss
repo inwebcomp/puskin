@@ -3,6 +3,10 @@
 
     &__title {
         margin-bottom: $padding * 2;
+
+        @include media-max($small) {
+            margin-bottom: $padding;
+        }
     }
 
     &__row {
@@ -35,6 +39,12 @@
                 left: 0;
             }
         }
+
+        @include media-max($x-small) {
+            &:not(:last-of-type) {
+                margin-bottom: $padding;
+            } 
+        }
     }
 
     &__item {
@@ -58,6 +68,14 @@
         @include media-max($medium) {
             width: 80%;
             margin-bottom: $padding;
+        }
+
+        @include media-max($x-small) {
+            width: 100%;
+        }
+
+        @include media-max($xx-small) {
+            margin-bottom: 0;
         }
 
         &-name {

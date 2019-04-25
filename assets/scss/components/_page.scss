@@ -55,7 +55,7 @@
     
     @include media-max($large) {    
         margin: 0 auto;
-        margin-top: $padding * 2.25;
+        margin-top: $padding * 4;
         order: 3;
         width: 100%;
     }
@@ -126,6 +126,11 @@
     line-height: normal;
     margin-top: 0;
     margin-bottom: $padding * 2.25;
+
+    @include media-max($x-small) {    
+        font-size: rem(29px);
+        margin-bottom: $padding * 1.5;
+    }
 }
 
 .page-title-h2 {

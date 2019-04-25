@@ -11,6 +11,7 @@
     @include media-max($large) {    
        display: inline-block;
        width: 24.5%;
+       padding-right: $padding;
        min-width: 165px;
        margin-top: $padding * 2;
 

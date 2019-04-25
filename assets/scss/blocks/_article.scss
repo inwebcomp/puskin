@@ -13,5 +13,10 @@
         padding-bottom: $padding * 3;
         border-top: 1px solid $content-bg-color;
         border-bottom: 1px solid $content-bg-color;
+
+        @include media-max($xx-small) {
+            margin: $padding * 1.75 0 $padding * 2.5; 
+            padding-bottom: $padding * 2.5;
+        }
     }
 }

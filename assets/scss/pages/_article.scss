@@ -2,4 +2,9 @@
     .page-content {
         padding-bottom: 0;
     }
+    .page-sitebar {
+        @include media-max($large) {    
+            display: none;
+        }
+    }
 }

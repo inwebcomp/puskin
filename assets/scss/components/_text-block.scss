@@ -11,27 +11,16 @@
     }
 
     h1 {
-        font-size: rem(33px);
-        font-weight: 900;
-        line-height: normal;
-        margin-top: 0;
+        @extend .page-title-h1;
         margin-bottom: $padding * 1.5;
     }
 
     h2 {
-        font-size: rem(28px);
-        font-weight: 900;
-        line-height: normal;
-        margin-top: $padding * 1.5;
-        margin-bottom: $padding * 1.5;
+        @extend .page-title-h2;
     }
 
     h3 {
-        font-size: rem(22px);
-        font-weight: 900;
-        line-height: normal;
-        margin-top: $padding * 1.5;
-        margin-bottom: $padding * 1.5;
+        @extend .page-title-h3;
     }
 
     p {
@@ -52,8 +41,15 @@
         img {
             float: left;
             max-width: 300px;
+            width: 100%;
             margin-bottom: $padding * 1.75;
             margin-right: $padding * 2;
+
+            @include media-max($x-small) {
+                float: none;
+                margin-bottom: $padding * 1.25;
+                margin-right: 0;
+            }
         }
     }
 
@@ -106,9 +102,13 @@
 
     ul {
         list-style: none;
-        margin-top: $padding * 3;
-        margin-bottom: $padding * 3;
+        margin: $padding * 3 0;
         padding-left: $padding * 4;
+
+        @include media-max($small) {    
+            margin: $padding * 2.25 0;
+            padding-left: $padding * 3;
+        }
 
         li {
             position: relative;
@@ -136,6 +136,11 @@
         margin-bottom: $padding * 3;
         padding-left: $padding * 4;
         position: relative;
+
+        @include media-max($small) {    
+            margin: $padding * 2.25 0;
+            padding-left: $padding * 3;
+        }
 
         li {
             counter-increment: list-counter;
