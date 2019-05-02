@@ -4,21 +4,6 @@
 
 .carousel {
     width: 100%;
-    
-    // &--large {
-    //     .carousel__cell {
-    //         height: auto;
-    //         @include media-max($large) {    
-    //             height: 350px;
-    //         }
-    //         @include media-max($medium) {    
-    //             height: 266px;
-    //         }
-    //         @include media-max($small) {    
-    //             height: auto;
-    //         }
-    //     }
-    // }
 
     &--main {
         margin-top: -5px;
@@ -34,16 +19,6 @@
         justify-content: center;
         margin-right: 1rem;
         width: 100%; 
-
-        // @include media-max($large) {    
-        //     height: 329px;
-        // }
-        // @include media-max($medium) {    
-        //     height: 353px;
-        // }
-        // @include media-max($small) {    
-        //     height: auto;
-        // }
     }
 
     &__image {

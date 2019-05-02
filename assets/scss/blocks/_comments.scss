@@ -2,7 +2,6 @@
     &__head {
         padding: $padding $padding;
         display: flex;
-        //flex-wrap: wrap;
         align-items: center;
         color: $link-dark-color;
         background-color: $content-bg-color;
@@ -143,10 +142,6 @@
         flex-wrap: wrap;
         align-items: center;
         margin-top: $padding * 3;
-
-        @include media-max(425px) {
-            //padding-right: 30px;
-        }
     }
 
     &__footer-content {

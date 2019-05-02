@@ -968,27 +968,6 @@ body {
   text-transform: uppercase;
 }
 
-.page-slider-small {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  display: grid;
-  grid-template-columns: 1fr 257px;
-  grid-column-gap: 48px;
-  width: 100%;
-  margin-bottom: 48px;
-}
-@media screen and (max-width: 1023px) {
-  .page-slider-small {
-    grid-template-columns: 1fr;
-    grid-row-gap: 32px;
-  }
-}
-.page-slider-small .carousel {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-}
-
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
