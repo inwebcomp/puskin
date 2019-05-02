@@ -3,8 +3,9 @@
         padding-bottom: 0;
     }
     .page-sitebar {
-        @include media-max($large) {    
-            display: none;
+        @include media-max($medium) {    
+            margin-top: 0;
+            margin-bottom: $padding * 3;
         }
     }
 }

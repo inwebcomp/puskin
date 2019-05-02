@@ -25,18 +25,18 @@
     <div id="app" class="page page--home">
         <div class="container">
             <?php include ("./partials/_header--shadow.html") ?>
-            <section class="carousel carousel--large carousel--main">
+            <section class="carousel carousel--main">
                 <div class="carousel__cell">
                     <img class="carousel__image" src="img/slider-img-lg.jpg"  data-flickity-lazyload="img/slider-img-lg.jpg">
                 </div>
                 <div class="carousel__cell">
-                    <img class="carousel__image" data-flickity-lazyload="https://xaxa-net.ru/uploads/posts/2018-03/1522233561_perfekcionizm_xaxa-net.ru-10.jpg"  >
+                    <img class="carousel__image" data-flickity-lazyload="img/slider-img-lg.jpg"  alt="orange tree">
                 </div>
                 <div class="carousel__cell">
-                    <img class="carousel__image" data-flickity-lazyload="https://bipbap.ru/wp-content/uploads/2017/06/tmb_145037_6611.jpg" >
+                    <img class="carousel__image" data-flickity-lazyload="img/slider-img-lg.jpg" alt="orange tree">
                 </div>
                 <div class="carousel__cell">
-                    <img class="carousel__image" data-flickity-lazyload="https://cdn.humoraf.ru/wp-content/uploads/2017/08/23-14.jpg"  alt="orange tree">
+                    <img class="carousel__image" data-flickity-lazyload="img/slider-img-lg.jpg"  alt="orange tree">
                 </div>
             </section>
             <section class="page-content">

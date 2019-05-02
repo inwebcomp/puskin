@@ -6,26 +6,22 @@
         padding: 0 $padding * 1.5; 
     }
 
-    &__list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-
-        @include media-max($large) {    
-            margin-left: -$padding;
-            margin-right: -$padding;
+    &__title {
+        @include media-max($xx-small) {    
+            justify-content: center;
         }
+    }
 
-        @include media-max($small) {    
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 256px);
+        grid-row-gap: $padding * 1.5;
+        grid-column-gap: $padding;
+        justify-content: space-between;
+        margin-bottom: $padding * 2;
+
+        @include media-max($xx-small) {
             justify-content: center;
         }
     } 
-
-    .news {
-        margin-top: 0;
-        margin-bottom: $padding * 3;
-        @include media-max($large) {
-            margin-bottom: $padding * 2;
-        }
-    }
 }

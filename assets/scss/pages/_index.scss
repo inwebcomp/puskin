@@ -12,13 +12,78 @@
     }
     
     .carousel {
-        width: 771px;
+        max-width: 771px;
+        width: 100%;
+        min-width: 300px;
+        flex: 1;
         align-self: flex-start;
         margin-bottom: $padding * 3;
+
+        @include media-max($large) {
+
+        }
     
-        @include media-max($large) {    
-            width: 100%;
+        @include media-max($small) {    
+            width: 95%;
+            flex: auto;
+            margin-right: auto;
+            margin-left: auto;
         };
+    }
+
+    .news-list {
+        &__title {
+            margin-left: 0;
+
+            @include media-max($large) {
+                margin-left: $padding * 0.5;
+            }
+        }
+
+        @include media-max($large) {    
+            flex-direction: column;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    .events-list {
+        &__title {
+            margin-left: 0;
+
+            @include media-max($large) {
+                margin-left: $padding * 0.5;
+            }
+        }
+
+        @include media-max($large) {    
+            flex-direction: column;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        @include media-max($medium) {
+            flex-direction: row;
+            margin-left: -$padding * 0.5;
+            margin-right: -$padding * 0.5;
+        }
+    }
+
+    .news-sitebar {
+        margin-bottom: $padding * 3;
+
+        @include media-max($medium) {
+            display: none;
+        }
+    }
+
+    .hidden-sitebar {
+        margin-bottom: $padding * 3;
+        display: none;
+
+        @include media-max($medium) {
+            display: block;
+        }
     }
 }
 

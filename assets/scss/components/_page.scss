@@ -41,22 +41,31 @@
     justify-content: space-between;
 
     @include media-max($small) {
-        padding: $padding * 2.5 $padding * 1.5 $padding * 2.5; 
+        padding: $padding * 2.5 $padding * 1.5; 
+    }
+
+    @include media-max($xxx-small) {
+        padding: $padding $padding; 
     }
 }
 
 .page-main {
-    width: 760px;
+    max-width: 760px;
+    flex: 1;
+
+    @include media-max($medium) {
+        width: 100%;
+    }
 }
 
 .page-sitebar {
     width: 257px;
     margin-left: $padding * 3 - 2;
     
-    @include media-max($large) {    
+    @include media-max($medium) {    
         margin: 0 auto;
         margin-top: $padding * 4;
-        order: 3;
+        //order: 3;
         width: 100%;
     }
 }

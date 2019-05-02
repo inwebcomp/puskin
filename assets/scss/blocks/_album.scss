@@ -4,6 +4,14 @@
     &__title {
         margin-top: 0;
         margin-bottom: $padding * 3;
+
+        @include media-max($small) {
+            margin-bottom: $padding * 2.5;
+        }
+
+        @include media-max($xx-small) {
+            margin-bottom: $padding * 1.5;
+        }
     }
 
     &__back {
@@ -12,10 +20,30 @@
     
     &__list {
         display: grid;
-        grid-template-columns: repeat( auto-fit, minmax(300px, 336px) );
+        grid-template-columns: 1fr 1fr 1fr;
         grid-column-gap: $padding * 2;
         grid-row-gap: $padding * 3;
         justify-content: center;
+
+        @include media-max($medium) {
+            grid-column-gap: $padding * 1.5;
+            grid-row-gap: $padding * 2;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @include media-max($small) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include media-max($xx-small) {
+            grid-column-gap: $padding ;
+            grid-row-gap: $padding * 1.5;
+        }
+
+        @include media-max($xxx-small) {
+            grid-column-gap: $padding * 0.5;
+            grid-row-gap: $padding * 1;
+        }
     }
 
     &__item {
@@ -53,6 +81,7 @@
 
     &__photo {
         display: block;
-        width: 100%;
+        max-width: 100%;
+        height: auto;
     }
 }

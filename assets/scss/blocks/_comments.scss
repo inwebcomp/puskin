@@ -2,17 +2,13 @@
     &__head {
         padding: $padding $padding;
         display: flex;
-        flex-wrap: wrap;
+        //flex-wrap: wrap;
         align-items: center;
         color: $link-dark-color;
         background-color: $content-bg-color;
         width: 100%;
         border: none;
-        outline: none;
-
-        @include media-max($xx-small) {
-            justify-content: center;
-        }
+        outline: none; 
 
         &--empty {
             cursor: default;
@@ -54,14 +50,15 @@
             content: '\f078';
             display: inline-block;
             font-family: $icon-font;
+            font-size: rem(18px);
             margin-left: $padding * 0.5;
             transition: transform $transition;
         }
         
-        @include media-max($xx-small) {
-            width: 100%;
-            margin: $padding * 0.5 auto 0;
-            transform: translateX(15px);
+        @include media-max(425px) {
+            font-size: 0;
+            margin: 0 ;
+            margin-left: auto;
         }
     }
 
@@ -78,10 +75,10 @@
         align-items: flex-start;
         
         &:not(:last-child) {
-            margin-bottom: $padding * 1.5;
+            margin-bottom: $padding * 2;
         }
 
-        @include media-max($xx-small) {
+        @include media-max(425px) {
             flex-wrap: wrap;
         }
     }
@@ -96,11 +93,12 @@
         width: 150px;
         min-width: 150px;
 
-        @include media-max($xx-small) {
+        @include media-max(425px) {
             text-align: left;
             width: 100%;
             min-width: 100%;
             margin-right: 0;
+            margin-top: 0;
         }
     }
 
@@ -131,9 +129,13 @@
         padding: $padding;
         background-color: rgba($accent-color, 0.05);
 
-        @include media-max($xx-small) {
-            margin-top: $padding * 0.75 ;
+        @include media-max(425px) {
+            margin-top: $padding * 0.5;
         }
+    }
+
+    &__btn {
+        margin-right: $padding;
     }
 
     &__footer {
@@ -141,27 +143,43 @@
         flex-wrap: wrap;
         align-items: center;
         margin-top: $padding * 3;
+
+        @include media-max(425px) {
+            //padding-right: 30px;
+        }
     }
 
+    &__footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+        align-items: center;
+        min-width: 400px;
 
-    &__footer-text {
-        margin: 0 $padding;
-        font-size: rem(13px);
-        line-height: normal;
-        vertical-align: middle;
-
-        @include media-max($medium) {
+        @include media-max($small) {
+            min-width: 100%;
             width: 100%;
-            margin: 0;
             margin-top: $padding;
         }
     }
 
-    &__socials {
-        display: inline-flex;
+    &__footer-text {
+        font-size: rem(13px);
+        line-height: normal;
+        vertical-align: middle;
+        margin-right: $padding;
 
         @include media-max($xx-small) {
-            margin-top: $padding * 0.5;
+            width: 100%;
+            padding-right: 20px;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        
+        @include media-max($xx-small) {
+            margin-top: $padding;
         }
     }
 

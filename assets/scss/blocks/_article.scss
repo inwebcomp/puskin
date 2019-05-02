@@ -3,9 +3,14 @@
     border-bottom: 1px solid $content-bg-color;
     margin-bottom: $padding * 3;
 
+    @include media-max($x-small) {
+        padding-bottom: $padding * 1.5;
+        margin-bottom: $padding * 2;
+    }
+
     &__head {
         margin-top: -$padding * 0.5;
-    }
+    } 
     
     &__content {
         margin: $padding * 2 0 $padding * 3; 

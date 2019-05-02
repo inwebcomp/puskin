@@ -8,22 +8,39 @@
     &__title {
         margin-top: 0;
         margin-bottom: $padding * 3;
+
+        @include media-max($medium) {
+            margin-bottom: $padding * 2;
+        }
     }
     
     &__list {
         display: grid;
-        grid-template-columns: repeat( auto-fit, minmax(300px, 336px) );
+        grid-template-columns: 1fr 1fr 1fr;
         grid-column-gap: $padding * 2;
         grid-row-gap: $padding * 3;
-        //grid-auto-columns: minmax(300px, 1fr); /* NEW */
-        //grid-auto-flow: dense; /* NEW */
         justify-content: center;
 
-        // @include media-max($large) {
-        //     grid-template-columns: repeat( auto-fit, minmax(300px, 336px) );
-        // };
-        // @include media-max($medium) {
-        //     grid-template-columns: repeat( 1, minmax(300px, 336px) );
-        // };
+        @include media-max($medium) {
+            grid-column-gap: $padding;
+            grid-row-gap: $padding * 2;
+        }
+
+        @include media-max($small) {
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: $padding * 2;
+            grid-row-gap: $padding * 3;
+        }
+
+        @include media-max($x-small) {
+            grid-column-gap: $padding;
+            grid-row-gap: $padding * 2;
+        }
+
+        @include media-max($xxx-small) {
+            grid-column-gap: $padding * 0.5;
+            grid-row-gap: $padding * 1;
+            grid-template-columns: 1fr;
+        }
     }
 }
