@@ -18,10 +18,6 @@
         flex: 1;
         align-self: flex-start;
         margin-bottom: $padding * 3;
-
-        @include media-max($large) {
-
-        }
     
         @include media-max($small) {    
             width: 95%;
@@ -29,6 +25,14 @@
             margin-right: auto;
             margin-left: auto;
         };
+
+        @include media-max(425px) {
+            margin: (-$padding * 1.5 - 4) (-$padding * 1.5) $padding * 2 (-$padding * 1.5);
+        }
+
+        @include media-max($xxx-small) {
+            margin: (-$padding * 1.5 - 4) (-$padding) $padding * 2 (-$padding);
+        }
     }
 
     .news-list {

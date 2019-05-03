@@ -42,5 +42,11 @@
             grid-row-gap: $padding * 1;
             grid-template-columns: 1fr;
         }
+
+        .data-comment__date {
+            @include media-max($x-small) {
+                margin-right: 0;
+            }
+        }
     }
 }

@@ -98,6 +98,8 @@
             min-width: 100%;
             margin-right: 0;
             margin-top: 0;
+            justify-content: space-between;
+            flex-direction: row;
         }
     }
 
@@ -118,6 +120,10 @@
         font-size: rem(15px);
         line-height: normal;
         color: $breadcrumbs-color;
+
+        @include media-max(425px) {
+            flex-basis: 100%;
+        }
     }
 
     &__item-text {

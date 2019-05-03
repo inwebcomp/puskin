@@ -63,6 +63,10 @@
     display: flex;
     transition: opacity $transition;
 
+    @include media-max(425px) {
+        display: none;
+    }
+
     &:focus {
         opacity: 1;
         box-shadow: none;
