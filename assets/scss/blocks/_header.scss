@@ -7,33 +7,116 @@
     position: relative;
     z-index: 1;
 
-    display: none;
+    @include media-max($large) {
+        align-items: center;
+        padding: $padding; 
+    }
+
+    @include media-max(640px) {
+        flex-wrap: wrap;
+        padding-bottom: $padding * 0.5;
+    }
 
     &--shadow {
         box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
     }
 
+    &__btn-menu {
+        display: none;
+        align-self: center;
+
+        @include media-max($large) {
+            display: flex;
+        }
+
+        @include media-max(640px) {
+            order: 1;
+        }
+    }
+
     &__logo {
         align-self: flex-start;
         margin-top: -$padding / 4;
+
+        @include media-max($large) {
+            align-self: center;
+        }
+
+        @include media-max(640px) {
+            order: 0;
+            flex-basis: 100%;
+            position: relative;
+            padding-bottom: $padding;
+            margin-bottom: $padding * 0.5;
+
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                display: block;
+                width: calc(100% + 32px);
+                left: -16px;
+                height: 2px;
+                background-color: $content-bg-color;
+            }
+        }
+
+        @include media-max(340px) {
+            margin-left: -8px;
+            margin-right: -8px;
+            flex: auto;
+        }
     }
 
     &__info {
         display: flex;
         justify-content: space-between;
         padding-right: $padding;
+
+        @include media-max($large) {
+            align-items: center;
+            padding-right: 0;
+        }
     }
 
     &__right-box {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        @include media-max($large) {
+            align-items: center;
+        }
+
+        @include media-max(640px) {
+            order: 2;
+        }
+    }
+
+    &__menu {
+        @include media-max($large) {
+            display: none;
+        }
     }
 
     &__contacts {
         display: flex;
         align-items: center;
         margin-left: $padding;
+
+        @include media-max($large) {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-right: $padding * 6; 
+        }
+
+        @include media-max($medium) {
+            margin-right: $padding * 2; 
+        }
+
+        @include media-max(829px) {
+            display: none;
+        }
     }
 
     &__contact {
@@ -42,6 +125,11 @@
 
         &:not(:last-child) {
             margin-right: 40px;
+
+            @include media-max($large) {
+                margin-right: 0;
+                margin-bottom: $padding * 0.5;
+            }
         }
 
         &:hover {

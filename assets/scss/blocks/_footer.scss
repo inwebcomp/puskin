@@ -18,6 +18,19 @@
         @include media-max($medium) {
             margin: 0 auto;
         }
+
+        @include media-max($xxx-small) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .logo__content {
+            @include media-max($xxx-small) {
+                width: 100%;
+                margin-left: 0;
+                margin-top: $padding * 0.5;  
+            }   
+        }
     }
     
     &__content {

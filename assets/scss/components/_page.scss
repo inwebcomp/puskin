@@ -18,6 +18,9 @@
         max-width: $medium;
     }
     @include media-max($medium) {
+        max-width: 830px;
+    }
+    @include media-max(830px) {
         max-width: $small;
     }
     @include media-max($small) {

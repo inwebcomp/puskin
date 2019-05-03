@@ -24,6 +24,7 @@
 <body>
     <div id="app" class="page page--index">
         <div class="container">
+            <?php include ("./partials/_mob-menu.html") ?>
             <?php include ("./partials/_header--shadow.html") ?>
             <section class="page-content">
                 <?php include ("./partials/_slider.html") ?>
