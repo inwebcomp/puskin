@@ -14,7 +14,7 @@
 
     @include media-max(640px) {
         flex-wrap: wrap;
-        padding-bottom: $padding * 0.5;
+        padding-bottom: 0;
     }
 
     &--shadow {
@@ -24,6 +24,7 @@
     &__btn-menu {
         display: none;
         align-self: center;
+        margin-left: -$padding;
 
         @include media-max($large) {
             display: flex;
@@ -47,7 +48,7 @@
             flex-basis: 100%;
             position: relative;
             padding-bottom: $padding;
-            margin-bottom: $padding * 0.5;
+            //margin-bottom: $padding * 0.5;
 
             &:after {
                 content: "";
