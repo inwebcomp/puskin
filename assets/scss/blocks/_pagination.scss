@@ -1,0 +1,49 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: $padding * 3;
+    flex-wrap: wrap;
+
+    @include media-max($xx-small) {
+        justify-content: flex-start;
+    }
+
+    &__item {
+        min-width: 35px;
+        height: 35px;
+        padding: 0 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $content-bg-color;
+        cursor: pointer;
+        transition: background-color $transition, transform $transition;
+
+        &:not(:last-child) {
+            margin-right: $padding * 0.5;
+        }
+        
+        &:hover {
+            background-color: darken($content-bg-color, 10%);
+        }
+
+        &:active {
+            transform: scale(0.9);
+        }
+
+        &.active {
+            background-color: $accent-color;
+        }
+
+        &.first,
+        &.last {
+            padding: 0 $padding * 0.75;
+        }
+
+        @include media-max($xx-small) {
+            margin-top: $padding * 0.5;
+        }
+    }
+}

@@ -1,4 +1,6 @@
-let mix = require('laravel-mix')
+let mix = require('laravel-mix');
+
+mix.disableSuccessNotifications();
 
 /*
  |--------------------------------------------------------------------------
@@ -11,10 +13,24 @@ let mix = require('laravel-mix')
  |
  */
 
-mix.sass('assets/scss/app.scss', 'dist/')
-   .options({
-      processCssUrls: false, // Process/optimize relative stylesheet url()'s. Set to false, if you don't want them touched.
-    });
+mix.sass('assets/scss/app.scss', 'dist/css/')
+  // .browserSync({
+  //   proxy: false,
+  //   files: ['*'],
+  //   server: {
+  //     baseDir: 'dist'
+  //   }
+  // })
+  .options({
+     autoprefixer: {
+            options: {
+                browsers: [
+                    'last 4 versions',
+                ]
+            }
+        },
+    processCssUrls: false, // Process/optimize relative stylesheet url()'s. Set to false, if you don't want them touched.
+  });
 
 // Full API
 // mix.js(src, output);
@@ -29,7 +45,10 @@ mix.sass('assets/scss/app.scss', 'dist/')
 // mix.less(src, output);
 // mix.stylus(src, output);
 // mix.postCss(src, output, [require('postcss-some-plugin')()]);
-// mix.browserSync('my-site.test');
+mix.browserSync({
+   proxy: 'http://localhost:80',
+   files: ['dist/**/*.*']
+})
 // mix.combine(files, destination);
 // mix.babel(files, destination); <-- Identical to mix.combine(), but also includes Babel compilation.
 // mix.copy(from, to);

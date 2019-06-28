@@ -1,0 +1,11 @@
+.page--article {
+    .page-content {
+        padding-bottom: 0;
+    }
+    .page-sitebar {
+        @include media-max($medium) {    
+            margin-top: 0;
+            margin-bottom: $padding * 3;
+        }
+    }
+}

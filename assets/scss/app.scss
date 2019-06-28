@@ -4,6 +4,7 @@
 @import "config/typography";
 @import "config/layout";
 @import "config/interaction";
+@import "config/media-queries";
 
 // Utils
 @import "utils/functions";
@@ -17,6 +18,9 @@
 @import "general/icons";
 @import "general/grid";
 @import "general/page";
+
+// @import "general/font-awesome-scss/fontawesome.scss";
+// @import "general/font-awesome-scss/solid.scss";
 
 @import "general/includes";
 
