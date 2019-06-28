@@ -1,7 +1,0 @@
-.page--news {
-    .page-sitebar {
-        @include media-max($large) {    
-            margin-top: $padding * 2;
-        }
-    }
-}

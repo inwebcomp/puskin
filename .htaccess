@@ -1,4 +1,0 @@
-RewriteEngine Off
-
-AddDefaultCharset UTF-8
-Options All -Indexes
