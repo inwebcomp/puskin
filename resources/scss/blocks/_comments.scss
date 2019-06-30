@@ -1,0 +1,204 @@
+.comments {
+    &__head {
+        padding: $padding $padding;
+        display: flex;
+        align-items: center;
+        color: $link-dark-color;
+        background-color: $content-bg-color;
+        width: 100%;
+        border: none;
+        outline: none; 
+
+        &--empty {
+            cursor: default;
+            pointer-events: none;
+
+            .comments__btn-collapse {
+                display: none;
+            }
+        }
+
+        &.open {
+            .comments__btn-collapse {
+                &::after {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    &__head-icon {
+        margin-right: $padding;
+        color: $icon-color;
+        font-size: rem(18px);
+    }
+
+    &__head-text {
+        margin: 0;
+    }
+
+    &__btn-collapse {
+        margin-left: auto;
+        color: $font-color-accent;
+        border: none;
+        padding: 0;
+        background-color: transparent;
+        transition: color $transition;
+
+        &::after {
+            content: '\f078';
+            display: inline-block;
+            font-family: $icon-font;
+            font-size: rem(18px);
+            margin-left: $padding * 0.5;
+            transition: transform $transition;
+        }
+        
+        @include media-max(425px) {
+            font-size: 0;
+            margin: 0 ;
+            margin-left: auto;
+        }
+    }
+
+    &__inner {
+        margin-top: $padding * 4;
+
+        @include media-max($x-small) {
+            margin-top: $padding * 2;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        
+        &:not(:last-child) {
+            margin-bottom: $padding * 2;
+        }
+
+        @include media-max(425px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__item-info {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: right;
+        margin-right: $padding;
+        margin-top: $padding;
+        width: 150px;
+        min-width: 150px;
+
+        @include media-max(425px) {
+            text-align: left;
+            width: 100%;
+            min-width: 100%;
+            margin-right: 0;
+            margin-top: 0;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+    }
+
+    &__item-name {
+        font-weight: 900;
+        font-size: rem(16px);
+        line-height: normal;
+        margin-bottom: $padding * 0.5;
+    }
+
+    &__item-class {
+        font-size: rem(15px);
+        line-height: normal;
+        margin-bottom: $padding * 0.5;
+    }
+
+    &__item-time {
+        font-size: rem(15px);
+        line-height: normal;
+        color: $breadcrumbs-color;
+
+        @include media-max(425px) {
+            flex-basis: 100%;
+        }
+    }
+
+    &__item-text {
+        display: block; 
+        font-size: rem(15px);
+        line-height: em(22px, 15px);
+        margin: 0;
+        padding: $padding;
+        background-color: rgba($accent-color, 0.05);
+
+        @include media-max(425px) {
+            margin-top: $padding * 0.5;
+        }
+    }
+
+    &__btn {
+        margin-right: $padding;
+    }
+
+    &__footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: $padding * 3;
+    }
+
+    &__footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+        align-items: center;
+        min-width: 400px;
+
+        @include media-max($small) {
+            min-width: 100%;
+            width: 100%;
+            margin-top: $padding;
+        }
+    }
+
+    &__footer-text {
+        font-size: rem(13px);
+        line-height: normal;
+        vertical-align: middle;
+        margin-right: $padding;
+
+        @include media-max($xx-small) {
+            width: 100%;
+            padding-right: 20px;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        
+        @include media-max($xx-small) {
+            margin-top: $padding;
+        }
+    }
+
+    &__socials-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: rem(18px);
+        transition: opacity $transition;
+        width: 30px;
+        height: 30px;
+
+        &:hover {
+            opacity: 0.85;
+        }
+
+        &:not(:last-child) {
+            margin-right: $padding * 0.25;
+        }
+    }
+}

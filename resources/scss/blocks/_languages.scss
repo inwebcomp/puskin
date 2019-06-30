@@ -1,0 +1,34 @@
+.languages {
+    font-size: rem(14px);
+    font-weight: 100;
+    display: flex;
+
+    &__item {
+        padding: $padding / 4;
+        position: relative;
+        line-height: 1;
+        vertical-align: middle;
+        transition: opacity $transition;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &:not(:last-child) {
+            margin-right: 24px;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 2px;
+                right: -14px;
+                width: 2px;
+                height: 18px;
+                background-color: #f0f0f0;
+            }
+        }
+
+        &.active {
+            font-weight: 500;
+        }
+    }
+}

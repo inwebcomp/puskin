@@ -2,5 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/packages/inweb/admin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/packages/inweb/base" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/packages/inweb/media" vcs="Git" />
   </component>
 </project>

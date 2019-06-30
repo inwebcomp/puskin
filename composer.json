@@ -1,5 +1,5 @@
 {
-    "name": "laravel/laravel",
+    "name": "inweb/puskin",
     "type": "project",
     "description": "The Laravel Framework.",
     "keywords": [
@@ -7,13 +7,47 @@
         "laravel"
     ],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./admin-components/ResourceTools/Images"
+        },
+        {
+            "type": "path",
+            "url": "./admin-components/ResourceTools/Metadata"
+        },
+        {
+            "type": "path",
+            "url": "./admin-components/Tools/TranslatablePhrases"
+        },
+        {
+            "type": "path",
+            "url": "./packages/inweb/admin"
+        },
+        {
+            "type": "path",
+            "url": "./packages/inweb/base"
+        },
+        {
+            "type": "path",
+            "url": "./packages/inweb/media"
+        }
+    ],
     "require": {
         "php": "^7.1.3",
         "fideloper/proxy": "^4.0",
+        "inweb/admin": "dev-master",
+        "inweb/admin-resource-tool-images": "*",
+        "inweb/admin-resource-tool-metadata": "*",
+        "inweb/admin-translatable-phrases": "*",
+        "inweb/base": "*",
+        "inweb/media": "*",
         "laravel/framework": "5.8.*",
+        "laravel/telescope": "^2.0",
         "laravel/tinker": "^1.0"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.6",
         "beyondcode/laravel-dump-server": "^1.0",
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
