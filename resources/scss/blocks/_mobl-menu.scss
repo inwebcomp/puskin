@@ -1,0 +1,115 @@
+.mobl-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: #fff;
+    max-width: 280px;
+    width: 100%;
+    box-shadow: 4px 0 4px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: $padding;
+
+    &.hidden {
+        display: none;
+    }
+
+    &__logo {
+        flex-wrap: wrap;
+
+        .logo__content {
+            margin-left: 0;
+            margin-top: $padding;
+        }
+    }
+
+    &__close-btn {
+        border: 0;
+        padding: 0;
+        width: 48px;
+        height: 48px;
+        text-align: center;
+        background-color: transparent;
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    &__close-btn__icon {
+        font-size: 17px;
+        display: block;
+    }
+
+    &__list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border-top: 3px solid $content-bg-color;
+        border-bottom: 3px solid $content-bg-color;
+        font-size: 16px;
+        width: 100%;
+        margin-top: $padding;
+        margin-bottom: $padding;
+    }
+
+    &__item {
+        position: relative;
+
+        &.arrow {
+            &::after {
+                content: "\f105";
+                font-family: $icon-font;
+                font-size: 22px;
+                color: $breadcrumbs-color;
+                position: absolute;
+                display: block;
+                top: 3px;
+                right: $padding;
+                transition: transform $transition;
+            }
+
+            &--open {
+                &::after {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: $padding * 0.5 $padding;
+        line-height: em(20px, 16px);
+        outline: none;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $content-bg-color;
+        }
+    }
+
+    &__drop-menu {
+        padding: 0;
+        border-top: 1px solid $content-bg-color;
+        border-bottom: 1px solid $content-bg-color;
+        width: 100%;
+    }
+
+    &__drop-menu__link {
+        @extend .mobl-menu__link;
+        padding-left: $padding * 2;
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        font-size: 17px;
+    }
+}

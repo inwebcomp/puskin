@@ -1,0 +1,134 @@
+.article-prew {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+
+    @include media-max($small) {
+        flex-wrap: wrap;
+    }
+
+    &__photo {
+        display: block;
+        max-width: 320px;
+        min-width: 250px;
+        max-height: 300px;
+
+        @include media-max($small) {    
+            max-width: 300px;
+            width: 100%;
+            margin-bottom: $padding;
+        }
+
+        &-img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            max-height: 300px;
+            margin:  0 auto;
+
+            @include media-max($small) {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__content {
+        width: 57%;
+        margin-left: 18px;
+
+        &--full {
+            width: 100%;
+            max-width: 100%;
+            margin-left: 0;
+        }
+
+        @include media-max($small) {
+            width: 100%;
+            max-width: 450px;
+            margin-left: 0;
+        }
+    }
+
+    &__title {
+        font-size: rem(22px);
+        line-height: em(24px, 22px);
+        font-weight: 500;
+        margin-top: 0;
+        margin-bottom: $padding;
+        transition: opacity $transition;
+
+        &:hover {
+            opacity: 0.85;
+        }
+    }
+
+    &__info {
+        font-size: rem(12px);
+        color: #000;
+        opacity: 0.9;
+        display: flex;  
+
+        &-icon {
+            background-color: $content-bg-color;
+            padding-top: 4px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            vertical-align: middle;
+            border-radius: 50%;
+            color: $icon-color; 
+            margin-right: $padding / 2; 
+        }
+    }
+    
+    &__date {
+        display: inline-block;
+        margin-right: $padding * 2;
+    }
+
+    &__comments {
+        display: block;
+        padding-left: 20px;
+    }
+
+    &__text {
+        font-size: rem(15px);
+        line-height: em(20px, 15px);
+        font-weight: 100;
+        margin-bottom: $padding / 2;
+    }
+
+    &__link {
+        padding: $padding / 4 0;
+    }
+}
+
+.article-list {
+    &__title {
+        margin-bottom: $padding * 2.75;
+    }
+
+    &__btn {
+        margin-top: $padding * 1.5;
+    }
+
+    .article-prew {
+        &:not(:last-of-type) {
+            margin-bottom: $padding * 3;
+        }  
+
+        @include media-max($small) {
+            &:not(:last-of-type) {
+                margin-bottom: $padding * 2;
+            }  
+        }
+    }
+
+    .page-title-h1 {
+        margin-top: -10px;
+
+        @include media-max($xxx-small) {
+            margin-top: 0;
+        }
+    }
+}

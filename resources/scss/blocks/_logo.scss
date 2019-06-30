@@ -1,0 +1,48 @@
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--invers {
+        color: $footer-font-color;
+    }
+    
+    &__img {
+        display: block;
+        max-width: 180px;
+        width: 100%;
+        height: auto;
+
+        @include media-max($large) {
+            max-width: 123px;
+        }
+    }
+
+    &__content {
+        text-align: center;
+        margin-left: $padding * 1.25;
+        font-size: rem(20px);
+        font-weight: 100;
+        line-height: 1;
+
+        @include media-max($xxx-small) {
+            margin-left: $padding;
+        }
+    }
+
+    &__text {
+        text-transform: uppercase;
+        font-size: rem(13px);
+    }
+
+    &__name {
+        font-weight: 700;
+        margin: 0;
+        line-height: 1;
+        margin-top: 2px;
+    }
+
+    &__city {
+        font-size: rem(16px);
+    }
+}
