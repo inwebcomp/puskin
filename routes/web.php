@@ -34,5 +34,5 @@ Route::group(['prefix' => $locale], function () {
         Route::get('{album}', "AlbumController@show")->name('show');
     });
 
-    Route::get('{page}', "PageController@show")->name('page');
+    Route::get('{page}', "PageController@show")->where('page', '^(?!' . config('admin.path') . ')(.)*$')->name('page');
 });
