@@ -19,18 +19,6 @@
         {
             "type": "path",
             "url": "./admin-components/Tools/TranslatablePhrases"
-        },
-        {
-            "type": "path",
-            "url": "./packages/inweb/admin"
-        },
-        {
-            "type": "path",
-            "url": "./packages/inweb/base"
-        },
-        {
-            "type": "path",
-            "url": "./packages/inweb/media"
         }
     ],
     "require": {
