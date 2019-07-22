@@ -18,7 +18,7 @@ class CreateArticlesTable extends Migration
             $table->increments('id');
             Article::statusColumn($table);
             Article::positionColumn($table);
-            $table->tinyInteger('type')->default(static::defaultType());
+            $table->tinyInteger('type')->default(Article::defaultType());
             $table->timestamps();
         });
 

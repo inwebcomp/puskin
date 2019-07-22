@@ -5,6 +5,8 @@
             <i class="far fa-thumbtack page-title__icon-pin"></i>
         </h2>
 
-        @include('news.snippets.card', ['item' => $item])
+        @if($item)
+            @include('news.snippets.card', ['item' => $item])
+        @endif
     </div>
 </aside>
