@@ -24,4 +24,11 @@ class PageController extends Controller
             'breadcrumbs' => Breadcrumbs::page($page),
         ]);
     }
+
+    public function schedule()
+    {
+        return view('pages.schedule', [
+            'pageType' => 'schedule'
+        ]);
+    }
 }

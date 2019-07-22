@@ -17,6 +17,7 @@ if (strlen($locale) !== 2) {
 Route::group(['prefix' => $locale], function () {
     Route::get('', "PageController@index")->name('index');
     Route::get('contacts', "PageController@index")->name('contacts');
+    Route::get('schedule', "PageController@schedule")->name('schedule');
 
     Route::group(['prefix' => 'news', 'as' => 'news.'], function() {
         Route::get('', "NewsController@index")->name('index');

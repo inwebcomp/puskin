@@ -1494,7 +1494,7 @@ module.exports = function spread(callback) {
 
 
 var bind = __webpack_require__(/*! ./helpers/bind */ "./node_modules/axios/lib/helpers/bind.js");
-var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/axios/node_modules/is-buffer/index.js");
+var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/is-buffer/index.js");
 
 /*global toString:true*/
 
@@ -1829,10 +1829,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/axios/node_modules/is-buffer/index.js":
-/*!************************************************************!*\
-  !*** ./node_modules/axios/node_modules/is-buffer/index.js ***!
-  \************************************************************/
+/***/ "./node_modules/is-buffer/index.js":
+/*!*****************************************!*\
+  !*** ./node_modules/is-buffer/index.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -2137,8 +2137,8 @@ initStickySidebar();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/escral/Server/www/puskin/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/escral/Server/www/puskin/resources/scss/app.scss */"./resources/scss/app.scss");
+__webpack_require__(/*! /media/ivan/SSD/Work-Linux/puskin/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /media/ivan/SSD/Work-Linux/puskin/resources/scss/app.scss */"./resources/scss/app.scss");
 
 
 /***/ })
