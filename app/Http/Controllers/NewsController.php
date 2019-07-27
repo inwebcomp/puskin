@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Breadcrumbs;
 use App\Models\Article;
+use App\Models\Category;
+use App\Models\Metadata;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
@@ -22,23 +24,37 @@ class NewsController extends Controller
             ->with('images');
 
         [$year, $month] = $this->applyDateFilters($news, $request);
+        $category = $this->applyCategoryFilters($news, $request);
 
         $news = $news->paginate(10);
 
+        $categories = Category::query()
+                              ->news()
+                              ->published()
+                              ->ordered()
+                              ->withTranslation()
+                              ->get();
+
         $archive = $this->archive();
 
+        $activeFilters = $request->only(['category', 'date']);
+
         return view('pages.news', [
-            'pageType'    => 'news',
-            'breadcrumbs' => [Breadcrumbs::news()],
-            'news'        => $news,
-            'archive'     => $archive,
-            'title'       => $this->formatTitle($year, $month),
+            'pageType'      => 'news',
+            'breadcrumbs'   => [Breadcrumbs::news()],
+            'news'          => $news,
+            'categories'    => $categories,
+            'category'      => $category,
+            'archive'       => $archive,
+            'activeFilters' => $activeFilters,
+            'title'         => $this->formatTitle($category, $year, $month),
+            'meta'          => Metadata::fromPage('news'),
         ]);
     }
 
     public function show($article)
     {
-        $article = Article::news()->findBySlug($article)->firstOrFail();
+        $article = Article::news()->findBySlug($article)->published()->firstOrFail();
 
         return view('pages.page', [
             'page'        => $article,
@@ -59,7 +75,7 @@ class NewsController extends Controller
      * Chunk the underlying collection array by column.
      *
      * @param Collection $array
-     * @param string     $column
+     * @param string $column
      * @return Collection
      */
     protected function chunkBy(Collection $array, $column)
@@ -79,19 +95,19 @@ class NewsController extends Controller
     {
         return $this->chunkBy(
             Article::selectRaw('count(*) as count, DATE_FORMAT(created_at, "%Y-%m-01") as date')
-                ->groupBy('date')
-                ->published()
-                ->get()
-                ->map(function ($data) {
-                    $date = Carbon::parse($data->getOriginal('date'));
+                   ->groupBy('date')
+                   ->published()
+                   ->get()
+                   ->map(function ($data) {
+                       $date = Carbon::parse($data->getOriginal('date'));
 
-                    return [
-                        'title' => $this->mb_ucfirst($date->monthName) . ' ' . $date->year,
-                        'year'  => $date->year,
-                        'query' => $date->format('m-Y'),
-                        'count' => $data->count,
-                    ];
-                })
+                       return [
+                           'title' => $this->mb_ucfirst($date->monthName) . ' ' . $date->year,
+                           'year'  => $date->year,
+                           'query' => $date->format('m-Y'),
+                           'count' => $data->count,
+                       ];
+                   })
             , 'year');
     }
 
@@ -121,19 +137,37 @@ class NewsController extends Controller
         return [$year, $month];
     }
 
-    private function formatTitle($year, $month)
+    private function applyCategoryFilters(Builder $query, $request)
+    {
+        $category = $request->input('category');
+
+        if (! $category)
+            return null;
+
+        $category = Category::findBySlug($category)->news()->firstOrFail();
+
+        $query->where('category_id', '=', $category->id);
+
+        return $category;
+    }
+
+    private function formatTitle($category, $year, $month)
     {
         $title = __('Новости лицея');
 
         $date = Carbon::createFromDate($year, $month, 1);
 
         if ($month or $year) {
-            $title .=  ' ' . __('за');
+            $title .= ' ' . __('за');
 
             if ($month)
-                $title .=  ' ' . $date->monthName;
+                $title .= ' ' . $date->monthName;
             if ($year)
-                $title .=  ' ' . $date->year . ' ' . ($month ? __('года') : __('год'));
+                $title .= ' ' . $date->year . ' ' . ($month ? __('года') : __('год'));
+        }
+
+        if ($category) {
+            $title .= ' ' . __('в рубрике') . ' «‎' . $category->title . '»';
         }
 
         return $title;

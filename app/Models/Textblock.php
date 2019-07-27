@@ -23,6 +23,7 @@ class Textblock extends Entity implements Cacheable, Sortable
 
     protected $fillable = [
         'uid',
+        'title',
     ];
 
     protected static function boot()

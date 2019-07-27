@@ -10578,15 +10578,18 @@ readers do not read off random characters that represent icons */
 }
 .album__title {
   margin-top: 0;
+  margin-bottom: 16px;
+}
+.album__date {
   margin-bottom: 48px;
 }
 @media screen and (max-width: 767px) {
-  .album__title {
+  .album__date {
     margin-bottom: 40px;
   }
 }
 @media screen and (max-width: 459px) {
-  .album__title {
+  .album__date {
     margin-bottom: 24px;
   }
 }
@@ -10682,8 +10685,7 @@ readers do not read off random characters that represent icons */
 }
 .classes__row::after {
   content: "";
-  max-width: 752px;
-  width: 100%;
+  width: calc(100% - 32px);
   display: block;
   height: 1px;
   position: absolute;

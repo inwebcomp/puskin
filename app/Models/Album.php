@@ -35,22 +35,33 @@ class Album extends Entity implements HasPage, Sortable
         TranslatableSlug,
         WithImages;
 
-    public $translationModel = 'App\Translations\AlbumTranslation';
+    public $translationModel     = 'App\Translations\AlbumTranslation';
     public $translatedAttributes = ['title', 'slug', 'text'];
 
     public function path()
     {
-        return Route::localized(route('album.show', $this->slug, false));
+        return route('album.show', $this->slug);
+    }
+
+    public static function pathAll()
+    {
+        return route('album.index', null);
     }
 
     public function getImageThumbnails()
     {
         return [
-            'preview' => new Thumbnail(function (\Intervention\Image\Image $image) {
+            'preview'  => new Thumbnail(function (\Intervention\Image\Image $image) {
                 return $image->fit(338, 210, function (Constraint $constraint) {
                     $constraint->upsize();
                 });
-            }, true),
+            }),
+            'original' => new Thumbnail(function (\Intervention\Image\Image $image) {
+                return $image->resize(1200, 1200, function (Constraint $constraint) {
+                    $constraint->upsize();
+                    $constraint->aspectRatio();
+                });
+            }),
         ];
     }
 

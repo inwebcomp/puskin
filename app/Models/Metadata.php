@@ -25,4 +25,32 @@ class Metadata extends Entity
     {
         return 'metadata';
     }
+
+    public function toArray()
+    {
+        $data = [];
+
+        if ($this->title)
+            $data['title'] = $this->title;
+
+        if ($this->description)
+            $data['description'] = $this->description;
+
+        return $data;
+    }
+
+    public static function fromPage($page)
+    {
+        if (! ($page instanceof Page))
+            $page = Page::findBySlug($page)->first();
+
+        if (! $page)
+            return [];
+
+        $result = optional($page->metadata)->toArray() ?? [];
+
+        return array_merge([
+            'title' => $page->title,
+        ], $result);
+    }
 }

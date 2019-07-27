@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>@yield('title')</title>
+    @include('layout.meta')
 
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
     <meta name="format-detection" content="telephone=no">
@@ -17,12 +17,6 @@
     @yield('styles')
 
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
-    @if (isset($canonical))
-        <link rel="canonical" href="{{ $canonical }}">
-    @endif
-
-    @yield('meta')
 </head>
 <body>
     <div id="app" class="{{ isset($pageType) ? 'page--' . $pageType : '' }}" :class="{ 'show-sidebar--menu': showMenu }">

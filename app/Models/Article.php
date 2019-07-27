@@ -34,8 +34,10 @@ class Article extends Entity implements HasPage, Sortable, Cacheable
         TranslatableSlug,
         WithMetadata,
         WithImages;
+
     const NEWS = 0;
     const EVENT = 1;
+
     public $translationModel = 'App\Translations\ArticleTranslation';
     public $translatedAttributes = ['title', 'slug', 'description', 'text'];
 
@@ -43,7 +45,17 @@ class Article extends Entity implements HasPage, Sortable, Cacheable
     {
         $type = $this->type == static::NEWS ? 'news' : 'event';
 
-        return Route::localized(route($type . '.show', $this->slug, false));
+        return route($type . '.show', $this->slug);
+    }
+
+    public static function pathAllNews($params = null)
+    {
+        return route('news.index', $params);
+    }
+
+    public static function pathAllEvents($params = null)
+    {
+        return route('events.index', $params);
     }
 
     public function getImageThumbnails()
@@ -98,6 +110,11 @@ class Article extends Entity implements HasPage, Sortable, Cacheable
     public function scopeEvents(Builder $query)
     {
         return $query->where('type', static::EVENT);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 
     public function getDateAttribute()
