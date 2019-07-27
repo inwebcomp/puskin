@@ -18,12 +18,12 @@ use InWeb\Admin\App\Fields\Textarea;
 use InWeb\Admin\App\Http\Requests\AdminRequest;
 use InWeb\Admin\App\Resources\Resource;
 
-class News extends Resource
+class EventsCategory extends Resource
 {
-    public static $model = \App\Models\Article::class;
-    protected static $position = 4;
+    public static $model = \App\Models\Category::class;
+    protected static $position = 5.5;
 
-    public static $with = ['translations', 'category'];
+    public static $with = ['translations'];
 
     public static $globallySearchable = true;
 
@@ -38,27 +38,27 @@ class News extends Resource
 
     public static function label()
     {
-        return __('Новости');
+        return __('Рубрики мероприятий');
     }
 
     public static function singularLabel()
     {
-        return __('Новость');
+        return __('Рубрика мероприятий');
     }
 
     public static function uriKey()
     {
-        return 'news';
+        return 'events-category';
     }
 
     public static function indexQuery(AdminRequest $request, $query)
     {
-        return $query->news();
+        return $query->events();
     }
 
     public static function detailQuery(AdminRequest $request, $query)
     {
-        return $query->news();
+        return $query->events();
     }
 
     /**
@@ -72,12 +72,6 @@ class News extends Resource
         return [
             Text::make(__('Название'), 'title')->link($this->editPath()),
             Text::make(__('URL ID'), 'slug'),
-            Select::make(__('Рубрика'), function() {
-                return optional($this->category)->title;
-            }),
-            Textarea::make(__('Описание'), 'description')->displayUsing(function($value) {
-                return Str::limit(strip_tags($value), 600);
-            }),
             Boolean::make(__('Опубликован'), 'status'),
         ];
     }
@@ -92,18 +86,11 @@ class News extends Resource
     {
         return [
             Text::make(__('Название'), 'title')->link($this->editPath()),
-            Select::make(__('Тип'), 'type')->options(Select::prepare(Article::types()))->default(Article::NEWS),
+            Select::make(__('Рубрика для'), 'type')->options(Select::prepare(Category::types()))->default(Article::EVENT),
             Text::make(__('URL ID'), 'slug'),
-            Select::make(__('Рубрика'), 'category_id')
-                  ->options(Select::prepare(
-                      Category::query()->news()->withTranslation()->get()->pluck('title', 'id'))
-                  )->withEmpty(),
-            Textarea::make(__('Описание'), 'description')->original(),
-            Editor::make(__('Текст'), 'text'),
             Boolean::make(__('Опубликован'), 'status'),
 
             new Metadata(),
-            new Images(),
         ];
     }
 

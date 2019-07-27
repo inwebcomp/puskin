@@ -19,7 +19,10 @@ class CreateArticlesTable extends Migration
             Article::statusColumn($table);
             Article::positionColumn($table);
             $table->tinyInteger('type')->default(Article::defaultType());
+            $table->unsignedInteger('category_id')->nullable();
             $table->timestamps();
+
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
         });
 
         Schema::create('article_translations', function (Blueprint $table) {

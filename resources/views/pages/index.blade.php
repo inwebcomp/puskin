@@ -1,7 +1,5 @@
 @extends('layout.default')
 
-@section('title', __('Лицей им. А.С.Пушкина'))
-
 @section('styles')
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 @endsection

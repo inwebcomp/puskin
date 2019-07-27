@@ -5,7 +5,7 @@
 
     @foreach($archive as $year => $items)
         <li class="archive-list__item">
-            <a href="{{ \InWeb\Base\Support\Route::route('news.index', ['date' => $year]) }}" class="archive-list__link more">
+            <a href="{{ \App\Models\Article::pathAllNews(array_merge($activeFilters, ['date' => $year])) }}" class="archive-list__link more">
                 {{ $year . ' ' . __('год') }}
                 <i class="fal fa-long-arrow-right archive-list__icon"></i>
             </a>
@@ -13,7 +13,7 @@
 
         @foreach($items as $item)
             <li class="archive-list__item" data-year="{{ $year }}">
-                <a href="{{ \InWeb\Base\Support\Route::route('news.index', ['date' => $item['query']]) }}" class="archive-list__link">
+                <a href="{{ \App\Models\Article::pathAllNews(array_merge($activeFilters, ['date' => $item['query']])) }}" class="archive-list__link">
                     {{ $item['title'] }}
                     @if ($item['count'])
                         <span class="archive-list__count">({{ $item['count'] }})</span>

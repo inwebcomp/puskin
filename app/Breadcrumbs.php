@@ -2,9 +2,10 @@
 
 namespace App;
 
+use App\Models\Album;
 use App\Models\Article;
+use App\Models\ClassModel;
 use App\Models\Page;
-use InWeb\Base\Support\Route;
 
 class Breadcrumbs
 {
@@ -12,7 +13,7 @@ class Breadcrumbs
     {
         return [
             'title' => __('Новости'),
-            'link'  => Route::route('news.index')
+            'link'  => Article::pathAllNews(),
         ];
     }
 
@@ -20,15 +21,27 @@ class Breadcrumbs
     {
         return [
             'title' => __('Мероприятия'),
-            'link'  => Route::route('event.index')
+            'link'  => Article::pathAllEvents(),
         ];
     }
-    public static function album()
+
+    public static function album(Album $album = null)
     {
-        return [
+        $path = [];
+
+        $path[] = [
             'title' => __('Фотоальбом'),
-            'link'  => Route::route('album.index')
+            'link'  => Album::pathAll(),
         ];
+
+        if ($album) {
+            $path[] = [
+                'title' => $album->title,
+                'link'  => $album->path()
+            ];
+        }
+
+        return $path;
     }
 
     public static function page(Page $page)
@@ -57,6 +70,25 @@ class Breadcrumbs
             'title' => $article->title,
             'link'  => $article->path()
         ];
+
+        return $path;
+    }
+
+    public static function classes(ClassModel $class = null)
+    {
+        $path = [];
+
+        $path[] = [
+            'title' => __('Классы'),
+            'link'  => ClassModel::pathAll(),
+        ];
+
+        if ($class) {
+            $path[] = [
+                'title' => $class->title,
+                'link'  => $class->path()
+            ];
+        }
 
         return $path;
     }

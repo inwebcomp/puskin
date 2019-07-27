@@ -3,6 +3,10 @@
 
     &__title {
         margin-top: 0;
+        margin-bottom: $padding;
+    }
+
+    &__date {
         margin-bottom: $padding * 3;
 
         @include media-max($small) {

@@ -23,8 +23,7 @@
 
         &::after {
             content: '';
-            max-width: 752px;
-            width: 100%;
+            width: calc(100% - #{$padding * 2});
             display: block; 
             height: 1px;
             position: absolute;

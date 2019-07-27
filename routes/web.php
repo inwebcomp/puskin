@@ -34,5 +34,10 @@ Route::group(['prefix' => $locale], function () {
         Route::get('{album}', "AlbumController@show")->name('show');
     });
 
+    Route::group(['prefix' => 'class', 'as' => 'class.'], function() {
+        Route::get('', "ClassController@index")->name('index');
+        Route::get('{class}', "ClassController@show")->name('show');
+    });
+
     Route::get('{page}', "PageController@show")->where('page', '^(?!' . config('admin.path') . ')(.)*$')->name('page');
 });

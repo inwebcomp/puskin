@@ -5,7 +5,7 @@ namespace App\Translations;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 
-class PageTranslation extends Model
+class CategoryTranslation extends Model
 {
     public $timestamps = false;
 
@@ -20,9 +20,5 @@ class PageTranslation extends Model
         ];
     }
 
-    protected $fillable = [
-        'title',
-        'slug',
-        'text'
-    ];
+    protected $fillable = ['title', 'slug'];
 }

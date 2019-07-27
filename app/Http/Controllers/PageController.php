@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Breadcrumbs;
+use App\Models\Metadata;
 use App\Models\Page;
 
 class PageController extends Controller
@@ -10,18 +11,20 @@ class PageController extends Controller
     public function index()
     {
         return view('pages.index', [
-            'pageType' => 'index'
+            'pageType' => 'index',
+            'meta'     => Metadata::fromPage('index'),
         ]);
     }
 
     public function show($page)
     {
-        $page = Page::findBySlug($page)->firstOrFail();
+        $page = Page::findBySlug($page)->published()->firstOrFail();
 
         return view('pages.page', [
-            'page'     => $page,
-            'pageType' => 'article',
+            'page'        => $page,
+            'pageType'    => 'article',
             'breadcrumbs' => Breadcrumbs::page($page),
+            'meta'        => Metadata::fromPage($page),
         ]);
     }
 
@@ -30,7 +33,7 @@ class PageController extends Controller
         $schedule = [
             [
                 'class' => '5a',
-                'days' => [
+                'days'  => [
                     ['химия', 'физика', 'русский'],
                     ['химия', 'физика', 'матеиатика', 'русский'],
                     ['химия', 'физика', 'матеиатика', 'русский', 'химия', 'физика',],
@@ -40,7 +43,7 @@ class PageController extends Controller
             ],
             [
                 'class' => '7a',
-                'days' => [
+                'days'  => [
                     ['химия', 'физика', 'русский'],
                     ['химия', 'физика', 'матеиатика', 'русский'],
                     ['химия', 'физика', 'матеиатика', 'русский', 'химия', 'физика',],
@@ -50,7 +53,7 @@ class PageController extends Controller
             ],
             [
                 'class' => '9a',
-                'days' => [
+                'days'  => [
                     ['химия', 'физика', 'русский'],
                     ['химия', 'физика', 'матеиатика', 'русский'],
                     ['химия', 'физика', 'матеиатика', 'русский', 'химия', 'физика',],
@@ -60,7 +63,7 @@ class PageController extends Controller
             ],
             [
                 'class' => '9a',
-                'days' => [
+                'days'  => [
                     ['химия', 'физика', 'русский'],
                     ['химия', 'физика', 'матеиатика', 'русский'],
                     ['химия', 'физика', 'матеиатика', 'русский', 'химия', 'физика',],
@@ -70,7 +73,7 @@ class PageController extends Controller
             ],
             [
                 'class' => '9a',
-                'days' => [
+                'days'  => [
                     ['химия', 'физика', 'русский'],
                     ['химия', 'физика', 'матеиатика', 'русский'],
                     ['химия', 'физика', 'матеиатика', 'русский', 'химия', 'физика',],
@@ -82,7 +85,7 @@ class PageController extends Controller
 
         return view('pages.schedule', [
             'pageType' => 'schedule',
-            'data' => $schedule
+            'data'     => $schedule
         ]);
     }
 }
