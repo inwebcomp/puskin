@@ -3,11 +3,11 @@
 namespace App\Traits;
 
 use App\Models\Metadata;
+use InWeb\Base\Exceptions\ModelIsNotBinded;
 
 /**
  * Trait WithMetadata
  * @property  Metadata metadata
- * @mixin \App\Models\Entity
  * @package App\Traits
  */
 trait WithMetadata
@@ -20,6 +20,7 @@ trait WithMetadata
     /**
      * @param $attributes
      * @return mixed
+     * @throws ModelIsNotBinded
      */
     public function setMetadata($attributes)
     {
@@ -34,5 +35,10 @@ trait WithMetadata
         }
 
         return $metadata->save();
+    }
+
+    public function getMetaTitle()
+    {
+        return $this->title;
     }
 }

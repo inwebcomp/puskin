@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\View\Composers\BannersComposer;
 use App\Http\View\Composers\BottomMenuComposer;
 use App\Http\View\Composers\DailyNewsComposer;
 use App\Http\View\Composers\IndexEventsComposer;
@@ -44,5 +45,7 @@ class ViewServiceProvider extends ServiceProvider
         View::composer('news.daily-big', DailyNewsComposer::class);
 
         View::composer('events.index', IndexEventsComposer::class);
+
+        View::composer('blocks.slider', BannersComposer::class);
     }
 }

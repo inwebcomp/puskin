@@ -3,11 +3,13 @@
 namespace App\Admin\Resources;
 
 use Admin\ResourceTools\Metadata\Metadata;
+use Admin\ResourceTools\Schedule\Schedule;
 use App\Admin\Actions\Hide;
 use App\Admin\Actions\Publish;
 use Illuminate\Http\Request;
 use InWeb\Admin\App\Fields\Boolean;
 use InWeb\Admin\App\Fields\Editor;
+use InWeb\Admin\App\Fields\Select;
 use InWeb\Admin\App\Fields\Text;
 use InWeb\Admin\App\Http\Requests\AdminRequest;
 use InWeb\Admin\App\Resources\Resource;
@@ -15,7 +17,7 @@ use InWeb\Admin\App\Resources\Resource;
 class ClassModel extends Resource
 {
     public static $model = \App\Models\ClassModel::class;
-    protected static $position = 7;
+    protected static $position = 8;
 
     public static $with = ['translations'];
 
@@ -55,6 +57,9 @@ class ClassModel extends Resource
     {
         return [
             Text::make(__('Название'), 'title')->link($this->editPath()),
+            Select::make(__('Классынй руководитель'), function() {
+                return optional($this->teacher)->name;
+            }),
             Boolean::make(__('Опубликован'), 'status'),
         ];
     }
@@ -70,10 +75,17 @@ class ClassModel extends Resource
         return [
             Text::make(__('Название'), 'title')->link($this->editPath()),
             Text::make(__('URL ID'), 'slug'),
+
+            Select::make(__('Классный руководитель'), 'teacher_id')
+                  ->options(Select::prepare(
+                      \App\Models\Teacher::withTranslation()->get()->pluck('name', 'id'))
+                  )->withEmpty(),
+
             Editor::make(__('Описание'), 'text'),
             Boolean::make(__('Опубликован'), 'status'),
 
             new Metadata(),
+            new Schedule(),
         ];
     }
 

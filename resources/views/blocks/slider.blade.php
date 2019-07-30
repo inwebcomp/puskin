@@ -1,14 +1,13 @@
 <section class="carousel">
-    <div class="carousel__cell">
-        <img class="carousel__image" src="img/slider-img.jpg"  data-flickity-lazyload="img/slider-img.jpg">
-    </div>
-    <div class="carousel__cell">
-        <img class="carousel__image" data-flickity-lazyload="img/slider-img.jpg"  >
-    </div>
-    <div class="carousel__cell">
-        <img class="carousel__image" data-flickity-lazyload="img/slider-img.jpg" >
-    </div>
-    <div class="carousel__cell">
-        <img class="carousel__image" data-flickity-lazyload="img/slider-img.jpg"  alt="orange tree">
-    </div>
+    @foreach($banners as $banner)
+        @if($banner->link)
+            <a href="{{ localized($banner->link) }}" class="carousel__cell">
+                <img class="carousel__image" src="{{ $banner->image->getUrl('catalog') }}" width="770" height="405" data-flickity-lazyload="{{ $banner->image->getUrl('catalog') }}"  alt="{{ $banner->title }}"/>
+            </a>
+        @else
+            <div class="carousel__cell">
+                <img class="carousel__image" src="{{ $banner->image->getUrl('catalog') }}" width="770" height="405" data-flickity-lazyload="{{ $banner->image->getUrl('catalog') }}"  alt="{{ $banner->title }}"/>
+            </div>
+        @endif
+    @endforeach
 </section>

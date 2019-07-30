@@ -18,7 +18,10 @@ class CreateClassesTable extends Migration
             $table->increments('id');
             ClassModel::statusColumn($table);
             ClassModel::positionColumn($table);
+            $table->unsignedInteger('teacher_id')->nullable();
             $table->timestamps();
+
+            $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('set null');
         });
 
         Schema::create('class_translations', function (Blueprint $table) {

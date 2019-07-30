@@ -1,6 +1,7 @@
 .footer {
     background-color: $footer-background-color;
     color: $footer-font-color;
+    margin-top: auto;
     
     &__main {
         padding: $padding * 1.75  $padding * 3;
