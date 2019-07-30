@@ -1,0 +1,39 @@
+.contact-item {
+    font-size: rem(20px);
+    width: 32%;
+    max-width: 341px;
+    border: 6px solid #FFF1B1;
+    margin: 0 $padding 0; 
+    padding: $padding * 1.75 $padding * 0.5 $padding * 1.75 $padding * 1.75;
+
+    &__title {
+        font-size: rem(24px);
+        font-weight: 900;
+        margin: 0;
+    }
+
+    &__name {
+        margin: $padding * 0.75 0 $padding * 1.75;
+    }
+
+    &__phone {
+        display: block;
+        padding: 2px;
+
+        &:hover {
+            .contact-item__icon {
+                opacity: 0.85;
+            }
+        }
+    }
+
+    &__icon {
+        font-size: rem(18px);
+        color: #F2C94C;
+        margin-right: 12px;
+        transition: opacity $transition;
+        width: 15px;
+        height: 15px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,61 @@
+.page-contact {
+    width: 100%;
+}
+
+.contacts-list {
+    display: flex;
+    margin-left: -$padding;
+    margin-right: -$padding;
+}
+
+.contacts-actions {
+    display: flex;
+    margin-top: $padding * 2;
+}
+
+.contact-form {
+    width: 47%;
+    margin-right: 3%;
+
+    &__title {
+        font-size: rem(28px);
+        font-weight: 900;
+        margin: 0 0 $padding 0;
+    }
+
+    &__row {
+        display: flex;
+        margin-bottom: $padding * 1.25;
+    }
+
+    &__field {
+        width: 48%;
+        
+        &:first-child {
+            margin-right: auto;
+        }
+    }
+
+    &__button {
+        margin: $padding 0 0 0;
+    }
+
+    &__alerts {
+        margin: 0;
+        margin-top: $padding;
+    }
+
+    &__alert-error {
+        display: block;
+        color: $error-color;
+    }
+
+    &__alert-success {
+        display: block;
+        color: $success-color;
+    }
+}
+
+.map {
+    width: 50%;
+}
