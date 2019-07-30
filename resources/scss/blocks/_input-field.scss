@@ -1,0 +1,40 @@
+.input-field {
+    
+    &__input {
+        padding: $padding;
+        background-color: $content-bg-color;
+        box-shadow: none;
+        border: 1px solid rgba(0, 0, 0, 0.11);
+        font-size: rem(16px);
+        width: 100%;
+
+        &::placeholder {
+            color: $font-color;
+        }
+    }
+
+    &__error {
+        display: inline-block;
+        margin-top: $padding * 0.375;
+        color: $accent-color-2;
+        line-height: 1.2;
+
+    }
+}
+
+.textarea {
+    height: 130px;
+    resize: none;
+    max-height: 130px;
+    
+    padding: $padding;
+    background-color: $content-bg-color;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.11);
+    font-size: rem(16px);
+    width: 100%;
+
+    &::placeholder {
+        color: $font-color;
+    }
+}
