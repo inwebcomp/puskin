@@ -1,0 +1,28 @@
+{
+    "name": "inweb/admin-resource-tool-schedule",
+    "description": "InWeb Admin resource tool",
+    "keywords": [
+        "laravel"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Admin\\ResourceTools\\Schedule\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Admin\\ResourceTools\\Schedule\\ResourceToolServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

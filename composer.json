@@ -18,6 +18,10 @@
         },
         {
             "type": "path",
+            "url": "./admin-components/ResourceTools/Schedule"
+        },
+        {
+            "type": "path",
             "url": "./admin-components/Tools/TranslatablePhrases"
         }
     ],
@@ -27,6 +31,7 @@
         "inweb/admin": "dev-master",
         "inweb/admin-resource-tool-images": "*",
         "inweb/admin-resource-tool-metadata": "*",
+        "inweb/admin-resource-tool-schedule": "*",
         "inweb/admin-translatable-phrases": "*",
         "inweb/base": "*",
         "inweb/media": "*",

@@ -165,3 +165,14 @@
 .uppercase {
     text-transform: uppercase;
 }
+
+
+#app {
+    height: 100%;
+}
+
+#app > .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}

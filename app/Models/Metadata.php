@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\WithMetadata;
 use Dimsav\Translatable\Translatable;
 use InWeb\Base\Entity;
 use InWeb\Base\Traits\BindedToModelAndObject;
@@ -51,6 +52,19 @@ class Metadata extends Entity
 
         return array_merge([
             'title' => $page->title,
+        ], $result);
+    }
+
+    /**
+     * @param Entity|WithMetadata $model
+     * @return array
+     */
+    public static function fromModel(Entity $model)
+    {
+        $result = optional($model->metadata)->toArray() ?? [];
+
+        return array_merge([
+            'title' => $model->getMetaTitle(),
         ], $result);
     }
 }

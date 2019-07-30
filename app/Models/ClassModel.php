@@ -27,7 +27,7 @@ class ClassModel extends Entity implements HasPage, Sortable
         TranslatableSlug,
         WithMetadata;
 
-    public $translationModel = 'App\Translations\ClassModelTranslation';
+    public $translationModel     = 'App\Translations\ClassModelTranslation';
     public $translatedAttributes = ['title', 'slug', 'text'];
 
     public function getTable()
@@ -43,5 +43,28 @@ class ClassModel extends Entity implements HasPage, Sortable
     public static function pathAll($params = null)
     {
         return route('class.index', $params);
+    }
+
+    public function teacher()
+    {
+        return $this->belongsTo(Teacher::class);
+    }
+
+    public function getPreparedScheduleAttribute()
+    {
+        return $this->schedule()
+                    ->orderBy('day')
+                    ->orderBy('subject_number')
+                    ->whereNotNull('subject')
+                    ->with('teacher', 'classModel')
+                    ->get()
+                    ->groupBy(function(Schedule $schedule) {
+                        return $schedule->day;
+                    });
+    }
+
+    public function schedule()
+    {
+        return $this->hasMany(Schedule::class);
     }
 }

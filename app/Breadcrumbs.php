@@ -6,6 +6,7 @@ use App\Models\Album;
 use App\Models\Article;
 use App\Models\ClassModel;
 use App\Models\Page;
+use App\Models\Teacher;
 
 class Breadcrumbs
 {
@@ -87,6 +88,25 @@ class Breadcrumbs
             $path[] = [
                 'title' => $class->title,
                 'link'  => $class->path()
+            ];
+        }
+
+        return $path;
+    }
+
+    public static function teachers(Teacher $teacher = null)
+    {
+        $path = [];
+
+        $path[] = [
+            'title' => __('Учителя'),
+            'link'  => Teacher::pathAll(),
+        ];
+
+        if ($teacher) {
+            $path[] = [
+                'title' => $teacher->name,
+                'link'  => $teacher->path()
             ];
         }
 

@@ -37,5 +37,13 @@ class PageSeeder extends Seeder
             'slug'   => 'classes',
             'title' => 'Классы',
         ]);
+        Page::create([
+            'slug'   => 'teachers',
+            'title' => 'Учителя',
+        ]);
+        Page::create([
+            'slug'   => 'contacts',
+            'title' => 'Контакты',
+        ]);
     }
 }

@@ -16,6 +16,17 @@ class PageController extends Controller
         ]);
     }
 
+    public function contacts()
+    {
+        $page = Page::findBySlug('contacts')->published()->firstOrFail();
+
+        return view('pages.contacts', [
+            'pageType' => 'contacts',
+            'meta'     => Metadata::fromPage($page),
+            'breadcrumbs' => Breadcrumbs::page($page),
+        ]);
+    }
+
     public function show($page)
     {
         $page = Page::findBySlug($page)->published()->firstOrFail();

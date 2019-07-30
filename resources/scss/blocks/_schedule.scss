@@ -7,30 +7,25 @@
 .schedule {
     min-width: 700px;
     width: 100%;
-    border-left: 1px solid $accent-color;
-    border-top: 1px solid $accent-color;
+    margin-bottom: $padding;
 
     &__row {
-        border-bottom: 1px solid $accent-color;
+        border-bottom: 1px solid $border-color;
+    }
+
+    &__caption {
+        font-size: rem(18px);
+        padding: $padding / 1.5;
     }
 
     &__cell {
         vertical-align: top;
-        padding: 3px 0 6px 0;
-        border-right: 1px solid $accent-color;
-        width: 18.5%;
+        padding: $padding / 1.5;
 
-        &:first-of-type {
-            width: 7.5%;
-            min-width: 80px;
-            font-weight: 500;
-            font-size: rem(16px);
-            padding-top: 8px;
-            text-transform: uppercase;
-            text-align: center;
-            border-right: 2px solid $accent-color;
+        &--min {
+            white-space: nowrap;
+            width: 1px;
         }
-        
     }
 
     &__head {
@@ -39,8 +34,10 @@
         .schedule__cell {
             font-weight: 700;
             font-size: rem(12px);
-            padding: 7px 0 6px $padding * 0.5;
+            padding: $padding / 1.5;
             text-transform: uppercase;
+            background-color: lighten($accent-color, 35%);
+            color: darken($accent-color, 32%);
         }
         
         .schedule__row {

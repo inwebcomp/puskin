@@ -452,6 +452,10 @@ p {
   text-decoration: none;
 }
 
+.clearfix {
+  overflow: hidden;
+}
+
 .grid {
   display: grid;
 }
@@ -9083,6 +9087,16 @@ readers do not read off random characters that represent icons */
   text-transform: uppercase;
 }
 
+#app {
+  height: 100%;
+}
+
+#app > .container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .button-menu {
   border: none;
   background-color: transparent;
@@ -9916,8 +9930,6 @@ readers do not read off random characters that represent icons */
 
 .article {
   padding-bottom: 48px;
-  border-bottom: 1px solid #F0F0F0;
-  margin-bottom: 48px;
 }
 @media screen and (max-width: 559px) {
   .article {
@@ -10229,6 +10241,7 @@ readers do not read off random characters that represent icons */
 .footer {
   background-color: #212121;
   color: #F8F8F8;
+  margin-top: auto;
 }
 .footer__main {
   padding: 28px 48px;
@@ -10718,6 +10731,9 @@ readers do not read off random characters that represent icons */
 .classes__item:hover .classes__link:after {
   transform: translateX(7px);
 }
+.classes__item--full {
+  width: 100%;
+}
 @media screen and (max-width: 1023px) {
   .classes__item {
     width: 80%;
@@ -10763,6 +10779,119 @@ readers do not read off random characters that represent icons */
   margin-top: 16px;
 }
 
+.teachers {
+  width: 100%;
+}
+.teachers__title {
+  margin-bottom: 32px;
+}
+@media screen and (max-width: 767px) {
+  .teachers__title {
+    margin-bottom: 16px;
+  }
+}
+.teachers__row {
+  display: flex;
+  justify-content: space-between;
+  margin-left: -16px;
+  margin-right: -16px;
+  position: relative;
+  flex-wrap: wrap;
+}
+.teachers__row:not(:last-of-type) {
+  margin-bottom: 32px;
+}
+.teachers__row::after {
+  content: "";
+  width: calc(100% - 32px);
+  display: block;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  background-color: #F0F0F0;
+}
+@media screen and (max-width: 1023px) {
+  .teachers__row::after {
+    max-width: 100%;
+    left: 0;
+  }
+}
+@media screen and (max-width: 559px) {
+  .teachers__row:not(:last-of-type) {
+    margin-bottom: 16px;
+  }
+}
+.teachers__item {
+  font-size: 1rem;
+  display: block;
+  padding: 16px;
+  transition: box-shadow ease 0.15s;
+  width: 48%;
+  margin-bottom: 32px;
+}
+.teachers__item:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.teachers__item:hover .teachers__link:after {
+  transform: translateX(7px);
+}
+.teachers__item--full {
+  width: 100%;
+}
+@media screen and (max-width: 1023px) {
+  .teachers__item {
+    width: 80%;
+    margin-bottom: 16px;
+  }
+}
+@media screen and (max-width: 559px) {
+  .teachers__item {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 459px) {
+  .teachers__item {
+    margin-bottom: 0;
+  }
+}
+.teachers__item__name {
+  font-size: 1.75rem;
+  line-height: 1;
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+.teachers__item__info {
+  margin: 0;
+}
+.teachers__item__info:not(:last-of-type) {
+  margin-bottom: 8px;
+}
+.teachers__item__info p {
+  margin: 0;
+}
+.teachers__item__photo {
+  float: left;
+  margin-right: 16px;
+  border: 4px solid #F2C94C;
+  overflow: hidden;
+}
+.teachers__item__photo--center {
+  float: none;
+  margin: 0 auto 20px;
+  width: 120px;
+}
+.teachers__item__img {
+  width: 120px;
+  display: block;
+}
+.teachers__link {
+  margin-top: 16px;
+}
+
 .schedule-table-wrap {
   width: 100%;
   overflow: auto;
@@ -10772,27 +10901,22 @@ readers do not read off random characters that represent icons */
 .schedule {
   min-width: 700px;
   width: 100%;
-  border-left: 1px solid #F2C94C;
-  border-top: 1px solid #F2C94C;
+  margin-bottom: 16px;
 }
 .schedule__row {
-  border-bottom: 1px solid #F2C94C;
+  border-bottom: 1px solid #dbe7f3;
+}
+.schedule__caption {
+  font-size: 1.125rem;
+  padding: 10.6666666667px;
 }
 .schedule__cell {
   vertical-align: top;
-  padding: 3px 0 6px 0;
-  border-right: 1px solid #F2C94C;
-  width: 18.5%;
+  padding: 10.6666666667px;
 }
-.schedule__cell:first-of-type {
-  width: 7.5%;
-  min-width: 80px;
-  font-weight: 500;
-  font-size: 1rem;
-  padding-top: 8px;
-  text-transform: uppercase;
-  text-align: center;
-  border-right: 2px solid #F2C94C;
+.schedule__cell--min {
+  white-space: nowrap;
+  width: 1px;
 }
 .schedule__head {
   text-align: left;
@@ -10800,8 +10924,10 @@ readers do not read off random characters that represent icons */
 .schedule__head .schedule__cell {
   font-weight: 700;
   font-size: 0.75rem;
-  padding: 7px 0 6px 8px;
+  padding: 10.6666666667px;
   text-transform: uppercase;
+  background-color: #fefbf2;
+  color: #906f0a;
 }
 .schedule__head .schedule__row {
   border-bottom: 2px solid #F2C94C;

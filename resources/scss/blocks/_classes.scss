@@ -64,6 +64,10 @@
             }
         }
 
+        &--full {
+            width: 100%;
+        }
+
         @include media-max($medium) {
             width: 80%;
             margin-bottom: $padding;

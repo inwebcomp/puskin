@@ -1,7 +1,7 @@
 .article {
     padding-bottom: $padding * 3;
-    border-bottom: 1px solid $content-bg-color;
-    margin-bottom: $padding * 3;
+    //border-bottom: 1px solid $content-bg-color;
+    //margin-bottom: $padding * 3;
 
     @include media-max($x-small) {
         padding-bottom: $padding * 1.5;
