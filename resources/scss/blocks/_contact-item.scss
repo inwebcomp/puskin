@@ -1,15 +1,20 @@
 .contact-item {
     font-size: rem(20px);
-    width: 32%;
-    max-width: 341px;
     border: 6px solid #FFF1B1;
-    margin: 0 $padding 0; 
     padding: $padding * 1.75 $padding * 0.5 $padding * 1.75 $padding * 1.75;
+
+    @include media-max(768px) {
+        font-size: rem(18px);
+    }
 
     &__title {
         font-size: rem(24px);
         font-weight: 900;
         margin: 0;
+
+        @include media-max(768px) {
+            font-size: rem(22px);
+        }
     }
 
     &__name {
@@ -21,6 +26,8 @@
         padding: 2px;
 
         &:hover {
+            text-decoration: underline;
+            
             .contact-item__icon {
                 opacity: 0.85;
             }
