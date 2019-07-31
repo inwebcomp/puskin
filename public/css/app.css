@@ -9489,7 +9489,7 @@ readers do not read off random characters that represent icons */
   justify-content: space-between;
   background-color: #fff;
   padding: 16px 0 0 16px;
-  min-height: 120px;
+  min-height: 140px;
   position: relative;
   z-index: 1;
 }
@@ -11007,34 +11007,60 @@ readers do not read off random characters that represent icons */
 }
 
 .contacts-list {
-  display: flex;
-  margin-left: -16px;
-  margin-right: -16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 32px;
+}
+@media screen and (max-width: 1024px) {
+  .contacts-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 640px) {
+  .contacts-list {
+    grid-template-columns: minmax(0, 410px);
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 375px) {
+  .contacts-list {
+    margin-top: 16px;
+  }
 }
 
 .contacts-actions {
-  display: flex;
   margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 32px;
+}
+@media screen and (max-width: 1024px) {
+  .contacts-actions {
+    grid-template-columns: 1fr;
+    grid-row-gap: 48px;
+  }
 }
 
-.contact-form {
-  width: 47%;
-  margin-right: 3%;
-}
 .contact-form__title {
   font-size: 1.75rem;
   font-weight: 900;
-  margin: 0 0 16px 0;
+  margin: 0 0 32px 0;
 }
 .contact-form__row {
   display: flex;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 .contact-form__field {
   width: 48%;
+  margin-bottom: 20px;
 }
 .contact-form__field:first-child {
   margin-right: auto;
+}
+@media screen and (max-width: 520px) {
+  .contact-form__field {
+    width: 100%;
+  }
 }
 .contact-form__button {
   margin: 16px 0 0 0;
@@ -11052,22 +11078,25 @@ readers do not read off random characters that represent icons */
   color: #2db86e;
 }
 
-.map {
-  width: 50%;
-}
-
 .contact-item {
   font-size: 1.25rem;
-  width: 32%;
-  max-width: 341px;
   border: 6px solid #FFF1B1;
-  margin: 0 16px 0;
   padding: 28px 8px 28px 28px;
+}
+@media screen and (max-width: 768px) {
+  .contact-item {
+    font-size: 1.125rem;
+  }
 }
 .contact-item__title {
   font-size: 1.5rem;
   font-weight: 900;
   margin: 0;
+}
+@media screen and (max-width: 768px) {
+  .contact-item__title {
+    font-size: 1.375rem;
+  }
 }
 .contact-item__name {
   margin: 12px 0 28px;
@@ -11075,6 +11104,9 @@ readers do not read off random characters that represent icons */
 .contact-item__phone {
   display: block;
   padding: 2px;
+}
+.contact-item__phone:hover {
+  text-decoration: underline;
 }
 .contact-item__phone:hover .contact-item__icon {
   opacity: 0.85;
