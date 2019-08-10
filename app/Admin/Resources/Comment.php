@@ -53,7 +53,7 @@ class Comment extends Resource
         return [
             Text::make(__('Имя'), 'name')->link($this->editPath()),
             Text::make(__('Запись'), function () {
-                return $this->commentable->title;
+                return optional($this->commentable)->title;
             })->link(optional($this->commentable)->adminPath()),
             Datetime::make(__('Дата'), 'created_at'),
             Textarea::make(__('Текст'), 'text')->resolveUsing(function($value) {
@@ -75,7 +75,7 @@ class Comment extends Resource
             Section::make(__('Запись')),
             Text::make(__('Дата'), 'created_at')->original()->display(),
             Text::make(__('Запись'), function() {
-                return $this->commentable->title;
+                return optional($this->commentable)->title;
             })->link(optional($this->commentable)->adminPath())->display(),
 
             Section::make(__('Данные')),
