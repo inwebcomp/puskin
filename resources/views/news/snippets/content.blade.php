@@ -6,9 +6,9 @@
     </div>
     <div class="article__content">
         <div class="text-block fr-view">
-            @if($item->image)
-                <img src="{{ $item->image->getUrl() }}" alt="{{ $item->title }}">
-            @endif
+{{--            @if($item->image)--}}
+{{--                <img src="{{ $item->image->getUrl() }}" alt="{{ $item->title }}">--}}
+{{--            @endif--}}
 
             {!! $item->text !!}
         </div>
