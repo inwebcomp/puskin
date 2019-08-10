@@ -9,6 +9,7 @@ use App\Admin\Actions\Hide;
 use App\Admin\Actions\Publish;
 use App\Admin\Actions\SetDailyArticle;
 use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use InWeb\Admin\App\Fields\Boolean;
@@ -73,6 +74,9 @@ class Events extends Resource
         return [
             Text::make(__('Название'), 'title')->link($this->editPath()),
             Text::make(__('URL ID'), 'slug'),
+            Select::make(__('Рубрика'), function() {
+                return optional($this->category)->title;
+            }),
             Textarea::make(__('Описание'), 'description')->displayUsing(function($value) {
                 return Str::limit(strip_tags($value), 600);
             }),
@@ -93,6 +97,10 @@ class Events extends Resource
             Text::make(__('Название'), 'title')->link($this->editPath()),
             Select::make(__('Тип'), 'type')->options(Select::prepare(Article::types()))->default(Article::EVENT),
             Text::make(__('URL ID'), 'slug'),
+            Select::make(__('Рубрика'), 'category_id')
+                  ->options(Select::prepare(
+                      Category::query()->events()->withTranslation()->get()->pluck('title', 'id'))
+                  )->withEmpty(),
             Textarea::make(__('Описание'), 'description')->original(),
             Editor::make(__('Текст'), 'text'),
             Boolean::make(__('Опубликован'), 'status'),
