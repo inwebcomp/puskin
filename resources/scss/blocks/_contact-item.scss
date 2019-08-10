@@ -8,7 +8,7 @@
     }
 
     &__title {
-        font-size: rem(23px);
+        font-size: rem(22px);
         font-weight: 900;
         margin: 0;
 
@@ -19,6 +19,7 @@
 
     &__name {
         margin: $padding * 0.75 0 $padding * 1.75;
+        font-size: rem(18px);
     }
 
     &__element {
@@ -28,7 +29,7 @@
     }
 
     &__icon {
-        font-size: rem(17px);
+        font-size: rem(18px);
         color: #F2C94C;
         margin-right: 12px;
         transition: opacity $transition;
