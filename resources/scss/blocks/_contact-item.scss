@@ -21,17 +21,10 @@
         margin: $padding * 0.75 0 $padding * 1.75;
     }
 
-    &__phone {
+    &__element {
         display: block;
+        width: fit-content;
         padding: 2px;
-
-        &:hover {
-            text-decoration: underline;
-            
-            .contact-item__icon {
-                opacity: 0.85;
-            }
-        }
     }
 
     &__icon {

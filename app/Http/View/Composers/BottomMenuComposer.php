@@ -16,7 +16,7 @@ class BottomMenuComposer
      */
     public function compose(View $view)
     {
-        $menu = Navigation::findByUID('top')
+        $menu = Navigation::findByUID('bottom')
             ->children()
             ->published()
             ->ordered()

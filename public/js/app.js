@@ -2046,6 +2046,17 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./resources/admin/scss/app.scss":
+/*!***************************************!*\
+  !*** ./resources/admin/scss/app.scss ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -2093,9 +2104,9 @@ var initCarousel = function initCarousel() {
   var carousel = document.querySelector('.carousel');
   if (!carousel) return false;
   var flkty = new Flickity(carousel, {
-    prevNextButtons: true,
-    lazyLoad: true,
-    //"imagesLoaded": true,
+    prevNextButtons: carousel.childElementCount > 1,
+    pageDots: carousel.childElementCount > 1,
+    lazyLoad: false,
     wrapAround: true,
     adaptiveHeight: false
   });
@@ -2131,14 +2142,15 @@ initStickySidebar();
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/scss/app.scss ***!
-  \*************************************************************/
+/*!*********************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/scss/app.scss ./resources/admin/scss/app.scss ***!
+  \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /media/ivan/SSD/Work-Linux/puskin/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /media/ivan/SSD/Work-Linux/puskin/resources/scss/app.scss */"./resources/scss/app.scss");
+__webpack_require__(/*! /home/alexander/Server/www/puskin/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /home/alexander/Server/www/puskin/resources/scss/app.scss */"./resources/scss/app.scss");
+module.exports = __webpack_require__(/*! /home/alexander/Server/www/puskin/resources/admin/scss/app.scss */"./resources/admin/scss/app.scss");
 
 
 /***/ })

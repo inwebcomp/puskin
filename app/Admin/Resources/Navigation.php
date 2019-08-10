@@ -54,7 +54,7 @@ class Navigation extends Resource implements Nested
             TreeField::make(__('Название'), 'title'),
             FastActions::make('')->onlyOnHover()->edit($this->editPath()),
             Text::make(__('Ссылка'), 'link', function ($value, $resource) {
-                return $resource->page ? $resource->page->path() : $value;
+                return $resource->link;
             })->original(),
             Boolean::make(__('Опубликован'), 'status'),
         ];
@@ -78,6 +78,13 @@ class Navigation extends Resource implements Nested
                         'value' => $page->id,
                     ];
                 }))->withEmpty(),
+            Select::make(__('Ведёт на запись'), 'article_id')
+                  ->options(\App\Models\Article::all()->map(function (\App\Models\Article $article) {
+                      return [
+                          'title' => $article->title,
+                          'value' => $article->id,
+                      ];
+                  }))->withEmpty(),
             Text::make(__('Ссылка'), 'link')->size('full')->original(),
             TreeField::make(__('Родитель'), 'parent_id'),
             Boolean::make('Опубликован', 'status'),

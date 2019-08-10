@@ -17,15 +17,18 @@ if (strlen($locale) !== 2) {
 Route::group(['prefix' => $locale], function () {
     Route::get('', "PageController@index")->name('index');
     Route::get('contacts', "PageController@contacts")->name('contacts');
+    Route::post('contacts', "PageController@contacts")->name('contacts.send');
 
     Route::group(['prefix' => 'news', 'as' => 'news.'], function () {
         Route::get('', "NewsController@index")->name('index');
         Route::get('{article}', "NewsController@show")->name('show');
+        Route::post('{article}', "NewsController@show")->name('comment.send');
     });
 
     Route::group(['prefix' => 'event', 'as' => 'event.'], function () {
         Route::get('', "EventController@index")->name('index');
         Route::get('{article}', "EventController@show")->name('show');
+        Route::post('{article}', "EventController@show")->name('comment.send');
     });
 
     Route::group(['prefix' => 'album', 'as' => 'album.'], function () {

@@ -6,6 +6,7 @@ use App\Traits\WithMetadata;
 use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Builder;
 use Intervention\Image\Constraint;
+use InWeb\Admin\App\Admin;
 use InWeb\Base\Contracts\Cacheable;
 use InWeb\Base\Contracts\HasPage;
 use InWeb\Base\Entity;
@@ -38,6 +39,8 @@ class Article extends Entity implements HasPage, Sortable, Cacheable
     const NEWS = 0;
     const EVENT = 1;
 
+    protected $fillable = ['daily'];
+
     public $translationModel = 'App\Translations\ArticleTranslation';
     public $translatedAttributes = ['title', 'slug', 'description', 'text'];
 
@@ -53,9 +56,16 @@ class Article extends Entity implements HasPage, Sortable, Cacheable
         return route('news.index', $params);
     }
 
+    public function adminPath()
+    {
+        $type = $this->type == static::NEWS ? 'news' : 'event';
+
+        return '/resource/' . $type . '/' . $this->id . '/edit';
+    }
+
     public static function pathAllEvents($params = null)
     {
-        return route('events.index', $params);
+        return route('event.index', $params);
     }
 
     public function getImageThumbnails()
@@ -112,6 +122,11 @@ class Article extends Entity implements HasPage, Sortable, Cacheable
         return $query->where('type', static::EVENT);
     }
 
+    public function scopeDaily(Builder $query)
+    {
+        return $query->where('daily', '=', 1);
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -120,5 +135,17 @@ class Article extends Entity implements HasPage, Sortable, Cacheable
     public function getDateAttribute()
     {
         return $this->created_at->format('d.m.Y');
+    }
+
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+
+    public function getCommentsCountAttribute()
+    {
+        return \Cache::remember('article:' . $this->id . ':comments-count', 3600 * 24, function() {
+            return $this->comments()->published()->count();
+        });
     }
 }

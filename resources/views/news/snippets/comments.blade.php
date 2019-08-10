@@ -1,66 +1,64 @@
-<div class="comments">
-    <button  type="button" class="comments__head comments__head--empty" style="margin-bottom: 16px">
-        <i class="fal fa-comment-lines comments__head-icon"></i>
-        <p class="comments__head-text">
-            Комментариев нет
-        </p>
-        <span class="comments__btn-collapse">
-            Скрыть комментарии
-        </span>
-    </button>
+<comments>
+    <div class="comments" id="comments">
+        <div class="page-title">@lang('Комментарии') @if($comments->count()) ({{ $comments->count() }}) @endif</div>
 
-    <button type="button" class="comments__head open">
-        <i class="fal fa-comment-lines comments__head-icon"></i>
-        <p class="comments__head-text">
-            <span class="comments__count">10</span>
-            комментариев
-        </p>
-        <span class="comments__btn-collapse">
-            Скрыть комментарии
-        </span>
-    </button>
+        @if(! $comments->count())
+            <button  type="button" class="comments__head comments__head--empty" style="margin-bottom: 16px">
+            <i class="fal fa-comment-lines comments__head-icon"></i>
+            <p class="comments__head-text">
+                @lang('Нет комментариев')
+            </p>
+            </button>
+        @endif
 
-    <div class="comments__inner">
-        <div class="comments__item">
-            <div class="comments__item-info">
-                <span class="comments__item-name">Том Круз</span>
-                <span class="comments__item-class">11 класс</span>
-                <span class="comments__item-time">23 июня 2019, 14:45</span>
+        @if($comments->count())
+            <div class="comments__inner">
+                @foreach($comments as $comment)
+                    <div class="comments__item">
+                        <div class="comments__item-info">
+                            <span class="comments__item-name">{{ $comment->name }}</span>
+                            <span class="comments__item-time">{{ $comment->date }}</span>
+                        </div>
+                        <div class="comments__item-text">{{ $comment->text }}</div>
+                    </div>
+                @endforeach
             </div>
-            <p class="comments__item-text">
-                Таким образом новая модель организационной деятельности играет важную роль в формировании позиций.
-            </p>
-        </div>
-        <div class="comments__item">
-            <div class="comments__item-info">
-                <span class="comments__item-name">Бенедикт Камбербэтч</span>
-                <span class="comments__item-class">11 класс</span>
-                <span class="comments__item-time">23 июня 2019, 14:45</span>
+        @endif
+
+
+
+        <form class="comments__footer" action="" method="post">
+            @csrf
+
+            <div class="comments__add" id="comment-add">
+                <div class="page-title">@lang('Оставьте свой комментарий')</div>
+
+                <div class="input-field">
+                    <input type="text" class="input-field__input" name="name" value="{{ $data['name'] ?? '' }}" placeholder="@lang('Ваше имя')">
+                    @if($errors->has('name'))
+                        <span class="input-field__error">{{ $errors->first('name') }}</span>
+                    @endif
+                </div>
+
+                <textarea name="text" class="textarea" placeholder="@lang('Текст комментария')">{{ $data['message'] ?? '' }}</textarea>
+                @if($errors->has('text'))
+                    <span class="input-field__error">{{ $errors->first('text') }}</span><br>
+                @endif
             </div>
-            <p class="comments__item-text">
-                Таким образом новая модель организационной деятельности играет важную роль в формировании позиций, занимаемых участниками в отношении поставленных задач. Идейные соображения высшего порядка, а также реализация намеченных плановых заданий в значительной степени обуславливает создание форм развития. Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач.
-            </p>
-        </div>
+
+            <button class="button button--small comments__btn">@lang('Добавить комментарий')</button>
+
+            @isset($message)
+                <p class="contact-form__alerts">
+                    <span class="contact-form__alert contact-form__alert--{{ $errors->any() ? 'error' : 'success' }}">{{ $message }}</span>
+                </p>
+            @endisset
+        </form>
+
+        @if(isset($message) or $errors->any())
+            <script>
+                window.location.href = "#comment-add"
+            </script>
+        @endif
     </div>
-
-    <footer class="comments__footer">
-        <button class="button button--small button--disabled comments__btn">Добавить комментарий</button>
-        <div class="comments__footer-content">
-            <div class="comments__footer-text">
-                <a class="link link--blue" href="">Войдите</a>
-                в аккаунт чтобы оставлять комментарии
-            </div>
-            <div class="comments__socials">
-                <a href="#" class="comments__socials-link">
-                    <i class="fab fa-vk" style="color: #4A76A8"></i>
-                </a>
-                <a href="#" class="comments__socials-link">
-                    <i class="fab fa-facebook-f" style="color: #29487D"></i>
-                </a>
-                <a href="#" class="comments__socials-link">
-                    <i class="fab fa-odnoklassniki" style="color: #EE8208"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
-</div>
+</comments>

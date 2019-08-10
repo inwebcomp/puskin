@@ -67,13 +67,15 @@
         margin-top: $padding;
     }
 
-    &__alert-error {
+    &__alert {
         display: block;
+    }
+
+    &__alert--error {
         color: $error-color;
     }
 
-    &__alert-success {
-        display: block;
+    &__alert--success {
         color: $success-color;
     }
 }

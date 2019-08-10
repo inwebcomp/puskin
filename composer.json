@@ -22,6 +22,10 @@
         },
         {
             "type": "path",
+            "url": "./admin-components/ResourceTools/Comments"
+        },
+        {
+            "type": "path",
             "url": "./admin-components/Tools/TranslatablePhrases"
         }
     ],
@@ -32,6 +36,7 @@
         "inweb/admin-resource-tool-images": "*",
         "inweb/admin-resource-tool-metadata": "*",
         "inweb/admin-resource-tool-schedule": "*",
+        "inweb/admin-resource-tool-comments": "*",
         "inweb/admin-translatable-phrases": "*",
         "inweb/base": "*",
         "inweb/media": "*",

@@ -62,11 +62,11 @@
     }
 
     &__inner {
-        margin-top: $padding * 4;
-
-        @include media-max($x-small) {
-            margin-top: $padding * 2;
-        }
+        //margin-top: $padding * 4;
+        //
+        //@include media-max($x-small) {
+        //    margin-top: $padding * 2;
+        //}
     }
 
     &__item {
@@ -89,8 +89,8 @@
         text-align: right;
         margin-right: $padding;
         margin-top: $padding;
-        width: 150px;
-        min-width: 150px;
+        width: 160px;
+        min-width: 160px;
 
         @include media-max(425px) {
             text-align: left;
@@ -141,13 +141,16 @@
 
     &__btn {
         margin-right: $padding;
+        margin-top: $padding;
     }
 
     &__footer {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
+        //display: flex;
+        //flex-wrap: wrap;
+        //align-items: center;
         margin-top: $padding * 3;
+        border-top: 1px solid $border-color;
+        padding-top: $padding * 3;
     }
 
     &__footer-content {
@@ -199,6 +202,13 @@
 
         &:not(:last-child) {
             margin-right: $padding * 0.25;
+        }
+    }
+
+    &__add {
+        .input-field {
+            margin-bottom: $padding;
+            max-width: 50%;
         }
     }
 }

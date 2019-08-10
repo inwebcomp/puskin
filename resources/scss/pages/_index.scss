@@ -15,11 +15,17 @@
         max-width: 771px;
         width: 100%;
         min-width: 300px;
+        min-height: 405px;
         flex: 1;
         align-self: flex-start;
         margin-bottom: $padding * 3;
-    
-        @include media-max($small) {    
+        position: relative;
+
+        @include media-max($large) {
+            min-height: auto;
+        }
+
+        @include media-max($small) {
             width: 95%;
             flex: auto;
             margin-right: auto;

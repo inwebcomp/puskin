@@ -7,7 +7,7 @@
             </span>
         @endif
         @if ($item->commentsCount)
-            <a href="#" class="data-comment__comments">
+            <a href="{{ $item->path() . '#comments' }}" class="data-comment__comments">
                 <i class="fal fa-comment-lines data-comment__icon"></i>
                 @lang('Комментариев'):
                 <span class="data-comment__comments-count">{{ $item->commentsCount }}</span>

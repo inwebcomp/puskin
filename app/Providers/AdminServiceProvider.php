@@ -20,6 +20,7 @@ class AdminServiceProvider extends AdminApplicationServiceProvider
 
         Admin::serving(function (ServingAdmin $event) {
             \App::setLocale('ru');
+            Admin::style('admin-dist-css', base_path('public/admin-dist/css/app.css'));
         });
     }
 

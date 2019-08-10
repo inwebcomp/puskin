@@ -5,7 +5,7 @@
         @include('news.snippets.comments-info', ['item' => $item])
     </div>
     <div class="article__content">
-        <div class="text-block">
+        <div class="text-block fr-view">
             @if($item->image)
                 <img src="{{ $item->image->getUrl() }}" alt="{{ $item->title }}">
             @endif
@@ -16,7 +16,7 @@
 
     @if($item->comments)
         <div class="article__comments">
-            @include('news.snippets.comments')
+            @include('news.snippets.comments', ['comments' => $item->comments])
         </div>
     @endif
 </article>

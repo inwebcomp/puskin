@@ -7,8 +7,9 @@ use App\Http\View\Composers\BottomMenuComposer;
 use App\Http\View\Composers\DailyNewsComposer;
 use App\Http\View\Composers\IndexEventsComposer;
 use App\Http\View\Composers\IndexNewsComposer;
-use App\Http\View\Composers\TopMenuComposer;
 use App\Http\View\Composers\OtherNewsComposer;
+use App\Http\View\Composers\TopMenuComposer;
+use Blade;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -47,5 +48,9 @@ class ViewServiceProvider extends ServiceProvider
         View::composer('events.index', IndexEventsComposer::class);
 
         View::composer('blocks.slider', BannersComposer::class);
+
+        Blade::if('admin', function () {
+            return auth()->guard('admin')->check();
+        });
     }
 }

@@ -1,4 +1,4 @@
-<section class="carousel">
+<section class="carousel slider-place">
     @foreach($banners as $banner)
         @if($banner->link)
             <a href="{{ localized($banner->link) }}" class="carousel__cell">

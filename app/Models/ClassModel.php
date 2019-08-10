@@ -67,4 +67,11 @@ class ClassModel extends Entity implements HasPage, Sortable
     {
         return $this->hasMany(Schedule::class);
     }
+
+    public function getCurrentLessonAttribute()
+    {
+        $n = Schedule::lessonNumber(now());
+
+        return Schedule::onSubject(now()->dayOfWeek, $this->id, $n)->first();
+    }
 }

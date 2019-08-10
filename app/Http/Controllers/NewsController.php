@@ -9,7 +9,6 @@ use App\Models\Metadata;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
-use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 
 class NewsController extends Controller
@@ -52,15 +51,22 @@ class NewsController extends Controller
         ]);
     }
 
-    public function show($article)
+    public function show(Request $request, $article)
     {
         $article = Article::news()->findBySlug($article)->published()->firstOrFail();
 
-        return view('pages.page', [
+        if ($request->getMethod() == 'POST') {
+            $controller = new FormController();
+            $data = $controller->callAction('comment', [$request, $article]);
+        } else {
+            $data = [];
+        }
+
+        return view('pages.page', array_merge([
             'page'        => $article,
             'pageType'    => 'article',
             'breadcrumbs' => Breadcrumbs::article($article),
-        ]);
+        ], $data));
     }
 
     protected function mb_ucfirst($string, $encoding = 'utf-8')
