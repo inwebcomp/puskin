@@ -19,7 +19,7 @@ class TopMenuComposer
         $menu = Navigation::findByUID('top')
             ->children()
             ->published()
-            ->ordered('desc')
+            ->ordered()
             ->withTranslation()
             ->with(['children' => function($query) {
                 $query->withTranslation()->published()->ordered();
