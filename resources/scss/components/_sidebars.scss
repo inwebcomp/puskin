@@ -24,6 +24,10 @@ $close-button-size: $padding * 3;
     z-index: 2;
 }
 
+.sidebar {
+    display: none;
+}
+
 @media only screen and (max-width: 1170px) {
     .sidebar__close {
         display: block;
@@ -31,17 +35,18 @@ $close-button-size: $padding * 3;
 
     .sidebar__content {
         display: none;
-        overflow: auto;
+        overflow: hidden;
+        overflow-y: auto;
         position: absolute;
-        top: $close-button-size;
         left: 0;
         width: 100%;
-        height: calc(100% - #{$close-button-size});
+        height: 100%;
         z-index: 1;
         box-sizing: border-box;
     }
 
     .sidebar {
+        display: block;
         margin: 0;
         background-color: #FFF;
         position: fixed;

@@ -37,7 +37,7 @@ class ViewServiceProvider extends ServiceProvider
             $view->with('locale', App::getLocale());
         });
 
-        View::composer('blocks.menu', TopMenuComposer::class);
+        View::composer(['blocks.menu', 'blocks.mobile-menu'], TopMenuComposer::class);
         View::composer('blocks.footer', BottomMenuComposer::class);
 
         View::composer('news.other', OtherNewsComposer::class);

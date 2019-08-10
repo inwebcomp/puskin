@@ -1,7 +1,7 @@
 <header class="header @if($pageType == 'index') header--shadow @endif">
-    <button type="button" class="button-menu header__btn-menu">
+    <button type="button" class="button-menu header__btn-menu" onclick="toggleMenu()">
         <i class="fas fa-bars button-menu__icon"></i>
-        Меню
+        @lang('Меню')
     </button>
 
     @include('blocks.logo', ['classes' => 'header__logo'])

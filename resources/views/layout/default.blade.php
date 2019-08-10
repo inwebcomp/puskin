@@ -21,7 +21,9 @@
 {{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/fontawesome.min.css">--}}
 </head>
 <body>
-    <div id="app" class="{{ isset($pageType) ? 'page--' . $pageType : '' }}" :class="{ 'show-sidebar--menu': showMenu }">
+    <div id="app" class="{{ isset($pageType) ? 'page--' . $pageType : '' }}">
+        <div class="sidebar__overlay" onclick="toggleMenu()"></div>
+
         <div class="container">
             @include('blocks.mobile-menu')
             @include('blocks.header')
