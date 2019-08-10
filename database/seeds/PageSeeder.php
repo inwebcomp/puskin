@@ -22,7 +22,7 @@ class PageSeeder extends Seeder
             'title' => 'Новости',
         ]);
         Page::create([
-            'slug'   => 'events',
+            'slug'   => 'event',
             'title' => 'Мероприятия',
         ]);
         Page::create([
@@ -34,11 +34,11 @@ class PageSeeder extends Seeder
             'title' => 'Расписание',
         ]);
         Page::create([
-            'slug'   => 'classes',
+            'slug'   => 'class',
             'title' => 'Классы',
         ]);
         Page::create([
-            'slug'   => 'teachers',
+            'slug'   => 'teacher',
             'title' => 'Учителя',
         ]);
         Page::create([

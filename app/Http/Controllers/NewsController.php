@@ -100,7 +100,8 @@ class NewsController extends Controller
     private function archive()
     {
         return $this->chunkBy(
-            Article::selectRaw('count(*) as count, DATE_FORMAT(created_at, "%Y-%m-01") as date')
+            Article::news()
+                   ->selectRaw('count(*) as count, DATE_FORMAT(created_at, "%Y-%m-01") as date')
                    ->groupBy('date')
                    ->published()
                    ->get()
