@@ -17,6 +17,7 @@
     @yield('styles')
 
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/3.0.3/css/froala_style.min.css">
 </head>
 <body>
     <div id="app" class="{{ isset($pageType) ? 'page--' . $pageType : '' }}" :class="{ 'show-sidebar--menu': showMenu }">

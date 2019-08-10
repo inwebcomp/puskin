@@ -19,6 +19,7 @@ class CreateArticlesTable extends Migration
             Article::statusColumn($table);
             Article::positionColumn($table);
             $table->tinyInteger('type')->default(Article::defaultType());
+            $table->boolean('daily')->default(0);
             $table->unsignedInteger('category_id')->nullable();
             $table->timestamps();
 

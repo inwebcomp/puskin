@@ -4,8 +4,10 @@ namespace App\Admin\Resources;
 
 use Admin\ResourceTools\Images\Images;
 use Admin\ResourceTools\Metadata\Metadata;
+use Admin\ResourceTools\Comments\Comments;
 use App\Admin\Actions\Hide;
 use App\Admin\Actions\Publish;
+use App\Admin\Actions\SetDailyArticle;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -78,6 +80,7 @@ class News extends Resource
             Textarea::make(__('Описание'), 'description')->displayUsing(function($value) {
                 return Str::limit(strip_tags($value), 600);
             }),
+            Boolean::make(__('Запись дня'), 'daily'),
             Boolean::make(__('Опубликован'), 'status'),
         ];
     }
@@ -102,8 +105,9 @@ class News extends Resource
             Editor::make(__('Текст'), 'text'),
             Boolean::make(__('Опубликован'), 'status'),
 
-            new Metadata(),
             new Images(),
+            new Metadata(),
+            new Comments(),
         ];
     }
 
@@ -112,6 +116,7 @@ class News extends Resource
         return [
             new Publish(),
             new Hide(),
+            new SetDailyArticle(),
         ];
     }
 }

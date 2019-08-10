@@ -492,7 +492,7 @@ body {
   font-size: inherit;
   font-weight: 300;
   overflow-x: hidden;
-  font-family: "MuseoSansCyrl", fantasy;
+  font-family: "MuseoSansCyrl", sans-serif;
   line-height: 1.4;
   min-width: 320px;
   color: #000;
@@ -8870,6 +8870,12 @@ readers do not read off random characters that represent icons */
   top: 5px;
   left: -32px;
 }
+.text-block .fr-file {
+  text-decoration: none;
+}
+.text-block .fr-file::after {
+  margin-left: 5px;
+}
 
 .button {
   padding: 0;
@@ -9101,7 +9107,7 @@ readers do not read off random characters that represent icons */
   padding: 16px;
   background-color: #F0F0F0;
   box-shadow: none;
-  border: 1px solid rgba(0, 0, 0, 0.11);
+  border: none;
   font-size: 1rem;
   width: 100%;
 }
@@ -9134,9 +9140,10 @@ readers do not read off random characters that represent icons */
   padding: 16px;
   background-color: #F0F0F0;
   box-shadow: none;
-  border: 1px solid rgba(0, 0, 0, 0.11);
+  border: none;
   font-size: 1rem;
   width: 100%;
+  display: block;
 }
 .textarea::-webkit-input-placeholder {
   color: #000;
@@ -9688,14 +9695,6 @@ readers do not read off random characters that represent icons */
     margin-left: auto;
   }
 }
-.comments__inner {
-  margin-top: 64px;
-}
-@media screen and (max-width: 559px) {
-  .comments__inner {
-    margin-top: 32px;
-  }
-}
 .comments__item {
   display: flex;
   align-items: flex-start;
@@ -9715,8 +9714,8 @@ readers do not read off random characters that represent icons */
   text-align: right;
   margin-right: 16px;
   margin-top: 16px;
-  width: 150px;
-  min-width: 150px;
+  width: 160px;
+  min-width: 160px;
 }
 @media screen and (max-width: 425px) {
   .comments__item-info {
@@ -9765,12 +9764,12 @@ readers do not read off random characters that represent icons */
 }
 .comments__btn {
   margin-right: 16px;
+  margin-top: 16px;
 }
 .comments__footer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   margin-top: 48px;
+  border-top: 1px solid #dbe7f3;
+  padding-top: 48px;
 }
 .comments__footer-content {
   display: flex;
@@ -9820,6 +9819,10 @@ readers do not read off random characters that represent icons */
 }
 .comments__socials-link:not(:last-child) {
   margin-right: 4px;
+}
+.comments__add .input-field {
+  margin-bottom: 16px;
+  max-width: 50%;
 }
 
 .data-comment {
@@ -10198,8 +10201,6 @@ readers do not read off random characters that represent icons */
 .carousel__image {
   max-height: 100%;
   max-width: 100%;
-  opacity: 0;
-  transition: opacity ease 0.15s;
 }
 .carousel__image.flickity-lazyloaded, .carousel__image.flickity-lazyerror {
   opacity: 1;
@@ -10293,6 +10294,14 @@ readers do not read off random characters that represent icons */
 }
 .flickity-page-dots .dot.is-selected {
   background-color: #fff;
+}
+
+.slider-place > .carousel__cell:not(:first-child) {
+  display: none;
+}
+
+.flickity-enabled > .carousel__cell:not(:first-child) {
+  display: block;
 }
 
 .footer {
@@ -11069,12 +11078,13 @@ readers do not read off random characters that represent icons */
   margin: 0;
   margin-top: 16px;
 }
-.contact-form__alert-error {
+.contact-form__alert {
   display: block;
+}
+.contact-form__alert--error {
   color: #EB5757;
 }
-.contact-form__alert-success {
-  display: block;
+.contact-form__alert--success {
   color: #2db86e;
 }
 
@@ -11101,15 +11111,12 @@ readers do not read off random characters that represent icons */
 .contact-item__name {
   margin: 12px 0 28px;
 }
-.contact-item__phone {
+.contact-item__element {
   display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 2px;
-}
-.contact-item__phone:hover {
-  text-decoration: underline;
-}
-.contact-item__phone:hover .contact-item__icon {
-  opacity: 0.85;
 }
 .contact-item__icon {
   font-size: 1.125rem;
@@ -11136,9 +11143,16 @@ readers do not read off random characters that represent icons */
   max-width: 771px;
   width: 100%;
   min-width: 300px;
+  min-height: 405px;
   flex: 1;
   align-self: flex-start;
   margin-bottom: 48px;
+  position: relative;
+}
+@media screen and (max-width: 1169px) {
+  .page--index .carousel {
+    min-height: auto;
+  }
 }
 @media screen and (max-width: 767px) {
   .page--index .carousel {

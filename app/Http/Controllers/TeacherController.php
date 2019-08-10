@@ -12,7 +12,7 @@ class TeacherController extends Controller
     public function index(Request $request)
     {
         $teachers = Teacher::withTranslation()
-                           ->with('images')
+                           ->with(['images', 'schedule'])
                            ->published()
                            ->ordered()
                            ->get()->chunk(2);

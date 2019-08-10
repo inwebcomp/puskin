@@ -68,4 +68,19 @@ class Teacher extends Entity implements HasPage, Sortable
     {
         return $this->hasMany(ClassModel::class);
     }
+
+    public function schedule()
+    {
+        return $this->hasMany(Schedule::class);
+    }
+
+    public function getCurrentLessonsAttribute()
+    {
+        $n = Schedule::lessonNumber(now());
+
+        return $this->schedule()
+             ->where('day', 1)
+             ->where('subject_number', $n)
+             ->get();
+    }
 }

@@ -1,6 +1,6 @@
 <div class="contacts-list">
-    @foreach(array(1, 2, 3) as $value)
-        @include('contacts.snippets.contact-item')
+    @foreach($contacts as $contact)
+        @include('contacts.snippets.contact-item', ['contact' => $contact])
     @endforeach
 </div>
 

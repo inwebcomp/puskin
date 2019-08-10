@@ -56,7 +56,9 @@ class Teacher extends Resource
     {
         return [
             Text::make(__('Имя'), 'name')->link($this->editPath()),
-            Text::make(__('Должность'), 'post'),
+            Text::make(__('Область деятельности'), 'subjects', function($value) {
+                return strip_tags($value);
+            }),
             Boolean::make(__('Опубликован'), 'status'),
         ];
     }
@@ -72,9 +74,9 @@ class Teacher extends Resource
         return [
             Text::make(__('Имя'), 'name')->link($this->editPath()),
             Text::make(__('URL ID'), 'slug'),
-            Text::make(__('Должность'), 'post'),
-            Editor::make(__('Описание'), 'text'),
+//            Text::make(__('Должность'), 'post'),
             Editor::make(__('Область деятельности'), 'subjects'),
+            Editor::make(__('Описание'), 'text'),
             Editor::make(__('Контакты'), 'contacts')->help(__('Видны только администраторам')),
             Boolean::make(__('Опубликован'), 'status'),
 

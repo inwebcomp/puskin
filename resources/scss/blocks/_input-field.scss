@@ -4,7 +4,8 @@
         padding: $padding;
         background-color: $content-bg-color;
         box-shadow: none;
-        border: 1px solid rgba(0, 0, 0, 0.11);
+        //border: 1px solid rgba(0, 0, 0, 0.11);
+        border: none;
         font-size: rem(16px);
         width: 100%;
 
@@ -30,9 +31,11 @@
     padding: $padding;
     background-color: $content-bg-color;
     box-shadow: none;
-    border: 1px solid rgba(0, 0, 0, 0.11);
+    //border: 1px solid rgba(0, 0, 0, 0.11);
+    border: none;
     font-size: rem(16px);
     width: 100%;
+    display: block;
 
     &::placeholder {
         color: $font-color;

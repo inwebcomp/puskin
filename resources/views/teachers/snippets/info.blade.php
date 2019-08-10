@@ -18,5 +18,17 @@
             {!! $teacher->text !!}
         </div>
     </div>
+
+    @admin
+        <div>
+            <h2 class="page-title">
+                @lang('Контакты')
+            </h2>
+
+            <div class="text-block">
+                {!! $teacher->contacts !!}
+            </div>
+        </div>
+    @endadmin
 </article>
 

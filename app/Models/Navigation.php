@@ -67,11 +67,22 @@ class Navigation extends Entity implements Nested, Sortable, Cacheable
 
     public function getLinkAttribute($value)
     {
-        return $this->page ? $this->page->path() : ($value ? Route::localized($value) : '/');
+        if ($this->page)
+            return $this->page->path();
+
+        if ($this->article)
+            return $this->article->path();
+
+        return ($value ? Route::localized($value) : '/');
     }
 
     public function page()
     {
         return $this->belongsTo(Page::class);
+    }
+
+    public function article()
+    {
+        return $this->belongsTo(Article::class);
     }
 }

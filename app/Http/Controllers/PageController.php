@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Breadcrumbs;
+use App\Models\Contact;
 use App\Models\Metadata;
 use App\Models\Page;
+use Illuminate\Http\Request;
+use Illuminate\Support\MessageBag;
 
 class PageController extends Controller
 {
@@ -16,15 +19,26 @@ class PageController extends Controller
         ]);
     }
 
-    public function contacts()
+    public function contacts(Request $request)
     {
         $page = Page::findBySlug('contacts')->published()->firstOrFail();
 
-        return view('pages.contacts', [
-            'pageType' => 'contacts',
-            'meta'     => Metadata::fromPage($page),
+        $contacts = Contact::published()->ordered()->get();
+
+        if ($request->getMethod() == 'POST') {
+            $controller = new FormController();
+            $data = $controller->callAction('contact', [$request]);
+        } else {
+            $data = [];
+        }
+
+        return view('pages.contacts', array_merge([
+            'pageType'    => 'contacts',
+            'meta'        => Metadata::fromPage($page),
             'breadcrumbs' => Breadcrumbs::page($page),
-        ]);
+            'contacts'    => $contacts,
+            'errors'      => new MessageBag(),
+        ], $data));
     }
 
     public function show($page)

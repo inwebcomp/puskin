@@ -16,5 +16,10 @@ class MenuSeeder extends Seeder
             'uid'   => 'top',
             'title' => 'Верхнее меню',
         ]);
+
+        Navigation::create([
+            'uid'   => 'bottom',
+            'title' => 'Нижнее меню',
+        ]);
     }
 }

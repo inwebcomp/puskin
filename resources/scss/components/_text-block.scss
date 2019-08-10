@@ -166,6 +166,14 @@
             }
         }
     }
+
+    .fr-file {
+        text-decoration: none;
+    }
+
+    .fr-file::after {
+        margin-left: 5px;
+    }
 }
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Breadcrumbs;
 use App\Models\Article;
 use App\Models\Metadata;
+use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
@@ -16,9 +17,16 @@ class EventController extends Controller
         ]);
     }
 
-    public function show($article)
+    public function show(Request $request, $article)
     {
         $article = Article::events()->findBySlug($article)->published()->firstOrFail();
+
+        if ($request->getMethod() == 'POST') {
+            $controller = new FormController();
+            $data = $controller->callAction('comment', [$request, $article]);
+        } else {
+            $data = [];
+        }
 
         return view('pages.page', [
             'page'        => $article,

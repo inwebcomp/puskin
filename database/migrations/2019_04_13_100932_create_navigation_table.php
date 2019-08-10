@@ -19,15 +19,17 @@ class CreateNavigationTable extends Migration
             $table->increments('id');
             $table->string('uid')->nullable();
             $table->unsignedInteger('page_id')->nullable();
+            $table->unsignedInteger('article_id')->nullable();
             Navigation::statusColumn($table);
             Navigation::positionColumn($table);
             $table->timestamps();
             $table->nestedSet();
         });
 
-        Schema::table('navigation', function(Blueprint $table) {
+        Schema::table('navigation', function (Blueprint $table) {
             $table->foreign('parent_id')->references('id')->on('navigation')->onDelete('cascade');
             $table->foreign('page_id')->references('id')->on('pages')->onDelete('set null');
+            $table->foreign('article_id')->references('id')->on('articles')->onDelete('set null');
         });
 
         Schema::create('navigation_translations', function (Blueprint $table) {
@@ -38,7 +40,7 @@ class CreateNavigationTable extends Migration
             $table->string('title');
             $table->string('link')->nullable();
 
-            $table->unique(['navigation_id','locale']);
+            $table->unique(['navigation_id', 'locale']);
             $table->foreign('navigation_id')->references('id')->on('navigation')->onDelete('cascade');
         });
     }

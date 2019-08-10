@@ -8,7 +8,11 @@ use InWeb\Base\Entity;
 
 class Schedule extends Entity
 {
-    protected $fillable = [
+    private static $lessonsTime = [];
+    private static $defaultBreak = 10;
+    private static $bigBreak = 20;
+
+    protected      $fillable = [
         'day',
         'subject_number',
         'class_model_id',
@@ -64,12 +68,10 @@ class Schedule extends Entity
     {
         $start = Carbon::make('8:00');
 
-        $defaultBreak = 10;
-
-        $break = $defaultBreak * ($lessonNumber - 1);
+        $break = self::$defaultBreak * ($lessonNumber - 1);
 
         if ($lessonNumber >= 4)
-            $break += 10;
+            $break += self::$bigBreak - self::$defaultBreak;
 
         $start->addMinutes(45 * ($lessonNumber - 1) + $break);
 
@@ -77,5 +79,17 @@ class Schedule extends Entity
             'start' => $start->format('H:i'),
             'end' => $start->addMinutes(45)->format('H:i'),
         ];
+    }
+
+    public static function lessonNumber(Carbon $time)
+    {
+        $diff = $time->diffInMinutes('08:00') + self::$defaultBreak;
+
+        $lessonDurationWithBreak = 45 + self::$defaultBreak;
+
+        if ($diff > $lessonDurationWithBreak * 4)
+            $diff -= self::$bigBreak - self::$defaultBreak;
+
+        return (int) ceil($diff / $lessonDurationWithBreak);
     }
 }

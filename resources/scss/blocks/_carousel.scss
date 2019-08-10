@@ -24,8 +24,8 @@
     &__image {
         max-height: 100%;
         max-width: 100%;
-        opacity: 0;
-        transition: opacity $transition;
+        //opacity: 0;
+        //transition: opacity $transition;
     }
 
     &__image {
@@ -134,5 +134,18 @@
         &.is-selected {
             background-color: #fff;
         }
+    }
+}
+
+
+.slider-place {
+    & > .carousel__cell:not(:first-child) {
+        display: none;
+    }
+}
+
+.flickity-enabled {
+    & > .carousel__cell:not(:first-child) {
+        display: block;
     }
 }

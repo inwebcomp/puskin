@@ -2,7 +2,7 @@
 
 @section('content')
     <main class="page-contact">
-        @include('contacts.list')
+        @include('contacts.list', ['contacts' => $contacts])
 
         <div class="contacts-actions">
             @include('contacts.contact-form')
