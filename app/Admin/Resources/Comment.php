@@ -54,7 +54,7 @@ class Comment extends Resource
             Text::make(__('Имя'), 'name')->link($this->editPath()),
             Text::make(__('Запись'), function () {
                 return $this->commentable->title;
-            })->link(oprional($this->commentable)->adminPath()),
+            })->link(optional($this->commentable)->adminPath()),
             Datetime::make(__('Дата'), 'created_at'),
             Textarea::make(__('Текст'), 'text')->resolveUsing(function($value) {
                 return Str::limit($value);
@@ -76,7 +76,7 @@ class Comment extends Resource
             Text::make(__('Дата'), 'created_at')->original()->display(),
             Text::make(__('Запись'), function() {
                 return $this->commentable->title;
-            })->link($this->commentable->adminPath())->display(),
+            })->link(optional($this->commentable->adminPath()))->display(),
 
             Section::make(__('Данные')),
             Text::make(__('Имя'), 'name')->original(),
