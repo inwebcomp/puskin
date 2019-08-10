@@ -66,6 +66,7 @@ class EventController extends Controller
             'page'        => $article,
             'pageType'    => 'article',
             'breadcrumbs' => Breadcrumbs::article($article),
+            'meta' => Metadata::fromModel($article),
         ]);
     }
 
