@@ -19,7 +19,7 @@ class BottomMenuComposer
         $menu = Navigation::findByUID('bottom')
             ->children()
             ->published()
-            ->ordered()
+            ->ordered('desc')
             ->withTranslation()
             ->with(['children' => function($query) {
                 $query->withTranslation()->published()->ordered();
