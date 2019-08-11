@@ -1,13 +1,17 @@
 <section class="carousel slider-place">
     @foreach($banners as $banner)
         @if($banner->link)
-            <a href="{{ localized($banner->link) }}" class="carousel__cell">
-                <img class="carousel__image" src="{{ $banner->image->getUrl('catalog') }}" width="770" height="405" data-flickity-lazyload="{{ $banner->image->getUrl('catalog') }}"  alt="{{ $banner->title }}"/>
-            </a>
+            @foreach($banner->images as $image)
+                <a href="{{ localized($banner->link) }}" class="carousel__cell">
+                    <img class="carousel__image" src="{{ $image->getUrl('catalog') }}" width="770" height="405" data-flickity-lazyload="{{ $image->getUrl('catalog') }}"  alt="{{ $banner->title }}"/>
+                </a>
+            @endforeach
         @else
-            <div class="carousel__cell">
-                <img class="carousel__image" src="{{ $banner->image->getUrl('catalog') }}" width="770" height="405" data-flickity-lazyload="{{ $banner->image->getUrl('catalog') }}"  alt="{{ $banner->title }}"/>
-            </div>
+            @foreach($banner->images as $image)
+                <div class="carousel__cell">
+                    <img class="carousel__image" src="{{ $image->getUrl('catalog') }}" width="770" height="405" data-flickity-lazyload="{{ $image->getUrl('catalog') }}"  alt="{{ $banner->title }}"/>
+                </div>
+            @endforeach
         @endif
     @endforeach
 </section>
