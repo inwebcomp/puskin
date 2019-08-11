@@ -1,6 +1,6 @@
 <a href="{{ $class->path() }}" class="classes__item @isset($full) classes__item--full @endisset">
     <h3 class="classes__item-name">
-        {{ $class->title     }}
+        {{ $class->title }}
         @if($class->pupils)<span class="classes__item-count">{{ $class->pupils }} @lang('учеников')</span>@endif
     </h3>
     @isset($class->teacher)

@@ -75,9 +75,4 @@ class ClassModel extends Entity implements HasPage, Sortable
 
         return Schedule::onSubject(now()->dayOfWeek, $this->id, $n)->first();
     }
-
-    public function getFullTitleAttribute()
-    {
-        return $this->title . (strpos($this->title, __('класс')) === false ? ' ' . __('класс') : '');
-    }
 }
