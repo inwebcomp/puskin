@@ -12,6 +12,14 @@
         </span>
     </div>
 
+    @if($album->text)
+        <div class="article__content">
+            <div class="text-block fr-view">
+                {!! $album->text !!}
+            </div>
+        </div>
+    @endif
+
     <div class="album__list">
         @foreach($images as $image)
             @include('gallery.snippets.image', ['image' => $image])
