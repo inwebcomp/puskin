@@ -71,4 +71,9 @@ class Album extends Entity implements HasPage, Sortable
     {
         return Carbon::parse($value)->format('d.m.Y');
     }
+
+    public function getMetaTitle()
+    {
+        return $this->title . ' – ' . __('Фотоальбом');
+    }
 }
