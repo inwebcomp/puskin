@@ -1,4 +1,4 @@
-<section class="carousel slider-place">
+<section class="carousel owl-carousel slider-place">
     @foreach($banners as $banner)
         @if($banner->link)
             @foreach($banner->images as $image)

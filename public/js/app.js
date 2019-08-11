@@ -2105,20 +2105,21 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var initCarousel = function initCarousel() {
-  var carousel = document.querySelector('.carousel');
-  if (!carousel) return false;
-  var flkty = new Flickity(carousel, {
-    prevNextButtons: carousel.childElementCount > 1,
-    pageDots: carousel.childElementCount > 1,
-    lazyLoad: false,
-    wrapAround: true,
-    adaptiveHeight: false
-  });
-};
-
-initCarousel();
-
+// const initCarousel = () => {
+//     const carousel = document.querySelector('.carousel');
+//
+//     if (!carousel) return false;
+//
+//     let flkty = new Flickity(carousel, {
+//         prevNextButtons: carousel.childElementCount > 1,
+//         pageDots: carousel.childElementCount > 1,
+//         lazyLoad: false,
+//         wrapAround: true,
+//         adaptiveHeight: false
+//     });
+// };
+//
+// initCarousel();
 var initStickySidebar = function initStickySidebar() {
   var elemSticky = document.querySelector('.sticky');
   if (document.body.clientWidth < 1170) return false;
@@ -2132,6 +2133,22 @@ var initStickySidebar = function initStickySidebar() {
 };
 
 initStickySidebar();
+
+var initCarousel = function initCarousel() {
+  var carousel = $('.carousel');
+  if (!carousel) return;
+  carousel.owlCarousel({
+    items: 1,
+    loop: true,
+    nav: true,
+    dots: true,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    navText: ''
+  });
+};
+
+initCarousel();
 
 /***/ }),
 
