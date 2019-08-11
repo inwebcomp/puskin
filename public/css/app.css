@@ -9835,6 +9835,11 @@ body .text-block .fr-file::after {
   margin-bottom: 16px;
   max-width: 50%;
 }
+@media screen and (max-width: 459px) {
+  .comments__add .input-field {
+    max-width: 100%;
+  }
+}
 
 .data-comment {
   font-size: 0.75rem;

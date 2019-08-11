@@ -209,6 +209,10 @@
         .input-field {
             margin-bottom: $padding;
             max-width: 50%;
+
+            @include media-max($xx-small) {
+                max-width: 100%;
+            }
         }
     }
 }
