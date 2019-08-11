@@ -9,6 +9,7 @@ use App\Admin\Actions\Publish;
 use Illuminate\Http\Request;
 use InWeb\Admin\App\Fields\Boolean;
 use InWeb\Admin\App\Fields\Editor;
+use InWeb\Admin\App\Fields\Number;
 use InWeb\Admin\App\Fields\Select;
 use InWeb\Admin\App\Fields\Text;
 use InWeb\Admin\App\Http\Requests\AdminRequest;
@@ -57,6 +58,7 @@ class ClassModel extends Resource
     {
         return [
             Text::make(__('Название'), 'title')->link($this->editPath()),
+            Number::make(__('Кол-во учеников'), 'pupils'),
             Select::make(__('Классынй руководитель'), function() {
                 return optional($this->teacher)->name;
             }),
@@ -75,6 +77,8 @@ class ClassModel extends Resource
         return [
             Text::make(__('Название'), 'title')->link($this->editPath()),
             Text::make(__('URL ID'), 'slug'),
+
+            Number::make(__('Кол-во учеников'), 'pupils'),
 
             Select::make(__('Классный руководитель'), 'teacher_id')
                   ->options(Select::prepare(

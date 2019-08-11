@@ -18,6 +18,7 @@ use Spatie\EloquentSortable\Sortable;
  * @package App
  * @property string title
  * @property string slug
+ * @property int|null pupils
  */
 class ClassModel extends Entity implements HasPage, Sortable
 {

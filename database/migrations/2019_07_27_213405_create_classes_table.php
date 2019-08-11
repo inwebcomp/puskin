@@ -19,6 +19,7 @@ class CreateClassesTable extends Migration
             ClassModel::statusColumn($table);
             ClassModel::positionColumn($table);
             $table->unsignedInteger('teacher_id')->nullable();
+            $table->integer('pupils')->nullable();
             $table->timestamps();
 
             $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('set null');
