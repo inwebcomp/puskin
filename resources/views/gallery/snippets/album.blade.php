@@ -10,7 +10,7 @@
         <div class="data-comment album-prew__data">
             <span class="data-comment__date">
                 <i class="fal fa-calendar-alt data-comment__icon"></i>
-                {{ $item->date }}
+                {{ $item->dateFormatted }}
             </span>
         </div>
         <span class="link-arrow pseudo album-prew__link">

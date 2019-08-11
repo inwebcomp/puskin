@@ -5,12 +5,9 @@ namespace App\Models;
 use App\Traits\WithMetadata;
 use Carbon\Carbon;
 use Dimsav\Translatable\Translatable;
-use Illuminate\Database\Eloquent\Builder;
 use Intervention\Image\Constraint;
-use InWeb\Base\Contracts\Cacheable;
 use InWeb\Base\Contracts\HasPage;
 use InWeb\Base\Entity;
-use InWeb\Base\Support\Route;
 use InWeb\Base\Traits\Positionable;
 use InWeb\Base\Traits\TranslatableSlug;
 use InWeb\Base\Traits\WithStatus;
@@ -33,10 +30,15 @@ class Album extends Entity implements HasPage, Sortable
         WithStatus,
         Positionable,
         TranslatableSlug,
-        WithImages;
+        WithImages,
+        WithMetadata;
 
     public $translationModel     = 'App\Translations\AlbumTranslation';
     public $translatedAttributes = ['title', 'slug', 'text'];
+
+    protected $dates = [
+        'date'
+    ];
 
     public function path()
     {
@@ -65,7 +67,7 @@ class Album extends Entity implements HasPage, Sortable
         ];
     }
 
-    public function getDateAttribute($value)
+    public function getDateFormattedAttribute($value)
     {
         return Carbon::parse($value)->format('d.m.Y');
     }

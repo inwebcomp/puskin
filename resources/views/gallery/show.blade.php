@@ -8,7 +8,7 @@
     <div class="data-comment album__date">
         <span class="data-comment__date">
             <i class="fal fa-calendar-alt data-comment__icon"></i>
-            {{ $album->date }}
+            {{ $album->dateFormatted }}
         </span>
     </div>
 

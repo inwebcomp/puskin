@@ -40,6 +40,7 @@ class AlbumController extends Controller
             'pageType'    => 'album',
             'images'      => $album->images,
             'breadcrumbs' => Breadcrumbs::album($album),
+            'meta'        => Metadata::fromModel($album),
         ]);
     }
 }

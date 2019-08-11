@@ -61,7 +61,7 @@ class Album extends Resource
     {
         return [
             Text::make(__('Название'), 'title')->link($this->editPath()),
-            Date::make(__('Дата'), 'date')->original(),
+            Date::make(__('Дата'), 'date'),
             Boolean::make(__('Опубликован'), 'status'),
         ];
     }
@@ -77,11 +77,12 @@ class Album extends Resource
         return [
             Text::make(__('Название'), 'title')->link($this->editPath()),
             Text::make(__('URL ID'), 'slug'),
-            Date::make(__('Дата'), 'date')->original(),
+            Date::make(__('Дата'), 'date'),
             Editor::make(__('Текст'), 'text'),
             Boolean::make(__('Опубликован'), 'status')->default(true),
 
             new Images(),
+            new Metadata(),
         ];
     }
 
