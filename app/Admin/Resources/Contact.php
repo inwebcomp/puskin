@@ -72,7 +72,7 @@ class Contact extends Resource
             Text::make(__('Телефон'), 'phone'),
             Text::make(__('Моб. телефон'), 'phone_mobile'),
             Text::make(__('Email'), 'email'),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликован'), 'status')->default(true),
         ];
     }
 

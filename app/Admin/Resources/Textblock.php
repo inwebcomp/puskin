@@ -56,7 +56,7 @@ class Textblock extends Resource
                     return Str::limit(strip_tags($value), 600);
                 }),
 
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликован'), 'status')->default(true),
         ];
     }
 

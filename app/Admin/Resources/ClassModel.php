@@ -86,7 +86,7 @@ class ClassModel extends Resource
                   )->withEmpty(),
 
             Editor::make(__('Описание'), 'text'),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликован'), 'status')->default(true),
 
             new Metadata(),
             new Schedule(),

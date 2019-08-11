@@ -65,7 +65,7 @@ class Page extends Resource
             Text::make(__('Название'), 'title')->rules('required'),
             Text::make(__('URL ID'), 'slug'),
             Editor::make(__('Текст'), 'text'),
-            Boolean::make('Published', 'status'),
+            Boolean::make('Published', 'status')->default(true),
         ];
     }
 
@@ -81,7 +81,7 @@ class Page extends Resource
             Text::make(__('Название'), 'title')->rules('required'),
             Text::make(__('URL ID'), 'slug'),
             Editor::make(__('Текст'), 'text'),
-            Boolean::make('Published', 'status'),
+            Boolean::make('Published', 'status')->default(true),
 
             new Metadata(),
         ];

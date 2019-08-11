@@ -79,7 +79,7 @@ class Album extends Resource
             Text::make(__('URL ID'), 'slug'),
             Date::make(__('Дата'), 'date')->original(),
             Editor::make(__('Текст'), 'text'),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликован'), 'status')->default(true),
 
             new Images(),
         ];

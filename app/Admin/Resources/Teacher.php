@@ -78,7 +78,7 @@ class Teacher extends Resource
             Editor::make(__('Область деятельности'), 'subjects'),
             Editor::make(__('Описание'), 'text'),
             Editor::make(__('Контакты'), 'contacts')->help(__('Видны только администраторам')),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликован'), 'status')->default(true),
 
             new Images(),
             new Metadata(),

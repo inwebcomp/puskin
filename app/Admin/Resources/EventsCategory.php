@@ -88,7 +88,7 @@ class EventsCategory extends Resource
             Text::make(__('Название'), 'title')->link($this->editPath()),
             Select::make(__('Рубрика для'), 'type')->options(Select::prepare(Category::types()))->default(Article::EVENT),
             Text::make(__('URL ID'), 'slug'),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликован'), 'status')->default(true),
 
             new Metadata(),
         ];
