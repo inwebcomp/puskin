@@ -33,6 +33,9 @@ initStickySidebar();
 
 
 const initCarousel = () => {
+    if (! $)
+        return
+
     const carousel = $('.owl-carousel')
 
     if (!carousel)
