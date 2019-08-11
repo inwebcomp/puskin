@@ -10,6 +10,15 @@
     <div class="teachers__item__info">
         {!! $teacher->subjects !!}
     </div>
+        @if(count($teacher->currentLessons))
+            <div class="teachers__item-info">
+                <span class="teachers__item-key">@lang('Сейчас идёт урок'):</span>
+                @if(count($teacher->currentLessons) > 1)<br>@endif
+                @foreach($teacher->currentLessons as $schedule)
+                    <span class="classes__item-value">{{ $schedule->subject }} ({{ $schedule->classModel->title }})</span><br>
+                @endforeach
+            </div>
+        @endif
     <span class="link-arrow pseudo teachers__link">
         @lang('Страница учителя')
     </span>
