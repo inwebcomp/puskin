@@ -48,7 +48,7 @@
     }
 
     @include media-max($xxx-small) {
-        padding: $padding $padding; 
+        padding: $padding * 2.5 $padding;
     }
 }
 

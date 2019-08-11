@@ -2135,6 +2135,7 @@ var initStickySidebar = function initStickySidebar() {
 initStickySidebar();
 
 var initCarousel = function initCarousel() {
+  if (!window.$) return;
   var carousel = $('.owl-carousel');
   if (!carousel) return;
   carousel.owlCarousel({

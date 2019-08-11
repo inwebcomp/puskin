@@ -8983,7 +8983,7 @@ body .text-block .fr-file::after {
 }
 @media screen and (max-width: 375px) {
   .page-content {
-    padding: 16px 16px;
+    padding: 40px 16px;
   }
 }
 
