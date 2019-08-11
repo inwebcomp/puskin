@@ -1,4 +1,4 @@
-@if(is_countable($classes))
+@if(is_countable($classes) and count($classes))
     <div class="class-teacher">
         <h2 class="page-title">
             @lang('Руководитель')
