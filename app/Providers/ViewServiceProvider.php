@@ -49,6 +49,12 @@ class ViewServiceProvider extends ServiceProvider
 
         View::composer('blocks.slider', BannersComposer::class);
 
+//        View::composer('blocks.languages', function($view) {
+//            $path = '';
+//
+//            $view->with('alternative', $path);
+//        });
+
         Blade::if('admin', function () {
             return auth()->guard('admin')->check();
         });

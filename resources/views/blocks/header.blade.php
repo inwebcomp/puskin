@@ -11,11 +11,11 @@
             <div class="header__contacts">
                 <a href="{{ \InWeb\Base\Support\Route::route('contacts') }}" class="header__contact">
                     <i class="fas fa-map-marker-alt header__contact-icon"></i>
-                    <span class="header__contact-text">{{ config('contacts.address') }}</span>
+                    <span class="header__contact-text">{!! app('contacts')['address'] !!}</span>
                 </a>
-                <a href="tel:{{ config('contacts.phone_link') }}" class="header__contact">
+                <a href="tel:{{ app('contacts')['phone_link'] }}" class="header__contact">
                     <i class="fas fa-phone header__contact-icon"></i>
-                    <span class="header__contact-text">{{ config('contacts.phone_prefix') }} <b>{{ config('contacts.phone') }}</b></span>
+                    <span class="header__contact-text">{!! app('contacts')['phone'] !!}</span>
                 </a>
             </div>
 

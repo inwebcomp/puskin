@@ -26,6 +26,10 @@
         max-width: 100%;
         //opacity: 0;
         //transition: opacity $transition;
+
+        @include media-max($large) {
+            height: auto;
+        }
     }
 
     &__image {

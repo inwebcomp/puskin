@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Traits\WithMetadata;
 use Dimsav\Translatable\Translatable;
 use InWeb\Base\Entity;
+use InWeb\Base\Support\Route;
 use InWeb\Base\Traits\BindedToModelAndObject;
 
 /**
@@ -52,6 +53,8 @@ class Metadata extends Entity
 
         return array_merge([
             'title' => $page->title,
+            'slug' => $page->slug,
+            'slug_alternative' => Route::alternativeSlug($page),
         ], $result);
     }
 
@@ -65,6 +68,8 @@ class Metadata extends Entity
 
         return array_merge([
             'title' => $model->getMetaTitle(),
+            'slug' => $model->slug,
+            'slug_alternative' => Route::alternativeSlug($model),
         ], $result);
     }
 }

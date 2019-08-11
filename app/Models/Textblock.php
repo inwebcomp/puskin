@@ -61,8 +61,23 @@ class Textblock extends Entity implements Cacheable, Sortable
         return strip_tags(static::html($name));
     }
 
-    public static function html($name)
+    public function getHtml($withoutWrapping = false)
     {
-        return optional(static::findByUID($name))->text;
+        $value = $this->text;
+
+        if ($withoutWrapping)
+            $value = preg_replace('/(^<p>)|(<\/p>$)/', '', $value);
+
+        return $value;
+    }
+
+    public static function html($name, $withoutWrapping = false)
+    {
+        $value = optional(static::findByUID($name))->text;
+
+        if ($withoutWrapping)
+            $value = preg_replace('/(^<p>)|(<\/p>$)/', '', $value);
+
+        return $value;
     }
 }

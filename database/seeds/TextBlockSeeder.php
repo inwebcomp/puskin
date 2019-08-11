@@ -16,5 +16,17 @@ class TextBlockSeeder extends Seeder
             'uid'   => 'copyrights',
             'title' => 'Подпись внизу сайта (Copyrights)',
         ]);
+        Textblock::create([
+            'uid'   => 'phone',
+            'title' => 'Телефон',
+        ]);
+        Textblock::create([
+            'uid'   => 'address',
+            'title' => 'Адрес',
+        ]);
+        Textblock::create([
+            'uid'   => 'email',
+            'title' => 'Email адрес',
+        ]);
     }
 }

@@ -26,13 +26,13 @@
                     <a href="{{ \InWeb\Base\Support\Route::route('contacts') }}" class="footer__list-link">@lang('Контакты')</a>
                 </li>
                 <li class="footer__list-item">
-                    <a href="mailto:{{ config('contacts.email') }}" class="footer__list-link">{{ config('contacts.email') }}</a>
+                    <a href="mailto:{{ app('contacts')['email'] }}" class="footer__list-link">{!! app('contacts')['email'] !!}</a>
                 </li>
                 <li class="footer__list-item">
-                    <a href="tel:{{ config('contacts.phone_link') }}" class="footer__list-link">{{ config('contacts.phone_prefix') . ' ' . config('contacts.phone') }}</a>
+                    <a href="tel:{{ app('contacts')['phone_link'] }}" class="footer__list-link">{!! app('contacts')['phone'] !!}</a>
                 </li>
                 <li class="footer__list-item">
-                    <a href="{{ \InWeb\Base\Support\Route::route('contacts') }}" class="footer__list-link">{{ config('contacts.address') }}</a>
+                    <a href="{{ \InWeb\Base\Support\Route::route('contacts') }}" class="footer__list-link">{!! app('contacts')['address'] !!}</a>
                 </li>
             </ul>
         </nav>
