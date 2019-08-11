@@ -8735,32 +8735,32 @@ readers do not read off random characters that represent icons */
     display: block;
   }
 }
-.text-block {
+body .text-block {
   font-size: 1.0625rem;
   line-height: 1.4117647059em;
   color: #000;
   box-sizing: border-box;
 }
-.text-block img {
+body .text-block img {
   display: block;
   max-width: 100%;
   margin-bottom: 36px;
 }
-.text-block h1 {
+body .text-block h1 {
   margin-bottom: 24px;
 }
-.text-block p {
+body .text-block p {
   margin-top: 24px;
   margin-bottom: 24px;
   line-height: 1.4117647059em;
 }
-.text-block p:first-of-type {
+body .text-block p:first-of-type {
   margin-top: 0;
 }
-.text-block p:last-of-type {
+body .text-block p:last-of-type {
   margin-bottom: 0;
 }
-.text-block p.p-float-img img {
+body .text-block p.p-float-img img {
   float: left;
   max-width: 300px;
   width: 100%;
@@ -8768,69 +8768,69 @@ readers do not read off random characters that represent icons */
   margin-right: 32px;
 }
 @media screen and (max-width: 767px) {
-  .text-block p.p-float-img img {
+  body .text-block p.p-float-img img {
     float: none;
     margin: 0 auto;
     margin-bottom: 20px;
   }
 }
-.text-block b {
+body .text-block b {
   font-weight: 700;
 }
-.text-block a {
+body .text-block a {
   font-weight: 500;
   color: #0299eb;
   text-decoration: underline;
 }
-.text-block a:hover {
+body .text-block a:hover {
   text-decoration: none;
   opacity: 0.85;
 }
-.text-block hr {
+body .text-block hr {
   border: none;
   background-color: #dbe7f3;
   height: 1px;
   margin: 32px 0;
 }
-.text-block table th {
+body .text-block table th {
   background-color: #ebf9fa;
 }
-.text-block table td, .text-block table th {
+body .text-block table td, body .text-block table th {
   border: none;
 }
-.text-block thead th {
+body .text-block thead th {
   height: 48px;
   font-weight: 500;
   font-size: 16px;
   padding: 13px 16px;
 }
-.text-block tbody td {
+body .text-block tbody td {
   padding: 13px 16px;
   border-bottom: 1px solid #dbe7f3;
 }
-.text-block li + li {
+body .text-block li + li {
   margin-top: 10px;
 }
-.text-block ul {
+body .text-block ul {
   list-style: none;
   margin: 48px 0;
   padding-left: 64px;
 }
 @media screen and (max-width: 767px) {
-  .text-block ul {
+  body .text-block ul {
     margin: 36px 0;
     padding-left: 48px;
   }
 }
 @media screen and (max-width: 425px) {
-  .text-block ul {
+  body .text-block ul {
     padding-left: 32px;
   }
 }
-.text-block ul li {
+body .text-block ul li {
   position: relative;
 }
-.text-block ul li::before {
+body .text-block ul li::before {
   content: "";
   display: block;
   box-sizing: border-box;
@@ -8843,7 +8843,7 @@ readers do not read off random characters that represent icons */
   top: 5px;
   left: -32px;
 }
-.text-block ol {
+body .text-block ol {
   list-style: none;
   counter-reset: list-counter;
   margin-top: 48px;
@@ -8852,21 +8852,21 @@ readers do not read off random characters that represent icons */
   position: relative;
 }
 @media screen and (max-width: 767px) {
-  .text-block ol {
+  body .text-block ol {
     margin: 36px 0;
     padding-left: 48px;
   }
 }
 @media screen and (max-width: 425px) {
-  .text-block ol {
+  body .text-block ol {
     padding-left: 32px;
   }
 }
-.text-block ol li {
+body .text-block ol li {
   counter-increment: list-counter;
   position: relative;
 }
-.text-block ol li::before {
+body .text-block ol li::before {
   content: counter(list-counter) ".";
   display: inline-block;
   font-size: 1.0625rem;
@@ -8876,10 +8876,10 @@ readers do not read off random characters that represent icons */
   top: 5px;
   left: -32px;
 }
-.text-block .fr-file {
+body .text-block .fr-file {
   text-decoration: none;
 }
-.text-block .fr-file::after {
+body .text-block .fr-file::after {
   margin-left: 5px;
 }
 
@@ -9065,7 +9065,7 @@ readers do not read off random characters that represent icons */
   transform: rotate(45deg);
 }
 
-.page-title-h1, .text-block h1 {
+.page-title-h1, body .text-block h1 {
   font-size: 2.0625rem;
   font-weight: 900;
   line-height: normal;
@@ -9073,13 +9073,13 @@ readers do not read off random characters that represent icons */
   margin-bottom: 36px;
 }
 @media screen and (max-width: 559px) {
-  .page-title-h1, .text-block h1 {
+  .page-title-h1, body .text-block h1 {
     font-size: 1.8125rem;
     margin-bottom: 24px;
   }
 }
 
-.page-title-h2, .text-block h2 {
+.page-title-h2, body .text-block h2 {
   font-size: 1.75rem;
   font-weight: 900;
   line-height: normal;
@@ -9087,7 +9087,7 @@ readers do not read off random characters that represent icons */
   margin-bottom: 24px;
 }
 
-.page-title-h3, .text-block h3 {
+.page-title-h3, body .text-block h3 {
   font-size: 1.375rem;
   font-weight: 900;
   line-height: normal;
@@ -9990,11 +9990,11 @@ readers do not read off random characters that represent icons */
     margin-bottom: 32px;
   }
 }
-.article-list .page-title-h1, .article-list .text-block h1, .text-block .article-list h1 {
+.article-list .page-title-h1, .article-list body .text-block h1, body .text-block .article-list h1 {
   margin-top: -10px;
 }
 @media screen and (max-width: 375px) {
-  .article-list .page-title-h1, .article-list .text-block h1, .text-block .article-list h1 {
+  .article-list .page-title-h1, .article-list body .text-block h1, body .text-block .article-list h1 {
     margin-top: 0;
   }
 }
