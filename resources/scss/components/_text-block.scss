@@ -89,6 +89,7 @@
         height: 48px;
         font-weight: 500;
         font-size: $font-size;
+        padding: $padding - 3px $padding;
     }
 
     tbody td {
