@@ -4,7 +4,7 @@
     </div>
     @if($class->text)
         <div class="article__content">
-            <div class="text-block">
+            <div class="text-block fr-view">
                 {!! $class->text !!}
             </div>
         </div>

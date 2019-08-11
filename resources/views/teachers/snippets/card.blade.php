@@ -12,7 +12,7 @@
     </div>
     @if(count($teacher->currentLessons))
         <div class="teachers__item-info">
-            <span class="teachers__item-key">@lang('Сейчас идёт урок'):</span>
+            <span class="teachers__item-key">@lang('Сейчас ведёт урок'):</span>
             @if(count($teacher->currentLessons) > 1)<br>@endif
             @foreach($teacher->currentLessons as $schedule)
                 <span class="classes__item-value">{{ $schedule->subject }} ({{ $schedule->classModel->title }})</span><br>
