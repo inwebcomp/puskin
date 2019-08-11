@@ -13,11 +13,13 @@
         </div>
     </div>
 
-    <div class="article__content">
-        <div class="text-block">
-            {!! $teacher->text !!}
+    @if($teacher->text)
+        <div class="article__content">
+            <div class="text-block">
+                {!! $teacher->text !!}
+            </div>
         </div>
-    </div>
+    @endif
 
     @admin
         <div>
