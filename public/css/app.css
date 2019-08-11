@@ -8792,20 +8792,20 @@ body .text-block hr {
   height: 1px;
   margin: 32px 0;
 }
-body .text-block table th {
-  background-color: #ebf9fa;
+body .text-block table thead th {
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 10.6666666667px 16px;
+  text-transform: uppercase;
+  background-color: #fefbf2;
+  color: #906f0a;
+  border-bottom: 2px solid #F2C94C;
 }
 body .text-block table td, body .text-block table th {
   border: none;
 }
-body .text-block thead th {
-  height: 48px;
-  font-weight: 500;
-  font-size: 16px;
-  padding: 13px 16px;
-}
 body .text-block tbody td {
-  padding: 13px 16px;
+  padding: 10.6666666667px 16px;
   border-bottom: 1px solid #dbe7f3;
 }
 body .text-block li + li {

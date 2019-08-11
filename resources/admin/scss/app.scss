@@ -129,8 +129,14 @@ body .fr-view {
     }
 
     table {
-        th {
-            background-color: $heading-background-color;
+        thead th {
+            font-weight: 700;
+            font-size: rem(14px);
+            padding: $padding / 1.5 $padding;
+            text-transform: uppercase;
+            background-color: lighten($accent-color, 35%);
+            color: darken($accent-color, 32%);
+            border-bottom: 2px solid $accent-color;
         }
 
         td, th {
@@ -138,15 +144,8 @@ body .fr-view {
         }
     }
 
-    thead th {
-        height: 48px;
-        font-weight: 500;
-        font-size: $font-size;
-        padding: $padding - 3px $padding;
-    }
-
     tbody td {
-        padding: $padding - 3px $padding;
+        padding: $padding / 1.5 $padding;
         border-bottom: 1px solid $border-color;
     }
 
