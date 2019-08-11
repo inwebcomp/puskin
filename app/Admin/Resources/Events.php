@@ -98,7 +98,7 @@ class Events extends Resource
                   )->withEmpty(),
             Textarea::make(__('Описание'), 'description')->original(),
             Editor::make(__('Текст'), 'text'),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликован'), 'status')->default(true),
 
             new Images(),
             new Metadata(),

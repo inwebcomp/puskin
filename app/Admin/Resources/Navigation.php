@@ -87,7 +87,7 @@ class Navigation extends Resource implements Nested
                   }))->withEmpty(),
             Text::make(__('Ссылка'), 'link')->size('full')->original(),
             TreeField::make(__('Родитель'), 'parent_id'),
-            Boolean::make('Опубликован', 'status'),
+            Boolean::make('Опубликован', 'status')->default(true),
         ];
     }
 
