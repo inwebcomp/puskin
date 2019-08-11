@@ -58,11 +58,6 @@ class News extends Resource
         return $query->news();
     }
 
-    public static function detailQuery(AdminRequest $request, $query)
-    {
-        return $query->news();
-    }
-
     /**
      * Get the fields displayed by the resource.
      *

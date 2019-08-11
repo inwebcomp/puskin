@@ -58,11 +58,6 @@ class Events extends Resource
         return $query->events();
     }
 
-    public static function detailQuery(AdminRequest $request, $query)
-    {
-        return $query->events();
-    }
-
     /**
      * Get the fields displayed by the resource.
      *
