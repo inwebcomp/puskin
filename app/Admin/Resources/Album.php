@@ -61,7 +61,7 @@ class Album extends Resource
     {
         return [
             Text::make(__('Название'), 'title')->link($this->editPath()),
-            Date::make(__('Дата'), 'date', function($value) {
+            Date::make(__('Дата'), 'date')->displayUsing(function() {
                 return $this->dateFormatted;
             }),
             Boolean::make(__('Опубликован'), 'status'),
